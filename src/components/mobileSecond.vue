@@ -8,9 +8,9 @@
 			<p class="fun" :class="{ruFun:(this.$i18n.locale==='ru', 'es')}">{{$t('secondPage.header.fun')}}</p>
 		</header>
 		<h1 class="BackNumber">2020</h1>
-		<transition appear mode="out-in" name="evolve">
+		<!-- <transition appear mode="out-in" name="evolve"> -->
 		<router-view/>
-		</transition>
+		<!-- </transition> -->
 		<footer></footer> 
 	</div>
 </template>
