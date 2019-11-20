@@ -457,7 +457,6 @@ p {
   border-radius: 5vw;
   width: calc(var(--vh, 1vh) * 22);
   height: 7vw;
-  outline: none;
   user-select: all;
   -moz-outline-radius: 20px;
 }
@@ -537,7 +536,6 @@ p {
     border-radius: 1vw;
     width: 90%;
     height: 1.1vw;
-    outline: none;
     user-select: all;
     transform: initial;
     -moz-outline-radius: 20px;

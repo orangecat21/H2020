@@ -141,7 +141,6 @@ export default {
 		transform: rotate(180deg);
 	}
 	.button{
-		outline: none;
 		border-radius: 0.5vw;
 		position: relative;
 		display: inline-block;

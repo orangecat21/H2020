@@ -84,7 +84,6 @@ export default {
         border: none;
         cursor: pointer;
         margin-top: calc(var(--vh, 1vh) * 0.2);
-        outline: none;
     }
     .button:focus, .button.active {
 		border: 0.2vw solid #ac40f1;

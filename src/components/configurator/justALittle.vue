@@ -27,7 +27,7 @@ section {
 }
 .phrase {
   color: #ac40f1;
-  font-size: 12vw;
+  font-size: 9vw;
   margin-bottom: 12vw;
 }
 .Next_Button {
@@ -35,7 +35,7 @@ section {
   background: #ac40f1;
   border: 0.1vw solid #ac40f1;
   color: #fff;
-  font-size: 10vw;
+  font-size: 9vw;
   padding: 0.2vw 8vw;
   cursor: pointer;
   box-shadow: 0vw 0vw 0.2vw #000;

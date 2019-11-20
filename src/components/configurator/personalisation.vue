@@ -41,7 +41,6 @@ export default {
 		height: calc(var(--vh, 1vh) * 40);
 	}
 	.button{
-		outline: none;
 		position: relative;
 		display: inline-block;
 		color: #E0FFFF;
@@ -54,7 +53,6 @@ export default {
 		cursor: pointer;
 		width: 47vw;
 		height: 10vw;
-		outline: none;
 	}
 	button:focus{
 		border: 0.15vw solid #ac40f1;
@@ -93,7 +91,6 @@ export default {
 		margin-top: 1vw;
 	}
 	.button{
-		outline: none;
 		position: relative;
 		display: inline-block;
 		color: #E0FFFF;

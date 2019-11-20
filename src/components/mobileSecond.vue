@@ -8,9 +8,9 @@
 			<p class="fun" :class="{ruFun:(this.$i18n.locale==='ru', 'es')}">{{$t('secondPage.header.fun')}}</p>
 		</header>
 		<h1 class="BackNumber">2020</h1>
-		<!-- <transition appear mode="out-in" name="evolve"> -->
-		<router-view/>
-		<!-- </transition> -->
+		<transition appear mode="out-in" name="evolve">
+			<router-view/>
+		</transition>
 		<footer></footer> 
 	</div>
 </template>
@@ -84,14 +84,15 @@ header{
 .war, .politics, .fun{
 	background: none;
 	border: none;
-	color: #20252a;
+	color: rgb(255, 255, 255);
+	text-shadow: 0 0 0.2vw rgb(67, 251, 77);
 	margin: 2vw 2vw 0 0;
 	font-family: 'Source', sans-serif;
-	font-size: 7vw;
+	font-size: calc(var(--vh, 1vh) * 6);
 	outline: none;
 }
 .ruFun, .ruWar, .ruPolitics{
-	line-height: 6vw;
+	line-height: calc(var(--vh, 1vh) * 5);
 }
 
 hr{

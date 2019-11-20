@@ -45,7 +45,6 @@ export default {
 		border: none;
 		margin-right: calc(var(--vh, 1vh) * 0.4);
 		margin-top: calc(var(--vh, 1vh) * 0.1);
-		outline: none;
 		flex-shrink: 0;
 	}
 	.button::-moz-focus-outer{

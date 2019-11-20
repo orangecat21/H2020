@@ -35,10 +35,10 @@ main{
 }
 .character{
 	width: 52vw;
+	height: 52vw;
 	margin-right: 5vw;
 }
 img{
-	height: 100%;
 	width: 28vh;
 }
 .submenu{

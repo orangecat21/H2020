@@ -122,7 +122,7 @@ header {
 	display: flex;
 	width: 100vw;
 	justify-content: flex-end;
-	height: calc(var(--vh, 1vh) * 2);
+	height: calc(var(--vh, 1vh) * 4);
 }
 hr{
 	border: 0.1vw solid #E0FFFF;
@@ -172,7 +172,7 @@ body{
 }
 main{
 	position: relative;
-	height: calc(var(--vh, 1vh) * 98);
+	height: calc(var(--vh, 1vh) * 96);
 	width: 100vw;
 	display: flex;
 	flex-direction: column;
@@ -274,6 +274,15 @@ main{
 	margin: 0 5vw 3vw 0;
 	text-shadow: 0vw 0vw 0.3vw #000;
 }
+button::-moz-focus-inner {
+  border: 0;
+}
+button{
+	outline: none;
+}
+input{
+	outline: none;
+}
 .date{
 	color: #E0FFFF;
 	z-index: 1;
@@ -347,6 +356,9 @@ main{
 	#app{
 		height: 100vh;
 	}
+	header{
+		height: initial;
+	}
 	.snout{
 		background: url(~@/assets/HUMAN.png) 0vw 15vh no-repeat, url(~@/assets/morpheus.png) 93% 100%  no-repeat;
 		background-size: 47vh, 35vh;
@@ -358,7 +370,7 @@ main{
 	}
 	.Eng, .Ru, .Spa{
 		font-size: 1.5vw;
-		margin: 2vw 1vw 0 0;
+		margin: 1.8vw 1vw 0 0;
 	}
 	hr{
 		border: 0.1vw solid #E0FFFF;

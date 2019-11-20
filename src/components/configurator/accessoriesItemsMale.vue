@@ -43,7 +43,6 @@ export default {
 		transition: 0.3s;
 		background: linear-gradient(rgb(130, 255, 136), rgb(140, 242, 255));
 		border: none;
-		outline: none;
 		border-radius: 1vw;
 	}
 	.button::-moz-focus-outer{
@@ -95,7 +94,6 @@ export default {
 		transition: 0.3s;
 		background: linear-gradient(rgb(130, 255, 136), rgb(140, 242, 255));
 		border: none;
-		outline: none;
 		border-radius: 1vw;
 		width: 9.7vw;
 		height: 10.8vw;

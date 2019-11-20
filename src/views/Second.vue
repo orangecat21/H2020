@@ -14,16 +14,17 @@
 		},
 		data: function(){
 			return{
-				width: window.innerWidth
+				width: window.innerWidth,
+				height: window.innerHeight
 			}
 		},
 		computed: {
       isDesktop: function(){
-        if(this.width >= 561){
+        if((this.width >= 561)&&(this.width/this.height>=1)){
           return true
         }
         else{
-					return false
+			return false
         }
       }
     },
@@ -39,6 +40,10 @@
 		},
 		created(){
 			window.addEventListener('resize', this.updateWidth)
+			window.addEventListener('resize', function(){
+				let vh = window.innerHeight * 0.01
+				document.documentElement.style.setProperty('--vh', `${vh}px`)
+			})
 		},
 		beforeDestroy(){
 			window.removeEventListener('resize', this.updateWidth)

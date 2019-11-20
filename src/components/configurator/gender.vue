@@ -47,7 +47,6 @@ button{
 	cursor: pointer;
 	height: calc(var(--vh, 1vh) * 29);
 	width: 47vw;
-	outline: none;
 	background-color: rgb(226, 226, 226);
 }
 button:focus{

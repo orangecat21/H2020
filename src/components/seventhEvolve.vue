@@ -1,6 +1,6 @@
 <template>
 	<main>
-			<div class="canvas">
+			<div class="character">
 				<img :src="require('../assets/hipster.png')" alt="hipster">
 			</div>
 			<section class="submenu">
@@ -35,10 +35,10 @@ main{
 }
 .character{
 	width: 52vw;
+	height: 52vw;
 	margin-right: 5vw;
 }
 img{
-	height: 100%;
 	width: 28vh;
 }
 .submenu{

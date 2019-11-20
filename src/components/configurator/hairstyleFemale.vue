@@ -85,7 +85,6 @@ section {
   border: none;
   cursor: pointer;
   margin-top: calc(var(--vh, 1vh) * 0.1);
-  outline: none;
 }
 .button:focus,
 .button.active {

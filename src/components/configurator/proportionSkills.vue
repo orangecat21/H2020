@@ -1,5 +1,5 @@
 <template>
-  <section :class="[{'inputM':inputTrigger}]">
+  <section :class="[{'inputM':inputTrigger},{'iphoneInput': iphoneTrigger}]">
     <div class="topConfMenu">
       <h1 class="clothesTitle">{{$t('thirdPage.clothes.clothes')}}</h1>
       <div class="rightButtonGroup">
@@ -77,7 +77,8 @@ export default {
       softSkills: null,
       hardSkill: null,
       buttonTrigger: false,
-      inputTrigger: false
+      inputTrigger: false,
+      iphoneTrigger: false
     };
   },
   computed: {
@@ -88,6 +89,11 @@ export default {
   beforeDestroy() {
     this.$store.dispatch("PUSH_SOFTSKILLS", this.softSkills);
     this.$store.dispatch("PUSH_HARDSKILL", this.hardSkill);
+  },
+  created(){
+    if (navigator.userAgent.match(/iPhone/i)) {
+      this.iphoneTrigger = true;
+  }
   },
   watch: {
     softSkills: function() {
@@ -250,11 +256,12 @@ input {
 }
 hr {
   width: 20vw;
+  height: 0.1vw;
   height: calc(var(--vh, 1vh) * 0.1);
   border-radius: 30%;
-  background-color: #fff;
   position: absolute;
-  border: 0.2vw solid #ffffff;
+  border: 0.2vw solid rgb(67, 251, 77);
+  box-shadow: 0 0 0.3vw rgb(36, 198, 219);
 }
 .separate {
   margin: 0.3vw 0vw;
@@ -265,6 +272,7 @@ hr {
   margin-left: 1vw;
   border: 0.1vw solid #ac40f1;
   background-color: #ac40f1;
+  box-shadow: 0 0 0.1vw #000;
 }
 p {
   position: absolute;
@@ -285,21 +293,21 @@ p {
 }
 .tophr {
   transform: rotate(-25deg);
-  left: calc(var(--vh, 1vh) * 10);
-  top: calc(var(--vh, 1vh) * 20);
-  width: calc(var(--vh, 1vh) * 27);
+  left: calc(var(--vh, 1vh) * 18);
+  top: calc(var(--vh, 1vh) * 19);
+  width: 23vw;
 }
 .bothr {
   transform: rotate(12deg);
   left: calc(var(--vh, 1vh) * 20);
   top: calc(var(--vh, 1vh) * 28);
-  width: calc(var(--vh, 1vh) * 30);
+  width: 40vw
 }
 .sumOfScills {
   position: relative;
   left: initial;
   bottom: initial;
-  font-size: 15vw;
+  font-size: calc(var(--vh, 1vh) * 10);
 }
 .Next_Button {
   display: none;
@@ -321,6 +329,14 @@ p {
   height: 100vh;
   right: 0;
   background-color: #fff;
+}
+.inputM.iphoneInput{
+  all: initial;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 @keyframes ticker {
   0% {
