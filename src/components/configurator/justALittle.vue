@@ -11,7 +11,7 @@ export default {
     goToNext() {
       this.$router.push("/create/proportion_skills");
     }
-  }
+  },
 };
 </script>
 

@@ -30,7 +30,7 @@ export default {
 	name:'DesktopSecond',
 	methods: {
 		goToConstruct(){
-			this.$router.push('/create/personalisation')
+			this.$router.replace('/create/personalisation')
 		},
 		goToBack(){
 			this.$router.push('/')

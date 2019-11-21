@@ -50,16 +50,11 @@ export default {
 	.button::-moz-focus-outer{
 		border: none;
 	}
-	.button:hover{
+	.button:hover, .button:focus{
 		transform: scale(1.05);
 		background: none;
 		transition: 0.3s;
 		border: 0.2vw solid #ac40f1;
-	}
-	.button:active{
-		transform: scale(1.1);
-		background: #ac40f1;
-		transition: 0.3s;
 	}
 @media screen and (min-width: 760px) and (max-width: 999px) {
 }
@@ -89,13 +84,13 @@ export default {
 		margin: 0vw 0.4vw 0.4vw 0vw;
 	}
 	.button:hover{
-		transform: scale(1.1);
+		transform: scale(1.05);
 		background: none;
 		transition: 0.3s;
 	}
 	.button:focus{
-		transform: scale(1.1);
-		background: #ac40f1;
+		transform: scale(1.05);
+		background: none;
 		transition: 0.3s;
 	}
 }

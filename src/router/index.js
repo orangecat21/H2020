@@ -106,6 +106,11 @@ const routes = [
         ]
       }
     ]
+  },
+  {
+    path: '/stats',
+    name: 'fourthScreen',
+    component: () => import(/* webpackChunkName: "fourth", webpackPrefetch: 800 */'../views/Fourth.vue')
   }
 ]
 

@@ -2,6 +2,52 @@
       <router-view></router-view>
 </template>
 
+<script>
+export default {
+	name:"H2020",
+	data(){
+		return {
+			saved_state: null
+		}
+	},
+	updated(){
+		let json = JSON.stringify(this.$store.state)
+		sessionStorage.setItem('state', json)
+	},
+	mounted(){
+		this.saved_state = JSON.parse(sessionStorage.getItem('state'))
+		
+		setTimeout(()=>{
+			this.$store.dispatch('GET_GENDER', this.saved_state.gender)
+			this.$store.dispatch('PUSH_NAME', this.saved_state.humanName)
+			this.$store.dispatch('PUSH_HEAD', this.saved_state.humanHead)
+			this.$store.dispatch('PUSH_SHIRTS', this.saved_state.humanShirt)
+			this.$store.dispatch('PUSH_JACKETS', this.saved_state.humanJackets)
+			this.$store.dispatch('PUSH_PANTS', this.saved_state.humanPants)
+			this.$store.dispatch('PUSH_SHOES', this.saved_state.humanShoes)
+			this.$store.dispatch('PUSH_ACCESSORIES', this.saved_state.humanAccessories)
+			this.$store.dispatch('PUSH_HARDSKILL', this.saved_state.hardSkillPoints)
+			this.$store.dispatch('PUSH_SOFTSKILLS', this.saved_state.softSkillsPoints)
+			this.$store.dispatch('PUSH_HARDSKILL_NAME', this.saved_state.hardSkillName)
+			this.$store.dispatch('PUSH_INITIATIVE', this.saved_state.Initiative)
+			this.$store.dispatch('PUSH_CREATIVITY', this.saved_state.Creativity)
+			this.$store.dispatch('PUSH_ADAPTABILITY', this.saved_state.Adaptability)
+			this.$store.dispatch('PUSH_REFLECTION', this.saved_state.Reflection)
+			this.$store.dispatch('PUSH_MULTITASKING', this.saved_state.Multitasking)
+			this.$store.dispatch('PUSH_LISTENING', this.saved_state.ListeningSkills)
+			this.$store.dispatch('PUSH_TEAMWORK', this.saved_state.Teamwork)
+			this.$store.dispatch('PUSH_CRITICAL', this.saved_state.CriticalThinking)
+			this.$store.dispatch('PUSH_TIMEMANAGEMENT', this.saved_state.TimeManagement)
+			this.$store.dispatch('PUSH_HUMANIMG', this.saved_state.humanImg)
+			let json = JSON.stringify(this.$store.state)
+			sessionStorage.setItem('state', json)
+		},1000)
+
+	}
+
+}
+</script>
+
 <style>
 *{
 	margin: 0;

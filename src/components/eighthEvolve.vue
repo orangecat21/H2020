@@ -16,7 +16,7 @@ export default {
 	name:'eightEvolve',
 	methods: {
 		goToNext(){
-			this.$router.push('/create/personalisation')
+			this.$router.replace('/create/personalisation')
 		},
 		goToBack(){
 			this.$router.push('/evolve/7')
@@ -48,13 +48,14 @@ img{
 	align-items: center;
 	align-self: center;
 	width: 25vw;
-	color: #20252a;
+	color: #ac40f1;
 	font-family: "Source", sans-serif;
 }
 .submenu h2{
 	font-size: 7vw;
-	font-weight: 300;
+	font-weight: 400;
 	margin-bottom: 2vw;
+	text-shadow: 0 0 0.5vw #fff;
 }
 .evolve{
 	outline: none;
@@ -88,7 +89,7 @@ img{
 	border: none;
 	font-size: 5vw;
 	color: #fff;
-	font-weight: 300;
+	font-weight: 400;
 	cursor: pointer;
 	box-shadow: 0vw 0vw 2vw #000;
 	padding: 1vw 3vw 0.6vw 3vw;

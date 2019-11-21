@@ -111,5 +111,9 @@ export default {
 	button:nth-of-type(11) img{
 		width: initial;
 	}
+	button:nth-of-type(-n+3) img{
+		height: 25%;
+		width: initial;
+	}
 }
 </style>

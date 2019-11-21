@@ -74,8 +74,8 @@ export default {
 header{
 	justify-content: center;
 	align-items: flex-end;
-	height: 30vw;
-	margin-bottom: 3vw;
+	height: calc(var(--vh, 1vh) * 25);
+	margin-bottom: 0vw;
 }
 .ruHeader{
 	flex-direction: column;
@@ -85,7 +85,7 @@ header{
 	background: none;
 	border: none;
 	color: rgb(255, 255, 255);
-	text-shadow: 0 0 0.2vw rgb(67, 251, 77);
+	text-shadow: 0 0 0.6vw #ac40f1;
 	margin: 2vw 2vw 0 0;
 	font-family: 'Source', sans-serif;
 	font-size: calc(var(--vh, 1vh) * 6);

@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="topConfMenu">
-      <h1 class="clothesTitle">HARD Skill</h1>
+      <h1 class="clothesTitle">{{$t('thirdPage.hardskill.HARD')}}</h1>
       <div class="rightButtonGroup">
         <router-link is="button" @click="goToBack" class="GoBack_button">
           <arrowsvg class="arrowbutton"></arrowsvg>
@@ -134,7 +134,7 @@ section {
   border: 0.1vw solid #ac40f1;
   background-color: #ac40f1;
 }
-.Next_Button {
+/* .Next_Button {
   border-radius: 2.5vw;
   background: #ac40f1;
   border: 0.1vw solid #ac40f1;
@@ -150,7 +150,7 @@ section {
 }
 .Next_Button:active {
   box-shadow: inset 0.2vw 0.2vw 0.3vw #000;
-}
+} */
 @media screen and (min-width: 760px) and (max-width: 999px) {
 }
 

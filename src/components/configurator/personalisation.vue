@@ -35,6 +35,7 @@ export default {
 <style scoped>
 	section{
 		display: flex;
+		flex-basis: 100%;
 		justify-content: space-around;
 		flex-wrap: wrap;
 		padding: 2vw 1.5vw 0vw 1.5vw;
@@ -43,7 +44,7 @@ export default {
 	.button{
 		position: relative;
 		display: inline-block;
-		color: #E0FFFF;
+		color: #fff;
 		overflow: hidden;
 		background-color: #cdcdcd;
 		border-radius: 1vw;

@@ -87,9 +87,9 @@ export default {
             },
             {
                 id: 15,
-                src: null,
-                posX: 200,
-                posY: 200
+                src: require('../../assets/question.png'),
+                posX: -1000,
+                posY: -1000
             },
         ],
         accessoriesFemale: [

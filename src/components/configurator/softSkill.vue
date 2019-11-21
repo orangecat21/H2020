@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="topConfMenu">
-      <h1 class="clothesTitle">{{$t('thirdPage.clothes.clothes')}}</h1>
+      <h1 class="clothesTitle">{{$t('thirdPage.softskill.SOFT')}}</h1>
       <div class="rightButtonGroup">
         <router-link is="button" @click="goToBack" class="GoBack_button">
           <arrowsvg class="arrowbutton"></arrowsvg>
@@ -291,6 +291,9 @@ export default {
     }
   },
   updated() {
+    if(this.$store.getters.skillInputActive === true){
+      this.$router.push('/stats')
+    }
     this.$store.dispatch("PUSH_INITIATIVE", this.skill1Value);
     this.$store.dispatch("PUSH_CREATIVITY", this.skill2Value);
     this.$store.dispatch("PUSH_ADAPTABILITY", this.skill3Value);
@@ -432,6 +435,7 @@ p {
   background-color: rgba(56, 56, 56, 0.342);
   border-radius: 5vw;
   padding: 0vw 4vw;
+  color: #fff;
   font-weight: 400;
 }
 .rangeSlider {

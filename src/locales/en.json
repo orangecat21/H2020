@@ -44,12 +44,21 @@
       "clothes":"Clothes"
     },
     "skills":{
-      "leftjust": "Left just a little 😉"
+      "leftjust": "Left just a little 😉",
+      "skillPoint": "Skill point",
+      "hard":"Hard skill",
+      "soft":"Soft skill"
     },
     "ticker":{
       "text1":"Distribute the available points into two groups of skills:",
       "text2": "is responsible for the technical side of your profession.",
       "text3": "is resposible for successful participation in the workflow and teamwork."
+    },
+    "softskill": {
+      "SOFT": "SOFT skill"
+    },
+    "hardskill": {
+      "HARD": "HARD skill"
     }
   },
   "footer": {

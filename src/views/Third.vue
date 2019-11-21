@@ -4,7 +4,7 @@
 		<h1 class="BackNumber">2020</h1>
 		<main>
 			<section class="workSpace">
-				<section class="progressBar">
+				<section class="progressBar" :class="{progressBarTriggered:this.$store.getters.skillInputActive}">
 					<personsvg class="personSVG" :class="[{'active':this.$route.path === firstStep}, {'active':this.$route.path === secondStepM},{'active': this.$route.path === (secondStepW)},{'active': this.$route.path === justALittle},{'active': this.$route.path === proportionSkills}, {'active':this.$route.path === hardSkill}, {'active':this.$route.path === softSkill}]"></personsvg>
 					<arrowsvg class="arrowSVG" :class="[{'active':this.$route.path === secondStepM},{'active': this.$route.path === secondStepW},{'active': this.$route.path === justALittle},{'active': this.$route.path === proportionSkills},{'active':this.$route.path === hardSkill}, {'active':this.$route.path === softSkill}]"></arrowsvg>
 					<hangersvg class="hangerSVG" :class="[{'active':this.$route.path === secondStepM},{'active': this.$route.path === secondStepW},{'active': this.$route.path === justALittle},{'active': this.$route.path === proportionSkills}, {'active':this.$route.path === hardSkill}, {'active':this.$route.path === softSkill}]"></hangersvg>
@@ -13,11 +13,11 @@
 					<arrowsvg class="arrowSVG"></arrowsvg>
 					<awardsvg class="awardSVG"></awardsvg>
 				</section>
-				<section class="configurator">
-					<router-view/>
+				<section class="configurator" :class="{configTriggered:this.$store.getters.skillInputActive}">
+					<router-view :ref="child"/>
 				</section>
 			</section>
-			<section class="canvascontainer" ref="canvascontainer">
+			<section class="canvascontainer" ref="canvascontainer" :class="{canvascontainerTriggered:skillInputActive}">
 				<v-stage ref="stage" :config="stage">
 					<v-layer>
 						<v-text :config="{text:name, fontSize:60, x:posX, y:20, fill:'#ac40f1'}"></v-text>
@@ -48,7 +48,7 @@
 		</main>
 		
 		<footer>
-			<div class="invisible" :class="{overlay: this.$route.path === finish}" @click="closeOverlay"></div>
+			<div class="invisible" :class="[{overlay: this.$route.path === finish}, {overlay:childOverlay}]" @click="closeOverlay"></div>
 			<div class="leftButtonGroup">
 				<router-link is="button" @click="goToBack" class="GoBack_button"><arrowsvg class="arrowbutton"></arrowsvg>{{ $t("footer.GoBack")}}</router-link>
 			<router-link v-if="this.$route.path !== firstStep" is="button" @click="Reset" class="GoBack_button"><resetsvg class="arrowbutton"></resetsvg>{{ $t("footer.reset")}}</router-link>
@@ -122,6 +122,12 @@ export default {
 		},
 		shoesSrc(){
 			return this.$store.getters.HUMAN_SHOES.src
+		},
+		skillInputActive(){
+			return this.$store.getters.skillInputActive
+		},
+		childOverlay(){
+			return this.$store.getters.popupActive
 		}
 	},
 	watch:{
@@ -156,6 +162,7 @@ export default {
 		shoesSrc: function(){
 			this.newShoes()
 		}
+		
 	},
 	components:{
 		personsvg:() => import(/* webpackChunkName: "personSVG", webpackPrefetch: 989 */ '../components/SVG/personSVG.vue'),
@@ -184,7 +191,7 @@ export default {
 			}
 		},
 		closeOverlay(){
-			this.$router.push("/create/soft_skill")
+			this.$router.push("/stats")
 		},
 		goToNext(){
 			if(this.$route.path === this.softSkill){
@@ -194,7 +201,7 @@ export default {
 					this.humanImg = this.$refs.stage.getStage().toDataURL({pixelRatio: 3})
 					this.$store.dispatch('PUSH_HUMANIMG', this.humanImg)
 					this.name = this.humanName
-				},300)
+				},1000)
 			}else this.$router.push('/create/just_a_little')
 		},
 		Reset(){
@@ -281,17 +288,15 @@ export default {
 		question.onload =() =>{
 			this.question=question
 		}
-		// window.addEventListener('resize', function(){
-		// let vh = window.innerHeight * 0.01
-		// document.documentElement.style.setProperty('--vh', `${vh}px`)
-		// setTimeout(()=>{this.changeCanvas()},8000)
-		// })
+		if((this.$store.getters.GENDER === null)||(this.$store.GENDER.HUMAN_NAME === '')){
+			this.$router.push('/create/personalisation')
+		}
 	},
 	mounted(){
 		let vh = window.innerHeight * 0.01
 		document.documentElement.style.setProperty('--vh', `${vh}px`)
 		this.changeCanvas(),
-		this.newGender(),
+		setTimeout(()=>{ this.newGender() },300),
 		this.posX = this.calcPosName(),
 		this.newHair(),
 		this.newAccessories(),
@@ -300,6 +305,9 @@ export default {
 		this.newJacket(),
 		this.name = this.humanName,
 		this.newShoes()
+	},
+	updated(){
+		this.changeCanvas()
 	}
 }
 </script>
@@ -350,6 +358,9 @@ footer{
 	align-items: center;
 	fill: rgb(138, 138, 138);
 }
+.progressBarTriggered{
+	display: none;
+}
 .active{
 	fill: rgb(255, 255, 255);
 }
@@ -370,6 +381,12 @@ footer{
 .workSpace{
 	order: 2;
 }
+.configTriggered{
+	height: calc(var(--vh, 1vh) * 100);
+}
+.canvascontainerTriggered{
+	display: none;
+}
 main{
 	display: flex;
 	flex-direction: column;
@@ -381,7 +398,6 @@ header{
 	display: none;
 }
 .BackNumber{
-	color: azure;
 	transform: rotate(-64deg);
 	font-size: 70vw;
 	color: #000;
@@ -444,6 +460,9 @@ header{
 	.BackNumber{
 		transform: rotate(-10deg);
 		font-size: 45vw;
+	}
+	.canvascontainerTriggered{
+	display: initial;
 	}
 	main{
 		height: 100vh;

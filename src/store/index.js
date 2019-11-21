@@ -65,9 +65,17 @@ export default new Vuex.Store({
     Teamwork:0,
     CriticalThinking:0,
     TimeManagement:0,
-    humanImg:null
+    humanImg:null,
+    skillInputActive: false,
+    popupActive:false
     },
   getters:{
+    popupActive: state => {
+      return state.popupActive
+    },
+    skillInputActive: state => {
+      return state.skillInputActive
+    },
     HUMAN_IMG: state =>{
       return state.humanImg
     },
@@ -109,6 +117,12 @@ export default new Vuex.Store({
     }
   },
   mutations: {
+    SET_POPUP: (state, payload) => {
+      state.popupActive = payload
+    },
+    SET_ORDER: (state, payload) => {
+      state.skillInputActive = payload
+    },
     SET_GENDER: (state,payload) =>{
       state.gender = payload
     },
@@ -174,6 +188,12 @@ export default new Vuex.Store({
     },
   },
   actions: {
+    PUSH_POPUP: (context, payload) => {
+      context.commit('SET_POPUP', payload)
+    },
+    PUSH_ORDER: (context, payload) => {
+      context.commit('SET_ORDER', payload)
+    },
     PUSH_HUMANIMG: (context, payload) =>{
       context.commit('SET_HUMANIMG', payload)
     },
