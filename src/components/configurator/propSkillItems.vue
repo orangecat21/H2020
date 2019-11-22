@@ -80,6 +80,9 @@ export default {
       let vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty("--vh", `${vh}px`);
     });
+    if (navigator.userAgent.match(/iPhone/i)) {
+      this.iphoneTrigger = true;
+    }
   },
   watch: {
     softSkills: function() {
@@ -101,7 +104,8 @@ export default {
       }
     },
     inputTrigger: function() {
-      this.$store.dispatch("PUSH_ORDER", this.inputTrigger);
+      if(this.iphoneTrigger === true){return}
+      else this.$store.dispatch("PUSH_ORDER", this.inputTrigger);
     }
   },
   methods: {
@@ -142,7 +146,7 @@ section {
   flex-direction: column;
   justify-content: space-around;
   width: 100%;
-  height: 33vh;
+  height: 55vw;
 }
 .sumOfSkill {
   display: flex;
@@ -226,14 +230,6 @@ input {
   box-shadow: 0vw 0vw 0.4vw #000;
   text-shadow: 0vw 0vw 0.3vw #000;
 }
-/* .inputM.iphoneInput {
-  all: initial;
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-} */
 @keyframes ticker {
   0% {
     transform: translateX(100vw);
@@ -284,7 +280,7 @@ input {
   display: initial;
 }
 section {
-  height: 63vh;
+  height: 30vw;
 }
 .ticker {
   text-shadow: 0 0 0.3vw #ac40f1;

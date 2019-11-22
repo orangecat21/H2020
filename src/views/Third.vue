@@ -14,7 +14,7 @@
 					<awardsvg class="awardSVG"></awardsvg>
 				</section>
 				<section class="configurator" :class="{configTriggered:this.$store.getters.skillInputActive}">
-					<router-view :ref="child"/>
+					<router-view/>
 				</section>
 			</section>
 			<section class="canvascontainer" ref="canvascontainer" :class="{canvascontainerTriggered:skillInputActive}">
@@ -288,7 +288,7 @@ export default {
 		question.onload =() =>{
 			this.question=question
 		}
-		if((this.$store.getters.GENDER === null)||(this.$store.GENDER.HUMAN_NAME === '')){
+		if((this.$store.getters.GENDER === null)||(this.$store.getters.HUMAN_NAME === '')){
 			this.$router.push('/create/personalisation')
 		}
 	},

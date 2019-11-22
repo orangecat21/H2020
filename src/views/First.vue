@@ -137,16 +137,17 @@ header {
   z-index: 1;
   position: sticky;
   display: flex;
+  align-items: center;
   width: 100vw;
   justify-content: flex-end;
-  height: calc(var(--vh, 1vh) * 4);
+  height: calc(var(--vh, 1vh) * 5);
 }
 hr {
   border: 0.1vw solid #e0ffff;
   width: 0.1vw;
   background: none;
   height: 5vw;
-  margin-top: 2vw;
+  margin: 2.5vw 0;
   margin-right: calc(1vw + 0.4vw);
   box-shadow: 0vw 0vw 0.15vw #000;
 }
@@ -156,7 +157,7 @@ hr {
   background: none;
   border: none;
   color: #fff;
-  margin: 2vw 2vw 0 0;
+  margin: 2vw 2vw 2vw 0;
   font-family: "Source", sans-serif;
   font-size: 4vw;
   outline: none;
@@ -386,6 +387,15 @@ input {
   #app {
     height: 100vh;
   }
+  hr {
+  margin: 2.5vw 0 0 0;
+}
+.Eng,
+.Ru,
+.Spa {
+  margin: 2vw 2vw 0vw 0;
+
+}
   header {
     height: initial;
   }

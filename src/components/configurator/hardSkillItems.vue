@@ -31,6 +31,7 @@ export default {
 	}
 	.scrollM{
 		overflow-x: scroll;
+		flex-wrap: nowrap;
 	}
 	.button{
 		font-size: 6vw;

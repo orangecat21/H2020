@@ -1,10 +1,10 @@
 <template>
 	<section>
-		<button @click='male'>
+		<button @click='male' :class="{active:maleTrigger}">
 			<malesvg class="malesvg"></malesvg>
 			<p>{{$t('thirdPage.gender.male')}}</p>
 		</button>
-		<button @click='female'>
+		<button @click='female' :class="{active:femaleTrigger}">
 			<femalesvg class="femalesvg"></femalesvg>
 			<p>{{$t('thirdPage.gender.female')}}</p>
 		</button>
@@ -14,6 +14,12 @@
 <script>
 export default {
 	name:'gender',
+	data(){
+		return{
+			maleTrigger: false,
+			femaleTrigger: false
+		}
+	},
 	components:{
 		malesvg:() => import(/* webpackChunkName: "malesvg", webpackPrefetch: true */ '../SVG/maleSVG.vue'),
 		femalesvg:() => import(/* webpackChunkName: "femalesvg", webpackPrefetch: true */ '../SVG/femaleSVG.vue')
@@ -21,9 +27,13 @@ export default {
 	methods:{
 		male(){
 			this.$store.dispatch('GET_GENDER', 'male')
+			this.maleTrigger = true
+			this.femaleTrigger = false
 		},
 		female(){
 			this.$store.dispatch('GET_GENDER', 'female')
+			this.maleTrigger = false
+			this.femaleTrigger = true
 		}
 	}
 }
@@ -49,11 +59,12 @@ button{
 	background-color: rgb(226, 226, 226);
 	transition: 0.2s;
 }
-button:focus{
-	transform: scale(1.05);
+
+button.active{
+		transform: scale(1.05);
 	border: 0.3vw solid #ac40f1;
 	padding: 0.85vw;
-}
+	}
 p{
 	position: absolute;
 	bottom: 1vw;

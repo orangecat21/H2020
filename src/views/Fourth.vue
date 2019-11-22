@@ -271,6 +271,13 @@ header{
 	text-shadow: 0 0 1vw rgb(48, 2, 173);
 	font-weight: 700;
 }
+.description{
+	color: rgb(48, 2, 173);
+	font-size: 4vw;
+	font-weight: 700;
+	text-align: center;
+	text-shadow: 0 0 0.5vw #fff;
+}
 	.canvascontainer{
 		height: 41vw;
 		order: 2;

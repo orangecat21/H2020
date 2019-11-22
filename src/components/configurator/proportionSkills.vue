@@ -158,6 +158,14 @@ section {
 .v-leave-active {
   transition: 0.2s;
 }
+.inputM {
+    position: absolute;
+    top: 0;
+    z-index: 999;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+  }
 .inputM.iphoneInput {
   all: initial;
   position: relative;

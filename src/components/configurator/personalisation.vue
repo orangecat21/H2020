@@ -70,6 +70,9 @@ export default {
 	}
 	.button.active{
 		background-color: #ac40f1;
+		transform: scale(1.05);
+	border: 0.3vw solid #ac40f1;
+	padding: 0.85vw;
 	}
 	.v-enter-active {
 		transition: opacity .2s;
