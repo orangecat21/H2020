@@ -12,7 +12,11 @@
       <h1 class="title">{{ $t("firstPage.h1") }}</h1>
       <p class="TopQuote">
         {{ $t("firstPage.topQuote")}}
-        <span id="trigger" class="invisible" :class="{ruTopQuote:(this.$i18n.locale==='ru')}">
+        <span
+          id="trigger"
+          class="invisible"
+          :class="{ruTopQuote:(this.$i18n.locale==='ru')}"
+        >
           {{ $t("firstPage.with")}}
           <router-link
             is="button"
@@ -33,7 +37,7 @@
       <p id="timer"></p>
       <p
         class="date"
-        :class="{enDate:(this.$i18n.locale==='en'), ruDate:(this.$i18n.locale==='ru'), esDate:(this.$i18n.locale==='es') }"
+        :class="{enDate:(this.$i18n.fallbackLocale ==='en'), enDate:(this.$i18n.locale==='en'), ruDate:(this.$i18n.locale==='ru'), esDate:(this.$i18n.locale==='es') }"
       >
         <span>{{ $t('firstPage.date.days')}}</span>
         <span>{{ $t('firstPage.date.hours')}}</span>
@@ -82,6 +86,7 @@ export default {
     }
   },
   mounted() {
+		this.changeLocEn()
     var text = document.querySelector("#timer");
     var now = new Date();
     var target = new Date(now.getFullYear() + 1, 0, 1, 0, 0);
@@ -332,9 +337,9 @@ input {
 .ruDate span:nth-child(3) {
   margin-left: -5vw;
 }
-.enDate span:nth-child(2){
-    margin: 0vw 13.5vw;
-  }
+.enDate span:nth-child(2) {
+  margin: 0vw 13.5vw;
+}
 .BottomQuote_button:active {
   box-shadow: inset 0.2vw 0.2vw 0.3vw #000;
 }
@@ -388,14 +393,13 @@ input {
     height: 100vh;
   }
   hr {
-  margin: 2.5vw 0 0 0;
-}
-.Eng,
-.Ru,
-.Spa {
-  margin: 2vw 2vw 0vw 0;
-
-}
+    margin: 2.5vw 0 0 0;
+  }
+  .Eng,
+  .Ru,
+  .Spa {
+    margin: 2vw 2vw 0vw 0;
+  }
   header {
     height: initial;
   }
@@ -466,7 +470,7 @@ input {
     line-height: 5vw;
     word-spacing: 30vw;
   }
-  .enDate span:nth-child(2){
+  .enDate span:nth-child(2) {
     margin: 0vw 8.5vw;
   }
   body {

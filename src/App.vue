@@ -10,6 +10,11 @@ export default {
 			saved_state: null
 		}
 	},
+	beforeCreate(){
+		if(localStorage.getItem('locale') === null){
+			localStorage.setItem('locale', 'en')
+		}
+	},
 	updated(){
 		let json = JSON.stringify(this.$store.state)
 		sessionStorage.setItem('state', json)
