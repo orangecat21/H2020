@@ -56,7 +56,8 @@ export default {
 		height: 10vw;
 	}
 	button:focus{
-		border: 0.15vw solid #ac40f1;
+		transform: scale(1.05);
+		border: 0.3vw solid rgb(48, 2, 173);
 		padding: 0.35vw 1.85vw;
 	}
 	.currentTab{

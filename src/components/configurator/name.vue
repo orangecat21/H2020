@@ -187,6 +187,18 @@ input {
 .Next_Button:active {
   box-shadow: inset 0.2vw 0.2vw 0.3vw #000;
 }
+input:focus::-webkit-input-placeholder{
+	color:transparent;
+}
+input:focus::-moz-placeholder{
+	color:transparent;
+}
+input:focus:-ms-input-placeholder{
+	color:transparent;
+}
+input:focus::placeholder{
+	color:transparent;
+}
 @media screen and (min-width: 760px) and (max-width: 999px) {
 }
 

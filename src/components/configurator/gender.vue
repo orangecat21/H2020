@@ -39,7 +39,6 @@ export default {
 	fill: #f5a9a9
 }
 button{
-	background-color: #fff;
 	position: relative;
 	border: none;
 	border-radius: 1vw;
@@ -48,9 +47,11 @@ button{
 	height: calc(var(--vh, 1vh) * 29);
 	width: 47vw;
 	background-color: rgb(226, 226, 226);
+	transition: 0.2s;
 }
 button:focus{
-	border: 0.15vw solid #ac40f1;
+	transform: scale(1.05);
+	border: 0.3vw solid #ac40f1;
 	padding: 0.85vw;
 }
 p{

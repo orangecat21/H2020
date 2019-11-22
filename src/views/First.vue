@@ -331,6 +331,9 @@ input {
 .ruDate span:nth-child(3) {
   margin-left: -5vw;
 }
+.enDate span:nth-child(2){
+    margin: 0vw 13.5vw;
+  }
 .BottomQuote_button:active {
   box-shadow: inset 0.2vw 0.2vw 0.3vw #000;
 }
@@ -450,8 +453,11 @@ input {
   }
   .date {
     font-size: 2vw;
-    line-height: 0vw;
-    word-spacing: 8.5vw;
+    line-height: 5vw;
+    word-spacing: 30vw;
+  }
+  .enDate span:nth-child(2){
+    margin: 0vw 8.5vw;
   }
   body {
     background: linear-gradient(rgb(0, 247, 255), rgb(100, 255, 131));

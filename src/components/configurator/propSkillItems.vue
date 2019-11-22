@@ -48,7 +48,7 @@
     </article>
     <transition>
       <router-link
-        v-if="buttonTrigger"
+        :class="{nextBtn:buttonTrigger}"
         is="button"
         class="Next_Button"
         @focus="goToNext"
@@ -247,6 +247,27 @@ input {
 
 
 @media screen and (min-width: 1000px), (orientation: landscape){
+  .Next_Button {
+  justify-self: center;
+  border-radius: 5vw;
+  align-self: center;
+  background: #ac40f1;
+  border: 0.1vw solid #ac40f1;
+  color: #fff;
+  opacity: 0;
+  font-size: 2vw;
+  padding: 0.1vw 4vw;
+  cursor: pointer;
+  box-shadow: 0vw 0vw 0.8vw #000;
+  text-shadow: 0vw 0vw 0.4vw #000;
+}
+.Next_Button:active {
+  box-shadow: inset 0.2vw 0.2vw 0.3vw #000;
+}
+.nextBtn{
+  opacity: 1;
+  transition: 0.5s;
+}
   span{
     color: #fff;
     text-shadow: 0 0 0.3vw #ac40f1;
@@ -260,10 +281,10 @@ input {
   align-items: flex-end;
 }
 .Next_Button{
-  display: none;
+  display: initial;
 }
 section {
-  height: 68vh;
+  height: 63vh;
 }
 .ticker {
   text-shadow: 0 0 0.3vw #ac40f1;
