@@ -65,11 +65,6 @@ export default {
 			this.$store.dispatch('PUSH_NAME', '')
 		}	
 	},
-	mounted(){
-		if((this.$store.getters.GENDER === null)||(this.$store.getters.HUMAN_NAME === '')){
-			this.$router.push('/create/personalisation')
-		}
-	}
 }
 </script>
 

@@ -15,7 +15,7 @@
         @focus="inputActive"
         @focusout="inputTrigger=false"
         type="text"
-        v-model="softSkills"
+        v-model.number="softSkills"
         placeholder="0"
         maxlength="3"
       />
@@ -29,7 +29,7 @@
         @focus="inputActive"
         @focusout="inputTrigger=false"
         type="text"
-        v-model="hardSkill"
+        v-model.number="hardSkill"
         placeholder="0"
         maxlength="3"
       />
@@ -116,8 +116,10 @@ export default {
       this.inputTrigger = true;
     },
     saveSkills() {
-      this.$store.dispatch("PUSH_SOFTSKILLS", this.softSkills);
-      this.$store.dispatch("PUSH_HARDSKILL", this.hardSkill);
+      setTimeout(() => {
+        this.$store.dispatch("PUSH_SOFTSKILLS", this.softSkills);
+        this.$store.dispatch("PUSH_HARDSKILL", this.hardSkill);
+      },200)
     }
   },
   beforeDestroy(){

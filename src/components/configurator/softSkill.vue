@@ -417,7 +417,8 @@ section {
   flex-shrink: 0;
 }
 .range:focus, .range:active{
-    outline: 0.2vw solid rgb(36, 198, 219);
+    border: 0.2vw solid rgb(48, 2, 173);
+    height: 7.4vw;
   }
 p {
   font-size: calc(var(--vh, 1vh) * 2.5);
@@ -543,6 +544,10 @@ p {
     user-select: all;
     transform: initial;
     -moz-outline-radius: 20px;
+  }
+  .range:focus, .range:active{
+    border: 0.15vw solid rgb(48, 2, 173);
+    height: 1.4vw;
   }
   .range::-moz-range-thumb {
     appearance: none;

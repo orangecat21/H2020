@@ -196,12 +196,12 @@ export default {
 		goToNext(){
 			if(this.$route.path === this.softSkill){
 				this.name = ''
-				this.$router.push('/create/soft_skill/finish')
 				setTimeout(() => {
+					this.$router.push('/create/soft_skill/finish')
 					this.humanImg = this.$refs.stage.getStage().toDataURL({pixelRatio: 3})
 					this.$store.dispatch('PUSH_HUMANIMG', this.humanImg)
-					this.name = this.humanName
-				},1000)
+				},500)
+				setTimeout(()=>{this.name = this.humanName},600)
 			}else this.$router.push('/create/just_a_little')
 		},
 		Reset(){
@@ -288,9 +288,10 @@ export default {
 		question.onload =() =>{
 			this.question=question
 		}
+		setTimeout(() => {
 		if((this.$store.getters.GENDER === null)||(this.$store.getters.HUMAN_NAME === '')){
 			this.$router.push('/create/personalisation')
-		}
+		}},1000)
 	},
 	mounted(){
 		let vh = window.innerHeight * 0.01

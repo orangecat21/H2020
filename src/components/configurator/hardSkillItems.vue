@@ -71,6 +71,7 @@ export default {
 	}
 	.scrollM{
 		overflow-x: hidden;
+		flex-wrap: wrap;
 	}
 	.button{
 		font-size: 1.5vw;

@@ -1,0 +1,316 @@
+ Самый частый gender:
+
+SELECT
+    H2020Collection.gender
+FROM
+    commons.H2020Collection
+GROUP BY
+    H2020Collection.gender
+ORDER BY
+    COUNT(*) DESC
+LIMIT
+    1
+
+==============================================================
+
+Самая частая humanHead:
+
+SELECT
+    H2020Collection.gender,
+    H2020Collection.humanHead
+FROM
+    commons.H2020Collection
+WHERE
+    H2020Collection.humanHead.id <> 0
+    and H2020Collection.gender = (
+        SELECT
+            H2020Collection.gender
+        FROM
+            commons.H2020Collection
+        GROUP BY
+            H2020Collection.gender
+        ORDER BY
+            COUNT(*) DESC
+        limit
+            1
+    )
+GROUP BY
+    H2020Collection.gender,
+    H2020Collection.humanHead
+ORDER BY
+    COUNT(*) DESC
+LIMIT
+    1
+
+==============================================================
+
+Самая частая humanShirt:
+
+SELECT
+    H2020Collection.gender,
+    H2020Collection.humanShirt
+FROM
+    commons.H2020Collection
+WHERE
+    H2020Collection.humanShirt.id <> 0
+    and H2020Collection.gender = (
+        SELECT
+            H2020Collection.gender
+        FROM
+            commons.H2020Collection
+        GROUP BY
+            H2020Collection.gender
+        ORDER BY
+            COUNT(*) DESC
+        limit
+            1
+    )
+GROUP BY
+    H2020Collection.gender,
+    H2020Collection.humanShirt
+ORDER BY
+    COUNT(*) DESC
+LIMIT
+    1
+
+==============================================================
+
+Самая частая humanJackets:
+
+SELECT
+    H2020Collection.gender,
+    H2020Collection.humanJackets
+FROM
+    commons.H2020Collection
+WHERE
+    H2020Collection.humanJackets.id <> 0
+    and H2020Collection.gender = (
+        SELECT
+            H2020Collection.gender
+        FROM
+            commons.H2020Collection
+        GROUP BY
+            H2020Collection.gender
+        ORDER BY
+            COUNT(*) DESC
+        limit
+            1
+    )
+GROUP BY
+    H2020Collection.gender,
+    H2020Collection.humanJackets
+ORDER BY
+    COUNT(*) DESC
+LIMIT
+    1
+
+==============================================================
+
+Самая частая humanPants:
+
+SELECT
+    H2020Collection.gender,
+    H2020Collection.humanPants
+FROM
+    commons.H2020Collection
+WHERE
+    H2020Collection.humanPants.id <> 0
+    and H2020Collection.gender = (
+        SELECT
+            H2020Collection.gender
+        FROM
+            commons.H2020Collection
+        GROUP BY
+            H2020Collection.gender
+        ORDER BY
+            COUNT(*) DESC
+        limit
+            1
+    )
+GROUP BY
+    H2020Collection.gender,
+    H2020Collection.humanPants
+ORDER BY
+    COUNT(*) DESC
+LIMIT
+    1
+
+==============================================================
+
+Самая частая humanShoes:
+
+SELECT
+    H2020Collection.gender,
+    H2020Collection.humanShoes
+FROM
+    commons.H2020Collection
+WHERE
+    H2020Collection.humanShoes.id <> 0
+    and H2020Collection.gender = (
+        SELECT
+            H2020Collection.gender
+        FROM
+            commons.H2020Collection
+        GROUP BY
+            H2020Collection.gender
+        ORDER BY
+            COUNT(*) DESC
+        limit
+            1
+    )
+GROUP BY
+    H2020Collection.gender,
+    H2020Collection.humanShoes
+ORDER BY
+    COUNT(*) DESC
+LIMIT
+    1
+
+==============================================================
+
+ Самый частый humanAccessories:
+
+SELECT
+    H2020Collection.gender,
+    H2020Collection.humanAccessories
+FROM
+    commons.H2020Collection
+WHERE
+    H2020Collection.humanAccessories.id <> 0
+    and H2020Collection.gender = (
+        SELECT
+            H2020Collection.gender
+        FROM
+            commons.H2020Collection
+        GROUP BY
+            H2020Collection.gender
+        ORDER BY
+            COUNT(*) DESC
+        limit
+            1
+    )
+GROUP BY
+    H2020Collection.gender,
+    H2020Collection.humanAccessories
+ORDER BY
+    COUNT(*) DESC
+LIMIT
+    1
+
+==============================================================
+
+Самая частая hardSkillName:
+
+SELECT
+    H2020Collection.hardSkillName
+FROM
+    commons.H2020Collection
+WHERE
+	H2020Collection.hardSkillName <> 'null'
+GROUP BY
+    H2020Collection.hardSkillName
+ORDER BY
+    COUNT(*) DESC
+LIMIT
+    1
+
+==============================================================
+
+Среднее значение Initiative:
+
+SELECT
+    round(AVG(H2020Collection.Initiative)) AS Initiative
+FROM
+    commons.H2020Collection
+
+==============================================================
+
+Среднее значение Creativity:
+
+SELECT
+    round(AVG(H2020Collection.Creativity)) AS Creativity
+FROM
+    commons.H2020Collection
+
+==============================================================
+
+Среднее значение Adaptability:
+
+SELECT
+    round(AVG(H2020Collection.Adaptability)) AS Adaptability
+FROM
+    commons.H2020Collection
+
+==============================================================
+
+Среднее значение Reflection:
+
+SELECT
+    round(AVG(H2020Collection.Reflection)) AS Reflection
+FROM
+    commons.H2020Collection
+
+==============================================================
+
+Среднее значение Multitasking:
+
+SELECT
+    round(AVG(H2020Collection.Multitasking)) AS Multitasking
+FROM
+    commons.H2020Collection
+
+==============================================================
+
+Среднее значение ListeningSkills:
+
+SELECT
+    round(AVG(H2020Collection.ListeningSkills)) AS ListeningSkills
+FROM
+    commons.H2020Collection
+
+==============================================================
+
+Среднее значение Teamwork:
+
+SELECT
+    round(AVG(H2020Collection.Teamwork)) AS Teamwork
+FROM
+    commons.H2020Collection
+
+==============================================================
+
+Среднее значение CriticalThinking:
+
+SELECT
+    round(AVG(H2020Collection.CriticalThinking)) AS CriticalThinking
+FROM
+    commons.H2020Collection
+
+==============================================================
+
+Среднее значение TimeManagement:
+
+SELECT
+    round(AVG(H2020Collection.TimeManagement)) AS TimeManagement
+FROM
+    commons.H2020Collection
+
+==============================================================
+
+Среднее значение hardSkillPoints:
+
+SELECT
+    round(AVG(H2020Collection.hardSkillPoints)) AS hardSkillPoints
+FROM
+    commons.H2020Collection
+
+==============================================================
+
+Среднее значение softSkillsPoints:
+
+SELECT
+    round(AVG(H2020Collection.softSkillsPoints)) AS softSkillsPoints
+FROM
+    commons.H2020Collection
+
+==============================================================
