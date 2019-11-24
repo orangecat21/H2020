@@ -40,9 +40,9 @@
     <article class="tickerContainer">
       <p class="ticker">
         {{ $t("thirdPage.ticker.text1")}}
-        <b>Hard</b>
+        <b>(Soft)</b>
         {{ $t("thirdPage.ticker.text2")}}
-        <b>Soft</b>
+        <b>(Hard)</b>
         {{ $t("thirdPage.ticker.text3")}}
       </p>
     </article>
@@ -267,8 +267,8 @@ input {
   transition: 0.5s;
 }
   span{
-    color: #fff;
-    text-shadow: 0 0 0.3vw #ac40f1;
+  color: #fff;
+  text-shadow: 0 0 0.3vw #ac40f1;
   font-size: 4vw;
   margin: 0 0.5vw;
 }
@@ -289,13 +289,14 @@ section {
   font-size: 2vw;
   color: #fff;
   font-weight: 400;
-  transform: translateX(35%);
-  animation: ticker 28s linear infinite;
+  transform: translateX(60%);
+  animation: ticker 18s linear infinite;
 }
 input {
   border: none;
   width: 8vw;
   height: 2vw;
+  line-height: 2vw;
   background: none;
   background-color: rgba(56, 56, 56, 0.52);
   border-radius: 5vw;
@@ -338,7 +339,7 @@ input {
 }
 @keyframes ticker {
   0% {
-    transform: translateX(35%);
+    transform: translateX(60%);
   }
   100% {
     transform: translateX(-100%);

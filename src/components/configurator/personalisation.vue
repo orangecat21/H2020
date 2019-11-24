@@ -3,7 +3,7 @@
     <button
       v-for="tab in tabs"
       v-bind:key="tab.id"
-      v-bind:class="['button', { active: currentTab === tab.component }]"
+      v-bind:class="['button', { active: currentTab === tab.component }, {tap:tab.id !== 1}]"
       v-on:click="currentTab = tab.component"
     >{{ tab.text }}</button>
     <transition mode="out-in">
@@ -29,11 +29,11 @@ export default {
       currentTab: "Gender",
       tabs: [
         {
-          id: "1",
+          id: 1,
           text: this.$t("thirdPage.gender.gender"),
           component: "Gender"
         },
-        { id: "2", text: this.$t("thirdPage.name.name"), component: "Name" }
+        { id: 2, text: this.$t("thirdPage.name.name"), component: "Name" }
       ]
     };
   }
@@ -119,6 +119,9 @@ button:focus {
     width: 25vw;
     height: 4vw;
   }
+  .tap:not(.active){
+    animation: cycle 3s linear infinite;
+  }
   .currentTab {
     flex-basis: 100%;
     padding: 1vw 0;
@@ -147,6 +150,32 @@ button:focus {
   .v-enter,
   .v-leave-to {
     opacity: 0;
+  }
+  @keyframes cycle {
+    35% {
+      transform: rotate(0) translate(0, 0);
+    }
+    40% {
+      transform: rotate(3deg) translate(0, -2px);
+    }
+    45% {
+      transform: rotate(-1deg) translate(0, -2px);
+    }
+    50% {
+      transform: rotate(3deg) translate(0, -2px);
+    }
+    55% {
+      transform: rotate(-1deg) translate(0, -2px);
+    }
+    60% {
+      transform: rotate(3deg) translate(0, -2px);
+    }
+    65% {
+      transform: rotate(-1deg) translate(0, -2px);
+    }
+    70% {
+      transform: rotate(0) translate(0, 0);
+    }
   }
 }
 </style>

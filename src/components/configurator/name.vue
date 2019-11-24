@@ -255,9 +255,36 @@ input:focus::placeholder{
     cursor: pointer;
     box-shadow: 0vw 0vw 0.2vw #000;
     text-shadow: 0vw 0vw 0.1vw #000;
+    animation: cycle 2s linear infinite;
   }
   .Next_Button:active {
     box-shadow: inset 0.2vw 0.2vw 0.3vw #000;
+  }
+  @keyframes cycle {
+    35% {
+      transform: rotate(0) translate(0, 0);
+    }
+    40% {
+      transform: rotate(4deg) translate(0, -2px);
+    }
+    45% {
+      transform: rotate(-2deg) translate(0, -2px);
+    }
+    50% {
+      transform: rotate(4deg) translate(0, -2px);
+    }
+    55% {
+      transform: rotate(-2deg) translate(0, -2px);
+    }
+    60% {
+      transform: rotate(4deg) translate(0, -2px);
+    }
+    65% {
+      transform: rotate(-2deg) translate(0, -2px);
+    }
+    70% {
+      transform: rotate(0) translate(0, 0);
+    }
   }
 }
 @media screen and (max-width: 1000px) and (orientation: landscape),

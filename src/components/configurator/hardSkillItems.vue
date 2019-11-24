@@ -5,6 +5,7 @@
 			v-bind:key="item.id"
 			v-on:click="saveToStore(item.skill)">
 			<p>{{ item.skill }}</p>
+			<component class="hardsvg" :is="item.svg"></component>
 		</button>
 	</section>
 </template>
@@ -12,6 +13,18 @@
 <script>
 export default {
 	props: ['items'],
+	components:{
+		bloggersvg:() => import(/* webpackChunkName: "personSVG", webpackPrefetch: 989 */ '../SVG/bloggerSVG.vue'),
+		armysvg:() => import(/* webpackChunkName: "arrowSVG", webpackPrefetch: 988 */ '../SVG/armySVG.vue'),
+		esportsvg:() => import(/* webpackChunkName: "hangerSVG", webpackPrefetch: 987 */ '../SVG/esportSVG.vue'),
+		itsvg:() => import(/* webpackChunkName: "seekerSVG", webpackPrefetch: 986 */ '../SVG/itSVG.vue'),
+		bussinessmansvg:() => import(/* webpackChunkName: "awardSVG", webpackPrefetch: 985 */ '../SVG/bussinessManSVG.vue'),
+		bussinesstrainersvg:() => import(/* webpackChunkName: "personSVG", webpackPrefetch: 989 */ '../SVG/bussinessTrainerSVG.vue'),
+		managersvg:() => import(/* webpackChunkName: "arrowSVG", webpackPrefetch: 988 */ '../SVG/managerSVG.vue'),
+		minersvg:() => import(/* webpackChunkName: "hangerSVG", webpackPrefetch: 987 */ '../SVG/minerSVG.vue'),
+		psychologsvg:() => import(/* webpackChunkName: "seekerSVG", webpackPrefetch: 986 */ '../SVG/psychologSVG.vue'),
+		ubersvg:() => import(/* webpackChunkName: "awardSVG", webpackPrefetch: 985 */ '../SVG/uberSVG.vue')
+	},
 	name:'hardSkillItems',
 	methods:{
 		saveToStore(elem){
@@ -75,7 +88,7 @@ export default {
 	}
 	.button{
 		font-size: 1.5vw;
-		color: #fff;
+		color: rgb(48, 2, 173);
 		cursor: pointer;
 		transition: 0.3s;
 		background: linear-gradient(rgb(130, 255, 136), rgb(140, 242, 255));
@@ -89,11 +102,17 @@ export default {
 		transform: scale(1.05);
 		background: none;
 		transition: 0.3s;
+		color: #ffffff;
 	}
 	.button:focus{
 		transform: scale(1.05);
 		background: none;
 		transition: 0.3s;
+		color: #ffffff;
+	}
+	.hardsvg{
+		width: 60%;
+		margin-top: 1vw;
 	}
 }
 </style>

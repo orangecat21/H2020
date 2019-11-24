@@ -131,27 +131,27 @@ export default {
     goToBack() {
       this.$router.push("/create/soft_skill");
     },
-    goToNext(){
+    goToNext() {
       this.$router.push("/stats");
     },
     downloadImage() {
       function downloadURI(uri, name) {
-        var link = document.createElement("a")
-        link.download = name
-        link.href = uri
-        document.body.appendChild(link)
-        link.click()
-        document.body.removeChild(link)
+        var link = document.createElement("a");
+        link.download = name;
+        link.href = uri;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
       }
-      var dataURL = this.imgSrc
-      downloadURI(dataURL, "human2020.png")
+      var dataURL = this.imgSrc;
+      downloadURI(dataURL, "human2020.png");
       setTimeout(() => {
-        this.$router.push("/stats")
+        this.$router.push("/stats");
       }, 1000);
     }
   },
-  beforeDestroy(){
-    this.$router.push('/stats')
+  beforeDestroy() {
+    this.$router.push("/stats");
   },
   components: {
     downloadsvg: () =>
@@ -385,7 +385,7 @@ p {
   }
   .download p {
     order: initial;
-    font-size: 1.2vw;
+    font-size: 1.6vw;
     margin-left: 0.5vw;
   }
   .downloadSVG {
@@ -397,6 +397,7 @@ p {
     margin: 0 0 0 0;
     border-radius: 1vw;
     box-shadow: 0 0 0.2vw #000;
+    animation: cycle 2s linear infinite;
   }
   .downloadSVG:hover {
     box-shadow: inset 0 0 0.2vw #000;
@@ -409,6 +410,32 @@ p {
     order: initial;
     flex-basis: initial;
     text-align: initial;
+  }
+  @keyframes cycle {
+    35% {
+      transform: rotate(0) translate(0, 0);
+    }
+    40% {
+      transform: rotate(7deg) translate(0, -2px);
+    }
+    45% {
+      transform: rotate(-5deg) translate(0, -2px);
+    }
+    50% {
+      transform: rotate(7deg) translate(0, -2px);
+    }
+    55% {
+      transform: rotate(-5deg) translate(0, -2px);
+    }
+    60% {
+      transform: rotate(7deg) translate(0, -2px);
+    }
+    65% {
+      transform: rotate(-5deg) translate(0, -2px);
+    }
+    70% {
+      transform: rotate(0) translate(0, 0);
+    }
   }
 }
 </style>

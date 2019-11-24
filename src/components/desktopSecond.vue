@@ -75,7 +75,7 @@
           >{{$t('secondPage.evolution.bourgeois')}}</span>
         </div>
         <div class="evolve4">
-          <p @mouseover="evolve5 = true" @mouseout="evolve5 = false" class="century">III</p>
+          <p @mouseover="evolve4 = true" @mouseout="evolve5 = false" class="century">III</p>
           <img
             @mouseover="evolve4 = true"
             @mouseout="evolve4 = false"
@@ -441,6 +441,7 @@ hr {
     top: 4vw;
     border-start-end-radius: 1vw;
     border-start-start-radius: 1vw;
+    border-end-end-radius: 0vw;
     left: 5vw;
     width: 6.5vw;
     height: 5.2vw;
@@ -481,7 +482,7 @@ hr {
     height: 9.5vw;
     background: rgba(0, 0, 0, 0.233);
     border-radius: 1vw;
-    z-index: 999;
+    z-index: 1;
     opacity: 0;
     transition: 1s;
   }
@@ -507,10 +508,11 @@ hr {
     height: 3vw;
     background: rgba(0, 0, 0, 0.233);
     border-radius: 0.7vw;
-    z-index: 999;
+    z-index: 1;
     opacity: 0;
     transition: 1.5s;
     transition-timing-function: ease-out;
+    transform: initial;
   }
   .popup2:after {
     content: "";
@@ -525,6 +527,9 @@ hr {
   .popupActive2 {
     left: 16vw;
     opacity: 1;
+    transform: initial;
+    right: initial;
+    top: 8vw;
   }
   .popup3 {
     position: absolute;
@@ -534,7 +539,7 @@ hr {
     height: 3vw;
     background: rgba(0, 0, 0, 0.233);
     border-radius: 1vw;
-    z-index: 999;
+    z-index: 1;
     opacity: 0;
     transition: 1s;
   }
@@ -560,7 +565,7 @@ hr {
     height: 3vw;
     background: rgba(0, 0, 0, 0.233);
     border-radius: 1vw;
-    z-index: 999;
+    z-index: 1;
     opacity: 0;
     transition: 1s;
   }
@@ -586,7 +591,7 @@ hr {
     height: 3vw;
     background: rgba(0, 0, 0, 0.233);
     border-radius: 1vw;
-    z-index: 999;
+    z-index: 1;
     opacity: 0;
     transition: 1s;
   }
@@ -612,7 +617,7 @@ hr {
     height: 3vw;
     background: rgba(0, 0, 0, 0.233);
     border-radius: 1vw;
-    z-index: 999;
+    z-index: 1;
     opacity: 0;
     transition: 1s;
   }
@@ -638,7 +643,7 @@ hr {
     height: 9.5vw;
     background: rgba(0, 0, 0, 0.233);
     border-radius: 1vw;
-    z-index: 999;
+    z-index: 1;
     opacity: 0;
     transition: 1s;
   }

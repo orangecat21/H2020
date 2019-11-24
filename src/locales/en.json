@@ -50,9 +50,9 @@
       "soft":"Soft skill"
     },
     "ticker":{
-      "text1":"Distribute the available points into two groups of skills:",
-      "text2": "is responsible for the technical side of your profession.",
-      "text3": "is resposible for successful participation in the workflow and teamwork."
+      "text1":"You have 1000 points, and people have social",
+      "text2": "and professional",
+      "text3": "skills. «-The bartender! Your best cocktail please...»"
     },
     "softskill": {
       "SOFT": "SOFT skill"
