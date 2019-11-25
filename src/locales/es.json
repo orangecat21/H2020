@@ -49,6 +49,13 @@
     "clothes": {
       "clothes": "Ropa"
     },
+    "century1": "Siglo III aC",
+    "century2": "S XIV",
+    "century3": "S XVI",
+    "century4": "S XIX",
+    "century5": "S XX",
+    "century6": "1970 año",
+    "century7": "Hoy en día",
     "hint": "RATÓN SOBRE",
     "popup1": "Pero en nuestro tiempo ... 👴👵 En la moda era trabajo manual y pliegues en la ropa.",
     "popup2": "En primer lugar teníamos una personalidad y talento humanos.",
@@ -110,6 +117,6 @@
     "next": "Siguiente"
   },
   "Fourth": {
-    "text": "¡Para eso vinimos todos, tomamos estadísticas de todo el mundo y se las mostramos a todos! Pronto seremos más de 7 mil millones!"
+    "text": "¡Has llegado a la final! En la pantalla, lo que vale la pena probar. ¡Recopilamos estadísticas de todo el mundo y se las mostramos a todos! ¡Pronto habrá más de 7 mil millones! ¡Gracias!💖"
   }
 }

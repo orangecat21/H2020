@@ -17,7 +17,11 @@
           <div class="popup1" :class="{popupActive1:(evolve1) && (firsthint)}">
             <p class="fcaption">{{$t('secondPage.popup1')}}</p>
           </div>
-          <p @mouseover="evolve1 = true" @mouseout="evolve1 = false" class="century">III</p>
+          <p
+            @mouseover="evolve1 = true"
+            @mouseout="evolve1 = false"
+            class="century"
+          >{{$t('secondPage.century1')}}</p>
           <img
             @mouseover="evolve1 = true, firsthint = true"
             @mouseout="evolve1 = false"
@@ -31,7 +35,11 @@
           <div class="popup2" :class="{popupActive2:(evolve2) && (firsthint)}">
             <p class="fcaption">{{$t('secondPage.popup2')}}</p>
           </div>
-          <p @mouseover="evolve2 = true" @mouseout="evolve2 = false" class="century">III</p>
+          <p
+            @mouseover="evolve2 = true"
+            @mouseout="evolve2 = false"
+            class="century"
+          >{{$t('secondPage.century2')}}</p>
           <img
             @mouseover="evolve2 = true"
             @mouseout="evolve2 = false"
@@ -47,7 +55,11 @@
           <div class="popup3" :class="{popupActive3:(evolve3) && (firsthint)}">
             <p class="fcaption">{{$t('secondPage.popup4')}}</p>
           </div>
-          <p @mouseover="evolve3 = true" @mouseout="evolve3 = false" class="century">III</p>
+          <p
+            @mouseover="evolve3 = true"
+            @mouseout="evolve3 = false"
+            class="century"
+          >{{$t('secondPage.century3')}}</p>
           <img
             @mouseover="evolve3 = true"
             @mouseout="evolve3 = false"
@@ -63,7 +75,11 @@
           <div class="popup4" :class="{popupActive4:(evolve4) && (firsthint)}">
             <p class="fcaption">{{$t('secondPage.popup5')}}</p>
           </div>
-          <p @mouseover="evolve4 = true" @mouseout="evolve5 = false" class="century">III</p>
+          <p
+            @mouseover="evolve4 = true"
+            @mouseout="evolve5 = false"
+            class="century"
+          >{{$t('secondPage.century4')}}</p>
           <img
             @mouseover="evolve4 = true"
             @mouseout="evolve4 = false"
@@ -77,7 +93,11 @@
           <div class="popup5" :class="{popupActive5:(evolve5) && (firsthint)}">
             <p class="fcaption">{{$t('secondPage.popup6')}}</p>
           </div>
-          <p @mouseover="evolve5 = true" @mouseout="evolve5 = false" class="century">III</p>
+          <p
+            @mouseover="evolve5 = true"
+            @mouseout="evolve5 = false"
+            class="century"
+          >{{$t('secondPage.century5')}}</p>
           <img
             @mouseover="evolve5 = true"
             @mouseout="evolve5 = false"
@@ -91,7 +111,11 @@
           <div class="popup6" :class="{popupActive6:(evolve6) && (firsthint)}">
             <p class="fcaption">{{$t('secondPage.popup7')}}</p>
           </div>
-          <p @mouseover="evolve6 = true" @mouseout="evolve6 = false" class="century">III</p>
+          <p
+            @mouseover="evolve6 = true"
+            @mouseout="evolve6 = false"
+            class="century"
+          >{{$t('secondPage.century6')}}</p>
           <img
             @mouseover="evolve6 = true"
             @mouseout="evolve6 = false"
@@ -107,7 +131,11 @@
           <div class="popup7" :class="{popupActive7:(evolve7) && (firsthint)}">
             <p class="fcaption">{{$t('secondPage.popup8')}}</p>
           </div>
-          <p @mouseover="evolve7 = true" @mouseout="evolve7 = false" class="century">III</p>
+          <p
+            @mouseover="evolve7 = true"
+            @mouseout="evolve7 = false"
+            class="century"
+          >{{$t('secondPage.century7')}}</p>
           <img
             @mouseover="evolve7 = true"
             @mouseout="evolve7 = false"
@@ -553,8 +581,8 @@ hr {
   .popup8 {
     position: absolute;
     width: 7vw;
-    top: 10vw;
-    right: -2.7vw;
+    top: 0vw;
+    right: -10vw;
     height: 5.5vw;
     background: rgba(0, 0, 0, 0.233);
     border-radius: 1vw;
@@ -586,7 +614,8 @@ hr {
     left: 50%;
     transform: translate(-70%, -10%);
     color: #fff;
-    font-size: 2vw;
+    font-size: 1.5vw;
+    font-weight: 700;
     z-index: 999;
     opacity: 0;
   }
@@ -647,7 +676,7 @@ hr {
   }
 }
 @media screen and (max-width: 999px) and (orientation: landscape) {
-    .BackNumber {
+  .BackNumber {
     transform: rotate(-10deg);
     font-size: 45vw;
   }
@@ -929,8 +958,8 @@ hr {
   .popup8 {
     position: absolute;
     width: 5.8vw;
-    top: 10vw;
-    right: -2.7vw;
+    top: 0vw;
+    right: -10vw;
     height: 4.5vw;
     background: rgba(0, 0, 0, 0.233);
     border-radius: 1vw;
@@ -962,7 +991,8 @@ hr {
     left: 50%;
     transform: translate(-70%, -10%);
     color: #fff;
-    font-size: 2vw;
+    font-weight: 700;
+    font-size: 1.5vw;
     z-index: 999;
     opacity: 0;
   }

@@ -46,6 +46,13 @@
       "evolve":"Evolve",
       "create":"Create"
     },
+    "century1": "III c BC",
+    "century2": "XIV c",
+    "century3": "XVI c",
+    "century4": "XIX c",
+    "century5": "XX c",
+    "century6": "1970 y",
+    "century7": "Nowadays",
     "hint": "MOUSE OVER",
     "popup1": "But in our time ... 👴👵 In fashion was manual labor and folds on clothes.",
     "popup2": "In the first place we had a human personality and talent",
@@ -106,6 +113,6 @@
     "next": "Next"
   },
   "Fourth": {
-    "text": "That's what we all came for, we take statistics from around the world, and show everyone! Soon we will be more than 7 billion!"
+    "text": "You have reached the finals! On the screen, what is worth trying. We collect statistics from around the world, and show everyone! Soon there will be more than 7 billion! Thanks you!💖"
   }
 }

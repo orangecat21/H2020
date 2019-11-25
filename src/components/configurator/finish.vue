@@ -36,17 +36,17 @@
             <p class="percent">{{ Teamwork }}</p>
           </div>
           <div class="skillItem">
-            <p>Критическое мышление</p>
+            <p>{{$t('thirdPage.softskill.Critical thinking')}}</p>
             <p class="percent">{{ CriticalThinking }}</p>
           </div>
           <div class="skillItem">
-            <p>Тайм-менеджмент</p>
+            <p>{{$t('thirdPage.softskill.Time management')}}</p>
             <p class="percent">{{ TimeManagement }}</p>
           </div>
         </section>
         <section class="download" @click="downloadImage">
           <downloadsvg class="downloadSVG"></downloadsvg>
-          <p>{{$t('thirdPage.popup.share')}} #2020 #human2020</p>
+          <p>{{$t('thirdPage.popup.share')}}<br><a class="linkedin" href="https://www.instagram.com/human_2020_/">Our instagram</a><br> #2020 #human2020 #choiceourfutures #lifestyle #international #world #fashion #art #following</p>
         </section>
         <section class="YourOpinion">
           <img :src="imgSrc" alt="Your human" />
@@ -188,6 +188,9 @@ export default {
 </script>
 
 <style scoped>
+.linkedin{
+  font-size: 5vw;
+}
 p {
   color: #ac40f1;
   font-size: 3vw;
@@ -346,6 +349,9 @@ p {
 }
 
 @media screen and (min-width: 1000px), (orientation: landscape) {
+  .linkedin{
+  font-size: 2vw;
+}
   .YourOpinion {
     display: none;
   }

@@ -135,7 +135,7 @@ export default {
           color: '#FF0015'
         },
         {
-          label: "ListeningSkills - "+this.ListeningSkills,
+          label: "Listening Skills - "+this.ListeningSkills,
           value: this.ListeningSkills,
           color: '#D6F700'
         },
@@ -145,12 +145,12 @@ export default {
           color: '#3F3FC2'
         },
         {
-          label: "CriticalThinking - "+this.CriticalThinking,
+          label: "Critical Thinking - "+this.CriticalThinking,
           value: this.CriticalThinking,
           color: '#00AD51'
         },
         {
-          label: "TimeManagement - "+this.TimeManagement,
+          label: "Time Management - "+this.TimeManagement,
           value: this.TimeManagement,
           color: '#BA5CAB'
         },
@@ -785,10 +785,9 @@ footer {
 .conclusion {
     width: 80vw;
     flex-shrink: 0;
-    font-size: 3vw;
-    color: #fff;
-    font-weight: 400;
-    
+    font-size: 6vw;
+    color: rgb(48, 2, 173);
+    font-weight: 700;
   }
   .charts{
     width: 135vw;
@@ -887,6 +886,14 @@ header {
 }
 
 @media screen and (min-width: 1000px), (orientation: landscape) {
+  .conclusion {
+    width: 80vw;
+    flex-shrink: 0;
+    font-size: 2.5vw;
+    color: rgb(48, 2, 173);
+    font-weight: 700;
+    text-align: center;
+  }
   .BackNumber {
     transform: rotate(-10deg);
     font-size: 45vw;

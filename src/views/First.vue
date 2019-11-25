@@ -660,6 +660,7 @@ input {
 }
 .attention {
   top: 0vw;
+  z-index: 0;
 }
 .popup4M {
   position: absolute;
@@ -998,7 +999,7 @@ input {
     position: absolute;
     top: 1vw;
     right: -25vw;
-    z-index: 998;
+    z-index: 0;
     width: 25vw;
     border-radius: 1vw;
     height: 4vw;
@@ -1326,7 +1327,7 @@ input {
     position: absolute;
     top: 0vw;
     right: -25vw;
-    z-index: 998;
+    z-index: 0;
     width: 25vw;
     border-radius: 1vw;
     height: 3vw;

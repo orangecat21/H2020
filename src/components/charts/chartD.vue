@@ -5,7 +5,7 @@
     hasLegend legendPlacement="top"
     :sections="sections" :total="1000"
   >
-    {{ hardSkill }}
+    {{ $t(hardSkill) }}
   </vc-donut>
 </template>
 
@@ -27,6 +27,7 @@ export default {
  }
  .cdc-legend{
      justify-content: flex-start;
+     color: rgb(48, 2, 173);
  }
  @media screen and (max-width: 999px) and (orientation: landscape){
      .cdc-legend{
