@@ -1,5 +1,5 @@
 <template>
-	<section :class="[{scrollM:items.length >=1},{scrollD:items.length >=11}]">
+	<section class="items" :class="[{scrollM:items.length >=1},{scrollD:items.length >=11}]">
 		<button class="button"
 			v-for="item in items"
 			v-bind:key="item.id"
@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style scoped>
-	section{
+	.items{
 		display: flex;
 		justify-content: flex-start;
 		flex-wrap: nowrap;
@@ -68,7 +68,7 @@ export default {
 	@media screen and (min-width: 760px) and (max-width: 999px) {
 	}
 	@media screen and (min-width: 1000px), (orientation: landscape){
-		section{
+		.items{
 			flex-wrap: wrap;
 			justify-content: space-around;
 			padding: 1vw;
@@ -94,5 +94,32 @@ export default {
 		.scrollM{
 			overflow-x: hidden;
 		}
+	}
+	@media screen and (max-width: 999px) and (orientation: landscape){
+		.items{
+			flex-wrap: nowrap;
+			justify-content: flex-start;
+		}
+		.scrollD{
+			overflow-y: hidden;
+		}
+		.scrollM{
+			overflow-x: scroll;
+		}
+		.button{
+		width: 8vw;
+		height: calc(var(--vh, 1vh) * 18.8);
+		border-radius: 1vw;
+		cursor: pointer;
+		transition: 0.5s;
+		background: linear-gradient(rgb(130, 255, 136), rgb(140, 242, 255));
+		border: none;
+		margin-right: 1vw;
+		margin-top: calc(var(--vh, 1vh) * 0.1);
+		flex-shrink: 0;
+	}
+	img{
+		height: 55%;
+	}
 	}
 </style>

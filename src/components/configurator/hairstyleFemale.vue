@@ -4,7 +4,7 @@
       v-for="color in colors"
       v-bind:key="color.id"
       v-bind:class="['button', { active: currentColor === color.color }, color.color]"
-      v-on:click="currentColor = color.color, array=color.array"
+      v-on:click="currentColor = color.color, array=color.array, changeColor()"
     ></button>
     <clothesitems :items="array" :type="type" class="currentColor"></clothesitems>
   </section>
@@ -20,12 +20,18 @@ export default {
       )
   },
   methods: {
-    changeColor() {}
+    changeColor() {
+      if(this.$store.state.humanHead.id !== 0){
+        this.currentID = +this.$store.state.humanHead.id-1
+        this.$store.dispatch('PUSH_HEAD', this.array[this.currentID])
+      }
+    }
   },
   data() {
     return {
       currentColor: "black",
       type: "HEAD",
+      currentID:0,
       array: this.$store.state.hairArrayFemale.hairBlackFemale,
       colors: [
         {
@@ -126,6 +132,11 @@ section {
   }
   .button.active {
     border: 0.2vw solid #fff;
+  }
+}
+@media screen and (max-width: 999px) and (orientation: landscape) {
+  section{
+    width: 50vw;
   }
 }
 </style>

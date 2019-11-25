@@ -95,6 +95,7 @@ export default {
   background-color: #ac40f1;
   border-radius: 50%;
   padding: 0.5vw;
+  animation: cycle 2s linear infinite;
 }
 .rightButtonGroup > button {
   margin-right: 2vw;
@@ -183,6 +184,23 @@ section {
   }
   .Next_Button:active {
     box-shadow: inset 0.2vw 0.2vw 0.3vw #000;
+  }
+}
+@media screen and (max-width: 999px) and (orientation: landscape) {
+  .Next_Button {
+    border-radius: 2.5vw;
+    background: #ac40f1;
+    border: 0.1vw solid #ac40f1;
+    color: #fff;
+    font-size: 1.5vw;
+    padding: 0.2vw 3vw;
+    cursor: pointer;
+    box-shadow: 0vw 0vw 0.2vw #000;
+    text-shadow: 0vw 0vw 0.1vw #000;
+    right: 2vw;
+    top: 1.5vw;
+    bottom: initial;
+    position: absolute;
   }
 }
 </style>

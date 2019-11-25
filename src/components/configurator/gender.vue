@@ -103,4 +103,26 @@ p{
 	color: #ac40f1;
 }
 }
+@media screen and (max-width: 1000px) and (orientation: landscape){
+button{
+	background-color: #fff;
+	position: relative;
+	border: none;
+	border-radius: 0.5vw;
+	padding: 0.5vw;
+	cursor: pointer;
+	height: 20vw;
+	width: 20vw;
+}
+.malesvg, .femalesvg{
+	width: 17vw;
+	height: initial;
+}
+p{
+	position: absolute;
+	font-size: 2vw;
+	font-weight: 200;
+	color: #ac40f1;
+}
+}
 </style>

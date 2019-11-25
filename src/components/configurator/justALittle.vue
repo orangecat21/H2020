@@ -40,6 +40,7 @@ section {
   cursor: pointer;
   box-shadow: 0vw 0vw 0.2vw #000;
   text-shadow: 0vw 0vw 0.1vw #000;
+  animation: cycle 2s linear infinite;
 }
 .Next_Button:active {
   box-shadow: inset 0.2vw 0.2vw 0.3vw #000;

@@ -3,52 +3,52 @@ export default {
         hardSkill: [
             {
                 id:1,
-                skill:'IT specialist',
+                skill: 'bussiness',
                 svg:"itsvg"
             },
             {
                 id:2,
-                skill:'Businessman',
+                skill: 'IT',
                 svg:"bussinessmansvg"
             },
             {
                 id:3,
-                skill:'Uber driver',
+                skill: 'uber',
                 svg:"ubersvg"
             },
             {
                 id:4,
-                skill:'Manager',
+                skill: 'manager',
                 svg:"managersvg"
             },
             {
                 id:5,
-                skill:'psychologist',
+                skill: 'psychologist',
                 svg:"psychologsvg"
             },
             {
                 id:6,
-                skill:'eSportsman',
+                skill: 'eSport',
                 svg:"esportsvg"
             },
             {
                 id:7,
-                skill:'Blogger',
+                skill: 'blogger',
                 svg:"bloggersvg"
             },
             {
                 id:8,
-                skill: 'Military',
+                skill: 'military',
                 svg:"armysvg"
             },
             {
                 id:9,
-                skill: 'Miner',
+                skill: 'miner',
                 svg:"minersvg"
             },
             {
                 id:10,
-                skill: 'Business trainer',
+                skill: 'bussinessTrainer',
                 svg:"bussinesstrainersvg"
             },
 

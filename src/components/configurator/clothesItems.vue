@@ -1,5 +1,5 @@
 <template>
-	<section :class="[{scrollM:items.length >=1},{scrollD:items.length >=11}]">
+	<section class="items" :class="[{scrollM:items.length >=1},{scrollD:items.length >=11}]">
 		<button class="button"
 			v-for="item in items"
 			v-bind:key="item.id"
@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style scoped>
-	section{
+	.items{
 		display: flex;
 		overflow: hidden;
 		justify-content: space-between;
@@ -64,7 +64,7 @@ export default {
 
 
 @media screen and (min-width: 1000px), (orientation: landscape){
-	section{
+	.items{
 		flex-wrap: wrap;
 		height: 23vw;
 	}
@@ -94,6 +94,28 @@ export default {
 	}
 	button:nth-of-type(11) img{
 		width: initial;
+	}
+}
+@media screen and (max-width: 999px) and (orientation: landscape){
+	.items{
+		flex-wrap: nowrap;
+		height: 23vw;
+	}
+	.scrollD{
+		overflow-y: hidden;
+	}
+	.scrollM{
+		overflow-x: scroll;
+	}
+	.button{
+		cursor: pointer;
+		transition: 0.3s;
+		background: linear-gradient(rgb(130, 255, 136), rgb(140, 242, 255));
+		border: none;
+		width: 10vw;
+		height: 12vw;
+		border-radius: 0.5vw;
+		margin-right: 1vw;
 	}
 }
 </style>

@@ -1,32 +1,5 @@
 <template>
   <div id="app">
-    <div class="hint" :class="{firstHintOut:firsthint}">
-      <p class="firsthint">MOUSE OVER</p>
-    </div>
-    <div class="popup1" :class="{popupActive1:(evolve1) && (firsthint)}">
-      <p class="fcaption">Hello Dick Sucker, my dick is big, is very very big</p>
-    </div>
-    <div class="popup2" :class="{popupActive2:(evolve2) && (firsthint)}">
-      <p class="fcaption">Hello Dick Sucker, my dick is big, is very very big</p>
-    </div>
-    <div class="popup3" :class="{popupActive3:(evolve3) && (firsthint)}">
-      <p class="fcaption">Hello Dick Sucker, my dick is big, is very very big</p>
-    </div>
-    <div class="popup4" :class="{popupActive4:(evolve4) && (firsthint)}">
-      <p class="fcaption">Hello Dick Sucker, my dick is big, is very very big</p>
-    </div>
-    <div class="popup5" :class="{popupActive5:(evolve5) && (firsthint)}">
-      <p class="fcaption">Hello Dick Sucker, my dick is big, is very very big</p>
-    </div>
-    <div class="popup6" :class="{popupActive6:(evolve6) && (firsthint)}">
-      <p class="fcaption">Hello Dick Sucker, my dick is big, is very very big</p>
-    </div>
-    <div class="popup7" :class="{popupActive7:(evolve7) && (firsthint)}">
-      <p class="fcaption">Hello Dick Sucker, my dick is big, is very very big</p>
-    </div>
-    <div class="popup8" :class="{popupActive8:(evolve8) && (firsthint)}">
-      <p class="fcaption">❔ ❓ ❔ ❓ ❔ ❓ ❔ ❓ ❔ ❓ ❔ ❓ ❔ ❓ ❔ ❓ ❔ ❓ ❔ ❓ ❔</p>
-    </div>
     <header>
       <p class="war">{{$t('secondPage.header.war')}}</p>
       <hr />
@@ -37,7 +10,13 @@
     <h1 class="BackNumber">2020</h1>
     <main>
       <section class="humanity">
-        <div class="evolve1">
+        <article class="evolve1">
+          <div class="hint" :class="{firstHintOut:firsthint}">
+            <p class="firsthint">{{$t('secondPage.hint')}}</p>
+          </div>
+          <div class="popup1" :class="{popupActive1:(evolve1) && (firsthint)}">
+            <p class="fcaption">{{$t('secondPage.popup1')}}</p>
+          </div>
           <p @mouseover="evolve1 = true" @mouseout="evolve1 = false" class="century">III</p>
           <img
             @mouseover="evolve1 = true, firsthint = true"
@@ -47,8 +26,11 @@
             alt="evolve"
           />
           <span :class="{ruGreeks:(this.$i18n.locale==='ru')}">{{$t('secondPage.evolution.greek')}}</span>
-        </div>
-        <div class="evolve2">
+        </article>
+        <article class="evolve2">
+          <div class="popup2" :class="{popupActive2:(evolve2) && (firsthint)}">
+            <p class="fcaption">{{$t('secondPage.popup2')}}</p>
+          </div>
           <p @mouseover="evolve2 = true" @mouseout="evolve2 = false" class="century">III</p>
           <img
             @mouseover="evolve2 = true"
@@ -60,8 +42,11 @@
           <span
             :class="{esAristocrats:(this.$i18n.locale==='es'), ruAristocrats:(this.$i18n.locale==='ru')}"
           >{{$t('secondPage.evolution.aristocrat')}}</span>
-        </div>
-        <div class="evolve3">
+        </article>
+        <article class="evolve3">
+          <div class="popup3" :class="{popupActive3:(evolve3) && (firsthint)}">
+            <p class="fcaption">{{$t('secondPage.popup4')}}</p>
+          </div>
           <p @mouseover="evolve3 = true" @mouseout="evolve3 = false" class="century">III</p>
           <img
             @mouseover="evolve3 = true"
@@ -73,8 +58,11 @@
           <span
             :class="{ruBourgeois:(this.$i18n.locale==='ru')}"
           >{{$t('secondPage.evolution.bourgeois')}}</span>
-        </div>
-        <div class="evolve4">
+        </article>
+        <article class="evolve4">
+          <div class="popup4" :class="{popupActive4:(evolve4) && (firsthint)}">
+            <p class="fcaption">{{$t('secondPage.popup5')}}</p>
+          </div>
           <p @mouseover="evolve4 = true" @mouseout="evolve5 = false" class="century">III</p>
           <img
             @mouseover="evolve4 = true"
@@ -84,8 +72,11 @@
             alt="evolve"
           />
           <span :class="{ruMafia:(this.$i18n.locale==='ru')}">{{$t('secondPage.evolution.mafia')}}</span>
-        </div>
-        <div class="evolve5">
+        </article>
+        <article class="evolve5">
+          <div class="popup5" :class="{popupActive5:(evolve5) && (firsthint)}">
+            <p class="fcaption">{{$t('secondPage.popup6')}}</p>
+          </div>
           <p @mouseover="evolve5 = true" @mouseout="evolve5 = false" class="century">III</p>
           <img
             @mouseover="evolve5 = true"
@@ -95,8 +86,11 @@
             alt="evolve"
           />
           <span :class="{ruHippie:(this.$i18n.locale==='ru')}">{{$t('secondPage.evolution.hippie')}}</span>
-        </div>
-        <div class="evolve6">
+        </article>
+        <article class="evolve6">
+          <div class="popup6" :class="{popupActive6:(evolve6) && (firsthint)}">
+            <p class="fcaption">{{$t('secondPage.popup7')}}</p>
+          </div>
           <p @mouseover="evolve6 = true" @mouseout="evolve6 = false" class="century">III</p>
           <img
             @mouseover="evolve6 = true"
@@ -108,8 +102,11 @@
           <span
             :class="{esPunks:(this.$i18n.locale==='es'), ruPunks:(this.$i18n.locale==='ru')}"
           >{{$t('secondPage.evolution.punk')}}</span>
-        </div>
-        <div class="evolve7">
+        </article>
+        <article class="evolve7">
+          <div class="popup7" :class="{popupActive7:(evolve7) && (firsthint)}">
+            <p class="fcaption">{{$t('secondPage.popup8')}}</p>
+          </div>
           <p @mouseover="evolve7 = true" @mouseout="evolve7 = false" class="century">III</p>
           <img
             @mouseover="evolve7 = true"
@@ -121,8 +118,11 @@
           <span
             :class="{esHipster:(this.$i18n.locale==='es'), ruHipsters:(this.$i18n.locale==='ru')}"
           >{{$t('secondPage.evolution.hipsters')}}</span>
-        </div>
-        <div class="evolve8">
+        </article>
+        <article class="evolve8">
+          <div class="popup8" :class="{popupActive8:(evolve8) && (firsthint)}">
+            <p class="fcaption">❔ ❓ ❔ ❓ ❔ ❓</p>
+          </div>
           <p @mouseover="evolve8 = true" @mouseout="evolve8 = false" class="century">❔</p>
           <img
             @mouseover="evolve8 = true"
@@ -132,7 +132,7 @@
             alt="evolve"
           />
           <router-link is="button" @click="goToConstruct" class="BottomQuote_button">#2020</router-link>
-        </div>
+        </article>
       </section>
       <img class="arrow" id="arrow" :src="require('../assets/Arrow.png')" alt="arrow" />
     </main>
@@ -258,7 +258,7 @@ hr {
   height: 8vw;
   border: 0;
   width: 0.4vw;
-  background-color: #e0ffff;
+  background-color: #fff;
 }
 @media screen and (min-width: 760px) and (max-width: 999px) {
   .BackNumber {
@@ -270,7 +270,7 @@ hr {
   }
 }
 
-@media screen and (max-width: 999px) and (orientation: landscape) {
+@media screen and (min-width: 1000px) {
   .BackNumber {
     transform: rotate(-10deg);
     font-size: 45vw;
@@ -278,59 +278,348 @@ hr {
   .war,
   .politics,
   .fun {
-    font-size: 3.5vw;
+    font-size: 4vw;
     text-shadow: 0vw 0vw 0.1vw #000;
   }
   header {
-    height: calc(var(--vh, 1vh) * 11);
+    height: 5vw;
   }
   hr {
-    height: calc(var(--vh, 1vh) * 10);
+    height: 4.5vw;
     width: 0.2vw;
   }
-  .humanity,
   .arrow {
     display: block;
   }
   .humanity {
     width: 95vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .humanity article:nth-of-type(n) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    position: relative;
+  }
+  .humanity article:nth-of-type(n) span:nth-of-type(n) {
+    color: #fff;
+    font-family: "Source", sans-serif;
+    font-size: 2vw;
+    text-shadow: 0vw 0vw 0.1vw #000;
+  }
+  .fcaption {
+    width: auto;
+    color: #fff;
+    font-size: 1.5vw;
+    font-weight: 400;
+    line-height: 2.5vw;
+    margin: auto 0;
+    text-align: center;
+    z-index: 999;
+    opacity: 1;
+  }
+  .hint {
+    top: 0vw;
+    border-start-end-radius: 1vw;
+    border-start-start-radius: 1vw;
+    border-end-end-radius: 0vw;
+    left: 1.5vw;
+    width: 6.5vw;
+    height: 3.5vw;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.233);
+    position: absolute;
+    transition: 1s;
+  }
+  .firstHintOut {
+    opacity: 0;
+  }
+  .firsthint {
+    color: #fff;
+    font-size: 2vw;
+    font-weight: 400;
+    text-align: center;
+    z-index: 999;
+    line-height: 1.8vw;
+    opacity: 1;
+  }
+  .hint:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 3.5vw;
+    left: -0.8vw;
+    border-left: 4vw solid transparent;
+    border-right: 4vw solid transparent;
+    border-top: 2vw solid rgba(0, 0, 0, 0.233);
+  }
+  .popup1 {
+    position: absolute;
+    top: -5vw;
+    left: -55vw;
+    width: 55vw;
+    height: 3vw;
+    background: rgba(0, 0, 0, 0.233);
+    border-radius: 1vw;
+    z-index: 1;
+    opacity: 0;
+    transition: 0.8s;
+  }
+  .popup1:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 3vw;
+    top: 3vw;
+    border: 0.5vw solid transparent;
+    border-top: 2vw solid rgba(0, 0, 0, 0.233);
+  }
+  .popupActive1 {
+    top: 1.4vw;
+    left: 0vw;
+    opacity: 1;
+  }
+  .popup2 {
+    position: absolute;
+    top: 1.4vw;
+    right: 0;
+    left: -50vw;
+    width: 50vw;
+    height: 3vw;
+    background: rgba(0, 0, 0, 0.233);
+    border-radius: 0.7vw;
+    z-index: 1;
+    opacity: 0;
+    transition: 0.8s;
+    transition-timing-function: ease-out;
+    transform: initial;
+  }
+  .popup2:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 3vw;
+    top: 3vw;
+    border: 0.5vw solid transparent;
+    border-top: 2vw solid rgba(0, 0, 0, 0.233);
+  }
+  .popupActive2 {
+    right: 0;
+    left: 0vw;
+    opacity: 1;
+    transform: initial;
+    right: initial;
+    top: 1.4vw;
+  }
+  .popup3 {
+    position: absolute;
+    top: -10vw;
+    left: 0vw;
+    width: 55vw;
+    height: 3vw;
+    background: rgba(0, 0, 0, 0.233);
+    border-radius: 1vw;
+    z-index: 1;
+    opacity: 0;
+    transition: 0.5s;
+  }
+  .popup3:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 3vw;
+    top: 3vw;
+    border: 0.5vw solid transparent;
+    border-top: 1vw solid rgba(0, 0, 0, 0.233);
+  }
+  .popupActive3 {
+    top: 1.4vw;
+    opacity: 1;
+  }
+  .popup4 {
+    position: absolute;
+    top: -10vw;
+    left: -33vw;
+    width: 49vw;
+    height: 3vw;
+    background: rgba(0, 0, 0, 0.233);
+    border-radius: 1vw;
+    z-index: 1;
+    opacity: 0;
+    transition: 0.5s;
+  }
+  .popup4:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: 10vw;
+    top: 3vw;
+    border: 0.5vw solid transparent;
+    border-top: 1vw solid rgba(0, 0, 0, 0.233);
+  }
+  .popupActive4 {
+    top: 1.4vw;
+    opacity: 1;
+  }
+  .popup5 {
+    position: absolute;
+    top: 1.4vw;
+    right: -80vw;
+    width: 60vw;
+    height: 3vw;
+    background: rgba(0, 0, 0, 0.233);
+    border-radius: 1vw;
+    z-index: 1;
+    opacity: 0;
+    transition: 0.5s;
+  }
+  .popup5:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 22vw;
+    top: 3vw;
+    border: 0.5vw solid transparent;
+    border-top: 2vw solid rgba(0, 0, 0, 0.233);
+  }
+  .popupActive5 {
+    right: -31vw;
+    opacity: 1;
+  }
+  .popup6 {
+    position: absolute;
+    top: -10vw;
+    right: 0vw;
+    width: 65vw;
+    height: 3vw;
+    background: rgba(0, 0, 0, 0.233);
+    border-radius: 1vw;
+    z-index: 1;
+    opacity: 0;
+    transition: 0.5s;
+  }
+  .popup6:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: 5vw;
+    top: 3vw;
+    border: 0.5vw solid transparent;
+    border-top: 1vw solid rgba(0, 0, 0, 0.233);
+  }
+  .popupActive6 {
+    top: 1.4vw;
+    opacity: 1;
+  }
+  .popup7 {
+    position: absolute;
+    top: 1.4vw;
+    right: -60vw;
+    width: 71vw;
+    height: 3vw;
+    background: rgba(0, 0, 0, 0.233);
+    border-radius: 1vw;
+    z-index: 1;
+    opacity: 0;
+    transition: 0.5s;
+  }
+  .popup7:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: 3vw;
+    top: 3vw;
+    border: 1vw solid transparent;
+    border-top: 1vw solid rgba(0, 0, 0, 0.233);
+    border-left: 1vw solid rgba(0, 0, 0, 0.233);
+  }
+  .popupActive7 {
+    right: 0vw;
+    top: 1.4vw;
+    opacity: 1;
+  }
+  .popup8 {
+    position: absolute;
+    width: 7vw;
+    top: 10vw;
+    right: -2.7vw;
+    height: 5.5vw;
+    background: rgba(0, 0, 0, 0.233);
+    border-radius: 1vw;
+    z-index: 0;
+    opacity: 0;
+    transform: scale(3);
+    transition: 0.5s;
+  }
+  .popup8:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: -1.65vw;
+    top: 3.2vw;
+    border: 0.7vw solid transparent;
+    border-right: 1vw solid rgba(0, 0, 0, 0.233);
+  }
+  .popupActive8 {
+    transform: scale(1);
+    transition: 0.5s;
+    top: 1.5vw;
+    right: -2vw;
+    opacity: 1;
+  }
+  .humanity article:nth-of-type(n) .century {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-70%, -10%);
+    color: #fff;
+    font-size: 2vw;
+    z-index: 999;
+    opacity: 0;
+  }
+  .humanity article:nth-of-type(n):hover .century {
+    transform: translate(-70%, -60%);
+    transition: 2s;
+    opacity: 1;
+  }
+  .🎁 {
+    width: 11vw;
+  }
+  .humanity article:nth-of-type(n) img {
+    transition: 0.5s;
+  }
+  .humanity article:nth-of-type(n) img:hover {
+    filter: brightness(30%);
+  }
+  .humanity article:nth-of-type(n) .century:hover ~ img {
+    filter: brightness(30%);
+  }
+  .evolve4 img {
+    width: 12vw;
+  }
+  .humanity article:nth-of-type(n):hover {
+    transform: scale(1.1);
+    z-index: 999;
   }
   .arrow {
     width: 75vw;
-    margin-top: 1vw;
+    margin-top: 2vw;
   }
   main {
     flex-direction: column;
-  }
-  .description {
-    color: #e0ffff;
-    font-family: "Source", sans-serif;
-    font-size: 2vw;
-    align-self: flex-start;
-    display: inline;
-    text-shadow: 0vw 0vw 0.1vw #000;
-  }
-  span:first-of-type {
-    margin-left: 4.5vw;
-    margin-right: 4vw;
-  }
-  span:nth-of-type(2) {
-    margin-right: 4vw;
-  }
-  span:nth-of-type(3) {
-    margin-right: 5vw;
-  }
-  span:nth-of-type(4) {
-    margin-right: 7.5vw;
-  }
-  span:nth-of-type(5) {
-    margin-right: 7vw;
-  }
-  span:nth-of-type(6) {
-    margin-right: 7vw;
-  }
-  span:nth-of-type(7) {
-    margin-right: 4vw;
   }
   .BottomQuote_button {
     padding: 0vw 2vw;
@@ -356,37 +645,9 @@ hr {
     fill: #fff;
     margin-right: 0.5vw;
   }
-  span.ruAristocrats {
-    margin-right: 2vw;
-  }
-  span.ruBourgeois {
-    margin-right: 3.5vw;
-  }
-  span.ruMafia {
-    margin-right: 6.5vw;
-  }
-  span.ruHippie {
-    margin-right: 7vw;
-  }
-  span.ruPunks {
-    margin-right: 6vw;
-  }
-  span.ruHipsters {
-    margin-right: 3vw;
-  }
-  span.esAristocrats {
-    margin-right: 3vw;
-  }
-  span.esPunks {
-    margin-right: 6.5vw;
-  }
-  span.esHipster {
-    margin-right: 3.75vw;
-  }
 }
-
-@media screen and (min-width: 1000px) {
-  .BackNumber {
+@media screen and (max-width: 999px) and (orientation: landscape) {
+    .BackNumber {
     transform: rotate(-10deg);
     font-size: 45vw;
   }
@@ -397,7 +658,7 @@ hr {
     text-shadow: 0vw 0vw 0.1vw #000;
   }
   header {
-    height: 10vw;
+    height: 5vw;
   }
   hr {
     height: 4.5vw;
@@ -412,7 +673,7 @@ hr {
     flex-direction: row;
     justify-content: space-around;
   }
-  .humanity div:nth-of-type(n) {
+  .humanity article:nth-of-type(n) {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -420,7 +681,7 @@ hr {
     transition: 0.5s;
     position: relative;
   }
-  .humanity div:nth-of-type(n) span:nth-of-type(n) {
+  .humanity article:nth-of-type(n) span:nth-of-type(n) {
     color: #fff;
     font-family: "Source", sans-serif;
     font-size: 2vw;
@@ -429,22 +690,22 @@ hr {
   .fcaption {
     width: auto;
     color: #fff;
-    font-size: 2vw;
+    font-size: 1.4vw;
     font-weight: 400;
-    line-height: 2.5vw;
+    line-height: 2vw;
     margin: auto 0;
     text-align: center;
     z-index: 999;
     opacity: 1;
   }
   .hint {
-    top: 4vw;
+    top: 0vw;
     border-start-end-radius: 1vw;
     border-start-start-radius: 1vw;
     border-end-end-radius: 0vw;
-    left: 5vw;
-    width: 6.5vw;
-    height: 5.2vw;
+    left: 1.5vw;
+    width: 5.5vw;
+    height: 3vw;
     text-align: center;
     background: rgba(0, 0, 0, 0.233);
     position: absolute;
@@ -455,11 +716,11 @@ hr {
   }
   .firsthint {
     color: #fff;
-    font-size: 2vw;
+    font-size: 1.5vw;
     font-weight: 400;
-    margin-top: 0.2vw;
     text-align: center;
     z-index: 999;
+    line-height: 1.5vw;
     opacity: 1;
   }
   .hint:after {
@@ -467,24 +728,23 @@ hr {
     width: 0;
     height: 0;
     position: absolute;
-    top: 5.2vw;
-    left: -3.8vw;
-    border-radius: 2vw;
-    border-left: 7vw solid transparent;
-    border-right: 7vw solid transparent;
-    border-top: 4vw solid rgba(0, 0, 0, 0.233);
+    top: 3vw;
+    left: -2.2vw;
+    border-left: 5vw solid transparent;
+    border-right: 5vw solid transparent;
+    border-top: 1vw solid rgba(0, 0, 0, 0.233);
   }
   .popup1 {
     position: absolute;
-    top: 1vw;
-    left: -16vw;
-    width: 16vw;
-    height: 9.5vw;
+    top: -5vw;
+    left: -45vw;
+    width: 45vw;
+    height: 2vw;
     background: rgba(0, 0, 0, 0.233);
     border-radius: 1vw;
     z-index: 1;
     opacity: 0;
-    transition: 1s;
+    transition: 0.8s;
   }
   .popup1:after {
     content: "";
@@ -492,25 +752,27 @@ hr {
     height: 0;
     position: absolute;
     left: 3vw;
-    top: 9.5vw;
+    top: 2vw;
     border: 0.5vw solid transparent;
-    border-top: 2vw solid rgba(0, 0, 0, 0.233);
+    border-top: 1vw solid rgba(0, 0, 0, 0.233);
   }
   .popupActive1 {
-    left: 4vw;
+    top: 1.4vw;
+    left: 0vw;
     opacity: 1;
   }
   .popup2 {
     position: absolute;
-    top: 8vw;
+    top: 1.4vw;
+    right: 0;
     left: -50vw;
-    width: 50vw;
-    height: 3vw;
+    width: 40vw;
+    height: 2vw;
     background: rgba(0, 0, 0, 0.233);
     border-radius: 0.7vw;
     z-index: 1;
     opacity: 0;
-    transition: 1.5s;
+    transition: 0.8s;
     transition-timing-function: ease-out;
     transform: initial;
   }
@@ -520,28 +782,29 @@ hr {
     height: 0;
     position: absolute;
     left: 3vw;
-    top: 3vw;
+    top: 2vw;
     border: 0.5vw solid transparent;
-    border-top: 2vw solid rgba(0, 0, 0, 0.233);
+    border-top: 1vw solid rgba(0, 0, 0, 0.233);
   }
   .popupActive2 {
-    left: 16vw;
+    right: 0;
+    left: 0vw;
     opacity: 1;
     transform: initial;
     right: initial;
-    top: 8vw;
+    top: 1.4vw;
   }
   .popup3 {
     position: absolute;
-    top: -3vw;
-    left: 28vw;
+    top: -10vw;
+    left: 0vw;
     width: 50vw;
-    height: 3vw;
+    height: 2vw;
     background: rgba(0, 0, 0, 0.233);
     border-radius: 1vw;
     z-index: 1;
     opacity: 0;
-    transition: 1s;
+    transition: 0.5s;
   }
   .popup3:after {
     content: "";
@@ -549,25 +812,25 @@ hr {
     height: 0;
     position: absolute;
     left: 3vw;
-    top: 3vw;
+    top: 2vw;
     border: 0.5vw solid transparent;
     border-top: 1vw solid rgba(0, 0, 0, 0.233);
   }
   .popupActive3 {
-    top: 8vw;
+    top: 1.1vw;
     opacity: 1;
   }
   .popup4 {
     position: absolute;
-    top: -3vw;
-    left: 5vw;
-    width: 42vw;
-    height: 3vw;
+    top: -10vw;
+    left: -27vw;
+    width: 35vw;
+    height: 2vw;
     background: rgba(0, 0, 0, 0.233);
     border-radius: 1vw;
     z-index: 1;
     opacity: 0;
-    transition: 1s;
+    transition: 0.5s;
   }
   .popup4:after {
     content: "";
@@ -575,25 +838,25 @@ hr {
     height: 0;
     position: absolute;
     right: 3vw;
-    top: 3vw;
+    top: 2vw;
     border: 0.5vw solid transparent;
     border-top: 1vw solid rgba(0, 0, 0, 0.233);
   }
   .popupActive4 {
-    top: 8vw;
+    top: 1.05vw;
     opacity: 1;
   }
   .popup5 {
     position: absolute;
-    top: 8vw;
-    right: 0vw;
-    width: 45vw;
-    height: 3vw;
+    top: 1.4vw;
+    right: -80vw;
+    width: 40vw;
+    height: 2vw;
     background: rgba(0, 0, 0, 0.233);
     border-radius: 1vw;
     z-index: 1;
     opacity: 0;
-    transition: 1s;
+    transition: 0.5s;
   }
   .popup5:after {
     content: "";
@@ -601,25 +864,25 @@ hr {
     height: 0;
     position: absolute;
     left: 22vw;
-    top: 3vw;
+    top: 2vw;
     border: 0.5vw solid transparent;
-    border-top: 2vw solid rgba(0, 0, 0, 0.233);
+    border-top: 1vw solid rgba(0, 0, 0, 0.233);
   }
   .popupActive5 {
-    right: 22vw;
+    right: -13vw;
     opacity: 1;
   }
   .popup6 {
     position: absolute;
-    top: 15vw;
-    right: 27vw;
-    width: 43vw;
-    height: 3vw;
+    top: -10vw;
+    right: -2.5vw;
+    width: 45vw;
+    height: 2vw;
     background: rgba(0, 0, 0, 0.233);
     border-radius: 1vw;
     z-index: 1;
     opacity: 0;
-    transition: 1s;
+    transition: 0.5s;
   }
   .popup6:after {
     content: "";
@@ -627,73 +890,73 @@ hr {
     height: 0;
     position: absolute;
     right: 5vw;
-    top: 3vw;
+    top: 2vw;
     border: 0.5vw solid transparent;
     border-top: 1vw solid rgba(0, 0, 0, 0.233);
   }
   .popupActive6 {
-    top: 8vw;
+    top: 1.05vw;
     opacity: 1;
   }
   .popup7 {
     position: absolute;
-    top: 1vw;
-    right: -20vw;
-    width: 20vw;
-    height: 9.5vw;
+    top: 1.4vw;
+    right: -50vw;
+    width: 55vw;
+    height: 2vw;
     background: rgba(0, 0, 0, 0.233);
     border-radius: 1vw;
     z-index: 1;
     opacity: 0;
-    transition: 1s;
+    transition: 0.5s;
   }
   .popup7:after {
     content: "";
     width: 0;
     height: 0;
     position: absolute;
-    left: 2vw;
-    top: 9.5vw;
-    border: 1vw solid transparent;
-    border-top: 1vw solid rgba(0, 0, 0, 0.233);
-    border-left: 1vw solid rgba(0, 0, 0, 0.233);
+    right: 3vw;
+    top: 2vw;
+    border: 0.5vw solid transparent;
+    border-top: 0.5vw solid rgba(0, 0, 0, 0.233);
+    border-left: 0.5vw solid rgba(0, 0, 0, 0.233);
   }
   .popupActive7 {
-    right: 3vw;
+    right: -1vw;
+    top: 1.4vw;
     opacity: 1;
   }
   .popup8 {
     position: absolute;
-    width: 16vw;
-    top: 20vw;
-    right: 40vw;
-    height: 9.5vw;
+    width: 5.8vw;
+    top: 10vw;
+    right: -2.7vw;
+    height: 4.5vw;
     background: rgba(0, 0, 0, 0.233);
     border-radius: 1vw;
     z-index: 0;
     opacity: 0;
-    transition: 1.5s;
-    transform: scale(8);
+    transform: scale(3);
+    transition: 0.5s;
   }
   .popup8:after {
     content: "";
     width: 0;
     height: 0;
     position: absolute;
-    right: 3vw;
-    top: 9.5vw;
-    border: 1vw solid transparent;
-    border-top: 1vw solid rgba(0, 0, 0, 0.233);
-    border-right: 1vw solid rgba(0, 0, 0, 0.233);
+    left: -1.2vw;
+    top: 2.5vw;
+    border: 0.5vw solid transparent;
+    border-right: 0.7vw solid rgba(0, 0, 0, 0.233);
   }
   .popupActive8 {
     transform: scale(1);
-    transition: 1.5s;
-    top: 1vw;
-    right: 6vw;
+    transition: 0.5s;
+    top: 1.1vw;
+    right: -2vw;
     opacity: 1;
   }
-  .humanity div:nth-of-type(n) .century {
+  .humanity article:nth-of-type(n) .century {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -703,36 +966,38 @@ hr {
     z-index: 999;
     opacity: 0;
   }
-  .humanity div:nth-of-type(n):hover .century {
+  .humanity article:nth-of-type(n):hover .century {
     transform: translate(-70%, -60%);
     transition: 2s;
     opacity: 1;
   }
   .🎁 {
-    width: 11vw;
+    width: 8vw;
   }
-  .humanity div:nth-of-type(n) img {
+  .humanity article:nth-of-type(n) img {
     transition: 0.5s;
   }
-  .humanity div:nth-of-type(n) img:hover {
+  .humanity article:nth-of-type(n) img:hover {
     filter: brightness(30%);
   }
-  .humanity div:nth-of-type(n) .century:hover~img {
+  .humanity article:nth-of-type(n) .century:hover ~ img {
     filter: brightness(30%);
   }
   .evolve4 img {
-    width: 12vw;
+    width: 9vw;
   }
-  .humanity div:nth-of-type(n):hover {
+  .humanity article:nth-of-type(n):hover {
     transform: scale(1.1);
     z-index: 999;
   }
   .arrow {
     width: 75vw;
-    margin-top: 2vw;
+    margin-top: 0vw;
   }
   main {
     flex-direction: column;
+    justify-content: flex-start;
+    height: calc(var(--vh, 1vh) * 74);
   }
   .BottomQuote_button {
     padding: 0vw 2vw;

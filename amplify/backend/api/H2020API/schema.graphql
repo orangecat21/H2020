@@ -27,6 +27,7 @@ type ImgObj {
   src: String
   posX: Int
   posY: Int
+  z: Int
 }
 
 type ImgShoesObj {
@@ -35,4 +36,5 @@ type ImgShoesObj {
   icon: String
   posX: Int
   posY: Int
+  z: Int
 }

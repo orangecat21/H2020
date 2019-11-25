@@ -11,24 +11,28 @@ export const onCreateAnswer = `subscription OnCreateAnswer {
       src
       posX
       posY
+      z
     }
     humanShirt {
       id
       src
       posX
       posY
+      z
     }
     humanJackets {
       id
       src
       posX
       posY
+      z
     }
     humanPants {
       id
       src
       posX
       posY
+      z
     }
     humanShoes {
       id
@@ -36,12 +40,14 @@ export const onCreateAnswer = `subscription OnCreateAnswer {
       icon
       posX
       posY
+      z
     }
     humanAccessories {
       id
       src
       posX
       posY
+      z
     }
     hardSkillPoints
     softSkillsPoints
@@ -68,24 +74,28 @@ export const onUpdateAnswer = `subscription OnUpdateAnswer {
       src
       posX
       posY
+      z
     }
     humanShirt {
       id
       src
       posX
       posY
+      z
     }
     humanJackets {
       id
       src
       posX
       posY
+      z
     }
     humanPants {
       id
       src
       posX
       posY
+      z
     }
     humanShoes {
       id
@@ -93,12 +103,14 @@ export const onUpdateAnswer = `subscription OnUpdateAnswer {
       icon
       posX
       posY
+      z
     }
     humanAccessories {
       id
       src
       posX
       posY
+      z
     }
     hardSkillPoints
     softSkillsPoints
@@ -125,24 +137,28 @@ export const onDeleteAnswer = `subscription OnDeleteAnswer {
       src
       posX
       posY
+      z
     }
     humanShirt {
       id
       src
       posX
       posY
+      z
     }
     humanJackets {
       id
       src
       posX
       posY
+      z
     }
     humanPants {
       id
       src
       posX
       posY
+      z
     }
     humanShoes {
       id
@@ -150,12 +166,14 @@ export const onDeleteAnswer = `subscription OnDeleteAnswer {
       icon
       posX
       posY
+      z
     }
     humanAccessories {
       id
       src
       posX
       posY
+      z
     }
     hardSkillPoints
     softSkillsPoints

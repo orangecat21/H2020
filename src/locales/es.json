@@ -1,6 +1,16 @@
 {
+  "bussiness": "Empresario",
+  "IT": "Especialista en TI",
+  "uber": "Conductor de Uber",
+  "manager": "Gerente",
+  "psychologist": "Psicólogo",
+  "eSport": "Ciber atleta",
+  "blogger": "Blogger",
+  "military": "Militar",
+  "miner": "Militar",
+  "bussinessTrainer": "Entrenador de negocios",
   "firstPage": {
-    "h1": "human 2020",
+    "h1": "HUMAN 2020",
     "topQuote": "«Todo comienza ",
     "with": "con ",
     "choice": "la elección",
@@ -9,7 +19,15 @@
       "days": "Dias",
       "hours": "Horas",
       "mins": "Minutos"
-    }
+    },
+    "hintM": "💌PULSE AQUÍ",
+    "hint": "RATÓN SOBRE",
+    "popup1": "-Un proyecto en el que puedes influir en la opinión de todo el mundo, ¡y tal vez incluso cambiar el futuro!",
+    "popup3M": "Cuando haces clic en el botón ... ¡El proyecto te dará la oportunidad de influir en la opinión de todo el mundo!",
+    "popup3": "Chicos, miren a su alrededor! Después de todo, miles de millones de personas nos están mirando.",
+    "popup4": "Año nuevo muy pronto, piensa en tus seres queridos, por favor💕",
+    "popup4M": "Año nuevo muy pronto, piensa en tus seres queridos, por favor💕 Y no olvides que cada día alguien te necesita",
+    "popup5": "Eres responsable de cada decisión tomada en la vida, ¡recuerda esto!"
   },
   "secondPage": {
     "header": {
@@ -30,7 +48,16 @@
     },
     "clothes": {
       "clothes": "Ropa"
-    }
+    },
+    "hint": "RATÓN SOBRE",
+    "popup1": "Pero en nuestro tiempo ... 👴👵 En la moda era trabajo manual y pliegues en la ropa.",
+    "popup2": "En primer lugar teníamos una personalidad y talento humanos.",
+    "popup3": "Grandes barrigas y trajes caros, ¿Promociones? ... empresas? ... apuestas? ¡Casi ... trabajo asalariado!",
+    "popup4": "Sombrero, PP Thompson, traje formal y una bala en la cabeza ...",
+    "popup5": "Pensamientos libres, ropa y amor. La violencia es el camino a ninguna parte",
+    "popup6": "Cadenas ... cadenas ... cadenas, chaquetas de cuero remachadas y música a todo volumen 🎸",
+    "popup7": "Los chicos en el tema! Barbershop, Segway, blog, sí, construyen oraciones a partir de estas palabras😁",
+    "popup8": "¡Y ahora es el momento de elegir, dinero o talento, amor o guerra, un traje formal o una chaqueta de cuero!"
   },
   "thirdPage": {
     "gender": {
@@ -59,15 +86,30 @@
       "text3": "habilidades. «-¡El camarero! Tu mejor coctel por favor...»"
     },
     "softskill": {
-      "SOFT": "SOFT habilidad"
+      "SOFT": "SOFT habilidad",
+      "Initiative": "Iniciativa",
+      "Creativity": "Creatividad",
+      "Adaptability": "Adaptabilidad",
+      "Reflection": "Reflexión",
+      "Multitasking": "Multitarea",
+      "Listening skills": "Habilidades de escuchar",
+      "Teamwork": "Trabajo en equipo",
+      "Critical thinking": "Pensamiento crítico",
+      "Time management": "Gestión del tiempo"
     },
     "hardskill": {
       "HARD": "HARD habilidad"
+    },
+    "popup": {
+      "share": "¡Comparte tu opinión con todo el mundo! ¡Juntos podemos cambiar todo!"
     }
   },
   "footer": {
     "GoBack": "Regresa",
     "reset": "Reiniciar",
     "next": "Siguiente"
+  },
+  "Fourth": {
+    "text": "¡Para eso vinimos todos, tomamos estadísticas de todo el mundo y se las mostramos a todos! Pronto seremos más de 7 mil millones!"
   }
 }

@@ -19,38 +19,44 @@ export default new Vuex.Store({
       id:0,
       src:'null',
       posX:0,
-      posY:0
+      posY:0,
+      z:11
     },
     humanShirt:{
       id:0,
       src:'null',
       posX:0,
-      posY:0
+      posY:0,
+      z:8
     },
     humanJackets:{
       id:0,
       src:'null',
       posX:0,
-      posY:0
+      posY:0,
+      z:9
     },
     humanPants:{
       id:0,
       src:'null',
       posX:0,
-      posY:0
+      posY:0,
+      z:4
     },
     humanShoes:{
       id:0,
       src:'null',
       icon:'null',
       posX:0,
-      posY:0
+      posY:0,
+      z:5
     },
     humanAccessories:{
       id:0,
       src:'null',
       posX:0,
-      posY:0
+      posY:0,
+      z:10
     },
     sumOfSkills:1000,
     hardSkillPoints:0,

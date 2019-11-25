@@ -4,35 +4,35 @@
     <section class="popup">
       <section class="text">
         <p class="name">{{ humanName }}</p>
-        <p class="hardskill">Hard Skills: {{ hardSkill }} ({{ hardSkillPoints }} points)</p>
+        <p class="hardskill">Hard Skills: {{$t(hardSkill)}} ({{ hardSkillPoints }} points)</p>
         <p class="softtitle">Soft Skills:</p>
         <section class="softskills">
           <div class="skillItem">
-            <p>Инициативность</p>
+            <p>{{$t('thirdPage.softskill.Initiative')}}</p>
             <p class="percent">{{ Initiative }}</p>
           </div>
           <div class="skillItem">
-            <p>Креативность</p>
+            <p>{{$t('thirdPage.softskill.Creativity')}}</p>
             <p class="percent">{{ Creativity }}</p>
           </div>
           <div class="skillItem">
-            <p>Адаптивность</p>
+            <p>{{$t('thirdPage.softskill.Adaptability')}}</p>
             <p class="percent">{{ Adaptability }}</p>
           </div>
           <div class="skillItem">
-            <p>Рефлексия</p>
+            <p>{{$t('thirdPage.softskill.Reflection')}}</p>
             <p class="percent">{{ Reflection }}</p>
           </div>
           <div class="skillItem">
-            <p>Многозадачность</p>
+            <p>{{$t('thirdPage.softskill.Multitasking')}}</p>
             <p class="percent">{{ Multitasking }}</p>
           </div>
           <div class="skillItem">
-            <p>Умение слушать</p>
+            <p>{{$t('thirdPage.softskill.Listening skills')}}</p>
             <p class="percent">{{ ListeningSkills }}</p>
           </div>
           <div class="skillItem">
-            <p>Командная работа</p>
+            <p>{{$t('thirdPage.softskill.Teamwork')}}</p>
             <p class="percent">{{ Teamwork }}</p>
           </div>
           <div class="skillItem">
@@ -46,7 +46,7 @@
         </section>
         <section class="download" @click="downloadImage">
           <downloadsvg class="downloadSVG"></downloadsvg>
-          <p>Share your opinion with the whole world! Together we can change everything! #2020 #human2020</p>
+          <p>{{$t('thirdPage.popup.share')}} #2020 #human2020</p>
         </section>
         <section class="YourOpinion">
           <img :src="imgSrc" alt="Your human" />
@@ -302,6 +302,7 @@ p {
   margin: 2vw 0 0 8vw;
   border-radius: 2vw;
   box-shadow: 0 0 0.5vw #000;
+  animation: cycle 2s linear infinite;
 }
 .downloadSVG:hover {
   box-shadow: inset 0 0 0.5 #000;
@@ -315,6 +316,32 @@ p {
   flex-basis: 80%;
   text-align: right;
 }
+@keyframes cycle {
+    35% {
+      transform: rotate(0) translate(0, 0);
+    }
+    40% {
+      transform: rotate(7deg) translate(0, -2px);
+    }
+    45% {
+      transform: rotate(-5deg) translate(0, -2px);
+    }
+    50% {
+      transform: rotate(7deg) translate(0, -2px);
+    }
+    55% {
+      transform: rotate(-5deg) translate(0, -2px);
+    }
+    60% {
+      transform: rotate(7deg) translate(0, -2px);
+    }
+    65% {
+      transform: rotate(-5deg) translate(0, -2px);
+    }
+    70% {
+      transform: rotate(0) translate(0, 0);
+    }
+  }
 @media screen and (min-width: 760px) and (max-width: 999px) {
 }
 
@@ -410,32 +437,6 @@ p {
     order: initial;
     flex-basis: initial;
     text-align: initial;
-  }
-  @keyframes cycle {
-    35% {
-      transform: rotate(0) translate(0, 0);
-    }
-    40% {
-      transform: rotate(7deg) translate(0, -2px);
-    }
-    45% {
-      transform: rotate(-5deg) translate(0, -2px);
-    }
-    50% {
-      transform: rotate(7deg) translate(0, -2px);
-    }
-    55% {
-      transform: rotate(-5deg) translate(0, -2px);
-    }
-    60% {
-      transform: rotate(7deg) translate(0, -2px);
-    }
-    65% {
-      transform: rotate(-5deg) translate(0, -2px);
-    }
-    70% {
-      transform: rotate(0) translate(0, 0);
-    }
   }
 }
 </style>

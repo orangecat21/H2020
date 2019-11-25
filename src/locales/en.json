@@ -1,6 +1,16 @@
 {
+  "bussiness": "Businessman",
+  "IT": "IT specialist",
+  "uber": "Uber driver",
+  "manager": "Manager",
+  "psychologist": "Psychologist",
+  "eSport": "eSportsman",
+  "blogger": "blogger",
+  "military": "Military",
+  "miner": "Miner",
+  "bussinessTrainer": "Business trainer",
   "firstPage": {
-    "h1" : "human 2020",
+    "h1" : "HUMAN 2020",
     "topQuote" : "«Everything begins ",
     "with" : "with ",
     "choice" : "choice",
@@ -9,7 +19,15 @@
       "days": "Days",
       "hours": "Hours",
       "mins": "Mins"
-    }
+    },
+    "hintM": "💌TAP HERE",
+    "hint": "MOUSE OVER",
+    "popup1": "-A project in which you can influence the opinion of the whole world, and maybe even change the future!",
+    "popup3M": "When you click on the button ... The project will give you the opportunity to influence the opinion of the whole world!",
+    "popup3": "Guys, look around! After all, billions of people are looking at us.",
+    "popup4": "New Year very soon, think about your loved ones, please them💕",
+    "popup4M": "New Year very soon, think about your loved ones, please them💕 And don’t forget that every day someone needs you",
+    "popup5": "You are responsible for every decision made in life, remember this!"
   },
   "secondPage": {
     "header": {
@@ -27,7 +45,16 @@
       "hipsters":"Hipsters",
       "evolve":"Evolve",
       "create":"Create"
-    }
+    },
+    "hint": "MOUSE OVER",
+    "popup1": "But in our time ... 👴👵 In fashion was manual labor and folds on clothes.",
+    "popup2": "In the first place we had a human personality and talent",
+    "popup3": "Big bellies and expensive suits, Promotions? ... enterprises? ... bets? Almost .. wage labor!",
+    "popup4": "Hat, PP Thompson, formal suit and a bullet in the head ...",
+    "popup5": "Free thoughts, clothes and love. Violence is the road to nowhere",
+    "popup6": "Chains..chains..chains, riveted leather jackets and loud music 🎸",
+    "popup7": "The guys in the subject! Barbershop, Segway, blog, they build sentences from these words😁",
+    "popup8": "And now it's time to make your choice, money or a talent, love or war, a formal suit or a leather jacket!"
   },
   "thirdPage": {
     "gender": {
@@ -55,15 +82,30 @@
       "text3": "skills. «-The bartender! Your best cocktail please...»"
     },
     "softskill": {
-      "SOFT": "SOFT skill"
+      "SOFT": "SOFT skill",
+      "Initiative": "Initiative",
+      "Creativity": "Creativity",
+      "Adaptability": "Adaptability",
+      "Reflection": "Reflection",
+      "Multitasking": "Multitasking",
+      "Listening skills": "Listening skills",
+      "Teamwork": "Teamwork",
+      "Critical thinking": "Critical thinking",
+      "Time management": "Time management"
     },
     "hardskill": {
       "HARD": "HARD skill"
+    },
+    "popup": {
+      "share": "Share your opinion with the whole world! Together we can change everything!"
     }
   },
   "footer": {
     "GoBack": "Go Back",
     "reset": "Reset",
     "next": "Next"
+  },
+  "Fourth": {
+    "text": "That's what we all came for, we take statistics from around the world, and show everyone! Soon we will be more than 7 billion!"
   }
 }

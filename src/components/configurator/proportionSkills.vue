@@ -112,6 +112,7 @@ export default {
   background-color: #ac40f1;
   border-radius: 50%;
   padding: 0.5vw;
+  animation: cycle 2s linear infinite;
 }
 .rightButtonGroup > button {
   margin-right: 2vw;
@@ -299,7 +300,129 @@ section {
     font-weight: 300;
   }
 }
-@media screen and (max-width: 759px) and (orientation: landscape) {
+
+@media screen and (max-width: 999px) and (orientation: landscape) {
+  .inputM {
+    top: initial;
+    z-index: initial;
+    left: initial;
+    right: initial;
+    background-color: initial;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .rightButtonGroup {
+    display: none;
+  }
+  .v-enter,
+  .v-leave-to {
+    opacity: 0;
+  }
+  .v-enter-active,
+  .v-leave-active {
+    transition: 0.2s;
+  }
+  section {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  h1 {
+    color: #fff;
+    font-size: 3vw;
+    font-weight: 300;
+    margin-left: 1vw;
+    text-shadow: 0vw 0vw 0.1vw #000;
+  }
+  input {
+    width: 4vw;
+    height: 1.5vw;
+    border-radius: 2vw;
+    font-size: 1.3vw;
+  }
+  .circleSum {
+    width: 10vw;
+    height: 10vw;
+    top: calc(50% - 5vw);
+    left: 10%;
+  }
+  .circleSoft {
+    width: 8vw;
+    height: 8vw;
+    top: calc(25% - 4vw);
+    left: 35vw;
+  }
+  .circleHard {
+    width: 8vw;
+    height: 8vw;
+    top: calc(75% - 4vw);
+    left: 40vw;
+  }
+  .circleHard,
+  .circleSoft {
+    font-size: 1.5vw;
+    color: #fff;
+    font-weight: 300;
+  }
+  .separate {
+    background-color: #fff;
+    border: 0.1vw solid #fff;
+  }
+  p {
+    text-shadow: 0vw 0vw 0.2vw #000;
+  }
+  .ticker {
+    color: #fff;
+    font-size: 2vw;
+    white-space: nowrap;
+    transform: translateX(43%);
+    animation: ticker 20s linear infinite;
+  }
+  .tophr {
+    transform: rotate(-17deg);
+    width: 18vw;
+    left: 16vw;
+    top: 11vw;
+  }
+  .bothr {
+    transform: rotate(15deg);
+    left: 16vw;
+    top: 20vw;
+    width: 23vw;
+  }
+  .sumOfScills {
+    font-size: 3vw;
+  }
+  .Next_Button {
+    display: block;
+    border-radius: 2.5vw;
+    background: #ac40f1;
+    border: 0.1vw solid #ac40f1;
+    color: #fff;
+    font-size: 2vw;
+    padding: 0.2vw 3vw;
+    cursor: pointer;
+    box-shadow: 0vw 0vw 0.2vw #000;
+    text-shadow: 0vw 0vw 0.1vw #000;
+    right: 2vw;
+    bottom: 45%;
+    position: absolute;
+  }
+  .Next_Button:active {
+    box-shadow: inset 0.2vw 0.2vw 0.3vw #000;
+  }
+  .clothesTitle {
+    color: #fff;
+    font-size: 3vw;
+    font-weight: 300;
+  }
+}
+@media screen and (max-width: 600px) and (orientation: landscape) {
   .Next_Button {
     display: none;
   }

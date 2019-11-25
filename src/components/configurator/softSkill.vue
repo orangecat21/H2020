@@ -25,7 +25,7 @@
     <hr class="separate" />
     <section class="scrollM">
     <div class="skillItem">
-      <p>Инициативность</p>
+      <p>{{$t('thirdPage.softskill.Initiative')}}</p>
       <input
         type="range"
         min="0"
@@ -37,7 +37,7 @@
       <p class="percent">{{ skill1 }}%</p>
     </div>
     <div class="skillItem">
-      <p>Креативность</p>
+      <p>{{$t('thirdPage.softskill.Creativity')}}</p>
       <input
         type="range"
         min="0"
@@ -49,7 +49,7 @@
       <p class="percent">{{ skill2 }}%</p>
     </div>
     <div class="skillItem">
-      <p>Адаптируемость</p>
+      <p>{{$t('thirdPage.softskill.Adaptability')}}</p>
       <input
         type="range"
         min="0"
@@ -61,7 +61,7 @@
       <p class="percent">{{ skill3 }}%</p>
     </div>
     <div class="skillItem">
-      <p>Рефлексия</p>
+      <p>{{$t('thirdPage.softskill.Reflection')}}</p>
       <input
         type="range"
         min="0"
@@ -73,7 +73,7 @@
       <p class="percent">{{ skill4 }}%</p>
     </div>
     <div class="skillItem">
-      <p>Многозадачность</p>
+      <p>{{$t('thirdPage.softskill.Multitasking')}}</p>
       <input
         type="range"
         min="0"
@@ -85,7 +85,7 @@
       <p class="percent">{{ skill5 }}%</p>
     </div>
     <div class="skillItem">
-      <p>Умение слушать</p>
+      <p>{{$t('thirdPage.softskill.Listening skills')}}</p>
       <input
         type="range"
         min="0"
@@ -97,7 +97,7 @@
       <p class="percent">{{ skill6 }}%</p>
     </div>
     <div class="skillItem">
-      <p>Работа в команде</p>
+      <p>{{$t('thirdPage.softskill.Teamwork')}}</p>
       <input
         type="range"
         min="0"
@@ -109,7 +109,7 @@
       <p class="percent">{{ skill7 }}%</p>
     </div>
     <div class="skillItem">
-      <p>Критичность мышления</p>
+      <p>{{$t('thirdPage.softskill.Critical thinking')}}</p>
       <input
         type="range"
         min="0"
@@ -121,7 +121,7 @@
       <p class="percent">{{ skill8 }}%</p>
     </div>
     <div class="skillItem">
-      <p>Тайм-менеджмент</p>
+      <p>{{$t('thirdPage.softskill.Time management')}}</p>
       <input
         type="range"
         min="0"
@@ -378,6 +378,7 @@ export default {
   background-color: #ac40f1;
   border-radius: 50%;
   padding: 0.5vw;
+  animation: cycle 2s linear infinite;
 }
 .rightButtonGroup > button {
   margin-right: 2vw;
@@ -569,6 +570,59 @@ p {
   }
   .range::-moz-focus-outer {
     border: none;
+  }
+}
+@media screen and (max-width: 999px) and (orientation: landscape) {
+  .scrollM{
+    display: flex;
+    flex-wrap:nowrap;
+    overflow-x: scroll;
+    justify-content: flex-start;
+}
+ .skillItem {
+   justify-content: space-around;
+    width: 23vw;
+    height: 17vw;
+    border-radius: 0.5vw;
+    margin-bottom: 1vw;
+    flex-shrink: 0;
+  }
+  p{
+    font-size: 2vw;
+  }
+  .percent{
+    font-size: 1.8vw;
+  }
+    .range {
+    appearance: none;
+    border-radius: 1vw;
+    width: 90%;
+    height: 2vw;
+    user-select: all;
+    transform: initial;
+    -moz-outline-radius: 20px;
+  }
+  .range:focus, .range:active{
+    border: 0.15vw solid rgb(48, 2, 173);
+    height: 2.1vw;
+  }
+  .range::-moz-range-thumb {
+    appearance: none;
+    width: 2.2vw;
+    height: 2.2vw;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid;
+  }
+  .range::-webkit-slider-thumb {
+    appearance: none;
+    width: 2.2vw;
+    height: 2.2vw;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid;
   }
 }
 </style>

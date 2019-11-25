@@ -83,6 +83,7 @@ export default {
 	background-color: #ac40f1;
 	border-radius: 50%;
 	padding: 0.5vw;
+	animation: cycle 2s linear infinite;
 }
 	section{
 		display: flex;
@@ -154,7 +155,7 @@ export default {
 		font-size: 1.5vw;
 		cursor: pointer;
 		width: calc(var(--vh, 1vh) * 6);
-		height: calc(var(--vh, 1vh) * 6)
+		height: calc(var(--vh, 1vh) * 6);
 	}
 	.button:hover{
 		background-color: #ac40f1;
@@ -206,6 +207,27 @@ export default {
 	}
 	.button:not(.active){
 		border-bottom: 0.1vw solid #fff;
+	}
+}
+@media screen and (min-width: 1000px), (orientation: landscape){
+	.clothesTitle{
+		color: #fff;
+		font-size: 2.5vw;
+	}
+	.separate{
+		border: 0.1vw solid #fff;
+		margin-bottom: 1vw;
+	}
+	.hairstylesvg, .shirtsvg, .accessoriessvg{
+		width: 2vw;
+	}
+	.suitsvgm, .pantssvg, .shoessvg{
+		width: 3vw;
+	}
+	.button{
+		border-radius: initial;
+		width: 8.8vw;
+		height: 4vw;
 	}
 }
 </style>

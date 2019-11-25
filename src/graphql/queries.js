@@ -11,24 +11,28 @@ export const getAnswer = `query GetAnswer($id: ID!) {
       src
       posX
       posY
+      z
     }
     humanShirt {
       id
       src
       posX
       posY
+      z
     }
     humanJackets {
       id
       src
       posX
       posY
+      z
     }
     humanPants {
       id
       src
       posX
       posY
+      z
     }
     humanShoes {
       id
@@ -36,12 +40,14 @@ export const getAnswer = `query GetAnswer($id: ID!) {
       icon
       posX
       posY
+      z
     }
     humanAccessories {
       id
       src
       posX
       posY
+      z
     }
     hardSkillPoints
     softSkillsPoints
@@ -73,24 +79,28 @@ export const listAnswers = `query ListAnswers(
         src
         posX
         posY
+        z
       }
       humanShirt {
         id
         src
         posX
         posY
+        z
       }
       humanJackets {
         id
         src
         posX
         posY
+        z
       }
       humanPants {
         id
         src
         posX
         posY
+        z
       }
       humanShoes {
         id
@@ -98,12 +108,14 @@ export const listAnswers = `query ListAnswers(
         icon
         posX
         posY
+        z
       }
       humanAccessories {
         id
         src
         posX
         posY
+        z
       }
       hardSkillPoints
       softSkillsPoints

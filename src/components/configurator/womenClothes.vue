@@ -85,6 +85,7 @@ export default {
 	padding: 0.5vw;
 	border: none;
 	box-shadow: none;
+	animation: cycle 2s linear infinite;
 }
 	section{
 		display: flex;
@@ -208,6 +209,27 @@ export default {
 	}
 	.button:not(.active){
 		border-bottom: 0.1vw solid #fff;
+	}
+}
+@media screen and (min-width: 1000px), (orientation: landscape){
+	.clothesTitle{
+		color: #fff;
+		font-size: 2.5vw;
+	}
+	.separate{
+		border: 0.1vw solid #fff;
+		margin-bottom: 1vw;
+	}
+	.hairstylesvg, .shirtsvg, .accessoriessvg{
+		width: 2vw;
+	}
+	.suitsvgm, .pantssvg, .shoessvg{
+		width: 3vw;
+	}
+	.button{
+		border-radius: initial;
+		width: 8.8vw;
+		height: 4vw;
 	}
 }
 </style>
