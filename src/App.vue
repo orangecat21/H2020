@@ -21,7 +21,6 @@ export default {
 	},
 	mounted(){
 		this.saved_state = JSON.parse(sessionStorage.getItem('state'))
-		
 		setTimeout(()=>{
 			this.$store.dispatch('GET_GENDER', this.saved_state.gender)
 			this.$store.dispatch('PUSH_NAME', this.saved_state.humanName)
@@ -47,7 +46,7 @@ export default {
 			let json = JSON.stringify(this.$store.state)
 			sessionStorage.setItem('state', json)
 		},1000)
-
+		
 	}
 
 }

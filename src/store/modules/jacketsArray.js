@@ -18,7 +18,7 @@ export default {
             {
                 id:3,
                 src:require('../../assets/Textures/Jackets/male/3.png'),
-                posX:361,
+                posX:359,
                 posY:337,
                 z:7
             },
@@ -39,8 +39,8 @@ export default {
             {
                 id:6,
                 src:require('../../assets/Textures/Jackets/male/6.png'),
-                posX:384,
-                posY:338,
+                posX:386,
+                posY:336,
                 z:7
             },
             {
@@ -53,7 +53,7 @@ export default {
             {
                 id:8,
                 src:require('../../assets/Textures/Jackets/male/8.png'),
-                posX:361,
+                posX:362,
                 posY:329,
                 z:7
             },

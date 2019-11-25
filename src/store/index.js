@@ -73,9 +73,13 @@ export default new Vuex.Store({
     TimeManagement:0,
     humanImg:null,
     skillInputActive: false,
-    popupActive:false
+    popupActive:false,
+    requestCounter:0
     },
   getters:{
+    requestCounter: state =>{
+      return state.requestCounter
+    },
     popupActive: state => {
       return state.popupActive
     },
@@ -123,6 +127,9 @@ export default new Vuex.Store({
     }
   },
   mutations: {
+    SET_COUNTER: (state, payload) => {
+      state.requestCounter = payload
+    },
     SET_POPUP: (state, payload) => {
       state.popupActive = payload
     },
@@ -194,6 +201,9 @@ export default new Vuex.Store({
     },
   },
   actions: {
+    PUSH_COUNTER: (context, payload) =>{
+      context.commit('SET_COUNTER', payload)
+    },
     PUSH_POPUP: (context, payload) => {
       context.commit('SET_POPUP', payload)
     },

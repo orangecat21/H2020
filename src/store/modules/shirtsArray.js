@@ -11,8 +11,8 @@ export default {
             {
                 id:2,
                 src:require('../../assets/Textures/Shirts/male/2.png'),
-                posX:410,
-                posY:345,
+                posX:405,
+                posY:347,
                 z:6
             },
             {
@@ -26,7 +26,7 @@ export default {
                 id:4,
                 src:require('../../assets/Textures/Shirts/male/4.png'),
                 posX:405,
-                posY:346,
+                posY:349,
                 z:6
             },
             {
@@ -39,8 +39,8 @@ export default {
             {
                 id:6,
                 src:require('../../assets/Textures/Shirts/male/6.png'),
-                posX:367,
-                posY:340,
+                posX:365,
+                posY:343,
                 z:6
             },
             {

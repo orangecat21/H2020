@@ -58,8 +58,6 @@
 </template>
 
 <script>
-import API, { graphqlOperation } from "@aws-amplify/api";
-import { createAnswer } from "../../graphql/mutations";
 export default {
   name: "finish",
   computed: {
@@ -159,31 +157,6 @@ export default {
         /* webpackChunkName: "downloadsvg", webpackPrefetch: 958 */ "../SVG/downloadSVG.vue"
       )
   },
-  async mounted() {
-    const answer = {
-      gender: this.gender,
-      humanName: this.humanName,
-      humanHead: this.humanHead,
-      humanShirt: this.humanShirt,
-      humanJackets: this.humanJackets,
-      humanPants: this.humanPants,
-      humanShoes: this.humanShoes,
-      humanAccessories: this.humanAccessories,
-      hardSkillPoints: this.hardSkillPoints,
-      softSkillsPoints: this.softSkillsPoints,
-      hardSkillName: this.hardSkill,
-      Initiative: this.Initiative,
-      Creativity: this.Creativity,
-      Adaptability: this.Adaptability,
-      Reflection: this.Reflection,
-      Multitasking: this.Multitasking,
-      ListeningSkills: this.ListeningSkills,
-      Teamwork: this.Teamwork,
-      CriticalThinking: this.CriticalThinking,
-      TimeManagement: this.TimeManagement
-    };
-    await API.graphql(graphqlOperation(createAnswer, { input: answer }));
-  }
 };
 </script>
 

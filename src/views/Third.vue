@@ -58,6 +58,8 @@
 	</div>
 </template>
 <script>
+import API, { graphqlOperation } from "@aws-amplify/api";
+import { createAnswer } from "../graphql/mutations";
 export default {
 	name: 'thirdPage',
 	data(){
@@ -129,7 +131,64 @@ export default {
 		},
 		childOverlay(){
 			return this.$store.getters.popupActive
-		}
+		},
+		gender() {
+          return this.$store.getters.GENDER;
+        },
+        humanHead() {
+          return this.$store.getters.HUMAN_HEAD;
+        },
+        humanShirt() {
+          return this.$store.getters.HUMAN_SHIRT;
+        },
+        humanPants() {
+          return this.$store.getters.HUMAN_PANTS;
+        },
+        humanShoes() {
+          return this.$store.getters.HUMAN_SHOES;
+        },
+        humanAccessories() {
+          return this.$store.getters.HUMAN_ACCESSORIES;
+        },
+        humanJackets() {
+          return this.$store.getters.HUMAN_JACKET;
+        },
+        hardSkillName() {
+          return this.$store.getters.HARDSKILLNAME;
+        },
+        hardSkillPoints() {
+          return this.$store.getters.HARDSKILL;
+        },
+        softSkillsPoints() {
+          return this.$store.getters.SOFTSKILLS;
+        },
+        Initiative() {
+          return this.$store.state.Initiative;
+        },
+        Creativity() {
+          return this.$store.state.Creativity;
+        },
+        Adaptability() {
+          return this.$store.state.Adaptability;
+        },
+        Reflection() {
+          return this.$store.state.Reflection;
+        },
+        Multitasking() {
+          return this.$store.state.Multitasking;
+        },
+        ListeningSkills() {
+          return this.$store.state.ListeningSkills;
+        },
+        Teamwork() {
+          return this.$store.state.Teamwork;
+        },
+        CriticalThinking() {
+          return this.$store.state.CriticalThinking;
+        },
+        TimeManagement() {
+          return this.$store.state.TimeManagement;
+        }
 	},
 	watch:{
 		humanLink: function(){
@@ -281,6 +340,8 @@ export default {
 		goToNext(){
 			if(this.$route.path === this.softSkill){
 				this.name = ''
+				if(this.$store.getters.requestCounter < 2){
+				this.pushToDynamo()}
 				setTimeout(() => {
 					this.$router.push('/create/soft_skill/finish')
 					this.humanImg = this.$refs.stage.getStage().toDataURL({pixelRatio: 3})
@@ -288,6 +349,34 @@ export default {
 				},500)
 				setTimeout(()=>{this.name = this.humanName},600)
 			}else this.$router.push('/create/just_a_little')
+		},
+		async pushToDynamo() {
+			const answer = {
+				gender: this.gender,
+				humanName: this.humanName,
+				humanHead: this.humanHead,
+				humanShirt: this.humanShirt,
+				humanJackets: this.humanJackets,
+				humanPants: this.humanPants,
+				humanShoes: this.humanShoes,
+				humanAccessories: this.humanAccessories,
+				hardSkillPoints: this.hardSkillPoints,
+				softSkillsPoints: this.softSkillsPoints,
+				hardSkillName: this.hardSkillName,
+				Initiative: this.Initiative,
+				Creativity: this.Creativity,
+				Adaptability: this.Adaptability,
+				Reflection: this.Reflection,
+				Multitasking: this.Multitasking,
+				ListeningSkills: this.ListeningSkills,
+				Teamwork: this.Teamwork,
+				CriticalThinking: this.CriticalThinking,
+				TimeManagement: this.TimeManagement
+			};
+			await API.graphql(graphqlOperation(createAnswer, { input: answer }));
+			var counter = this.$store.getters.requestCounter
+			counter = counter + 1
+			this.$store.dispatch('PUSH_COUNTER', counter)
 		},
 		Reset(){
 			this.$router.push('/create/personalisation'),
@@ -383,16 +472,16 @@ export default {
 		let vh = window.innerHeight * 0.01
 		document.documentElement.style.setProperty('--vh', `${vh}px`)
 		this.scene = this.$refs.scene.getStage()
-		this.changeCanvas(),
-		setTimeout(()=>{ this.newGender() },300),
-		this.posX = this.calcPosName(),
-		this.newHair(),
-		this.newAccessories(),
-		this.newPants(),
-		this.newShirt(),
-		this.newJacket(),
-		this.name = this.humanName,
-		this.newShoes()
+		this.changeCanvas()
+		// setTimeout(()=>{ this.newGender() },300),
+		// this.posX = this.calcPosName()
+		// this.newHair(),
+		// this.newAccessories(),
+		// this.newPants(),
+		// this.newShirt(),
+		// this.newJacket(),
+		// this.name = this.humanName,
+		// this.newShoes()
 	},
 	updated(){
 		this.changeCanvas()

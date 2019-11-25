@@ -58,9 +58,17 @@ export default {
 	.button:focus {
 		border: 0.1vw solid #ac40f1;
 	}
-	.button:nth-of-type(3) img, .button:nth-of-type(6) img{
+	.button:nth-of-type(3) img{
     height: initial;
     width: 80%;
+	}
+	.button:nth-of-type(6) img{
+		height: initial;
+		width: 70%;
+	}
+	.button:nth-of-type(8) img{
+		height: initial;
+		width: 80%;
 	}
 	img{
 		height: 60%;

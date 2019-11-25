@@ -151,7 +151,7 @@
           <div class="popup8" :class="{popupActive8:(evolve8) && (firsthint)}">
             <p class="fcaption">❔ ❓ ❔ ❓ ❔ ❓</p>
           </div>
-          <p @mouseover="evolve8 = true" @mouseout="evolve8 = false" class="century">❔</p>
+          <p @mouseover="evolve8 = true" @mouseout="evolve8 = false" class="century ❔">❔</p>
           <img
             @mouseover="evolve8 = true"
             @mouseout="evolve8 = false"
@@ -625,6 +625,12 @@ hr {
     transform: translate(-30%, -60%);
     transition: 2s;
     opacity: 1;
+  }
+  .humanity article:nth-of-type(n) .❔{
+    transform: translate(-20%, -10%);
+  }
+  .humanity article:nth-of-type(n):hover .❔ {
+    transform: translate(-20%, -60%);
   }
   .🎁 {
     width: 11vw;
