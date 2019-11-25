@@ -3,12 +3,12 @@ export default {
         hardSkill: [
             {
                 id:1,
-                skill: 'bussiness',
+                skill: 'IT',
                 svg:"itsvg"
             },
             {
                 id:2,
-                skill: 'IT',
+                skill: 'bussiness',
                 svg:"bussinessmansvg"
             },
             {

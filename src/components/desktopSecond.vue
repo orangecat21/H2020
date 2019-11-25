@@ -53,7 +53,7 @@
         </article>
         <article class="evolve3">
           <div class="popup3" :class="{popupActive3:(evolve3) && (firsthint)}">
-            <p class="fcaption">{{$t('secondPage.popup4')}}</p>
+            <p class="fcaption">{{$t('secondPage.popup3')}}</p>
           </div>
           <p
             @mouseover="evolve3 = true"
@@ -73,7 +73,7 @@
         </article>
         <article class="evolve4">
           <div class="popup4" :class="{popupActive4:(evolve4) && (firsthint)}">
-            <p class="fcaption">{{$t('secondPage.popup5')}}</p>
+            <p class="fcaption">{{$t('secondPage.popup4')}}</p>
           </div>
           <p
             @mouseover="evolve4 = true"
@@ -91,7 +91,7 @@
         </article>
         <article class="evolve5">
           <div class="popup5" :class="{popupActive5:(evolve5) && (firsthint)}">
-            <p class="fcaption">{{$t('secondPage.popup6')}}</p>
+            <p class="fcaption">{{$t('secondPage.popup5')}}</p>
           </div>
           <p
             @mouseover="evolve5 = true"
@@ -109,7 +109,7 @@
         </article>
         <article class="evolve6">
           <div class="popup6" :class="{popupActive6:(evolve6) && (firsthint)}">
-            <p class="fcaption">{{$t('secondPage.popup7')}}</p>
+            <p class="fcaption">{{$t('secondPage.popup6')}}</p>
           </div>
           <p
             @mouseover="evolve6 = true"
@@ -129,7 +129,7 @@
         </article>
         <article class="evolve7">
           <div class="popup7" :class="{popupActive7:(evolve7) && (firsthint)}">
-            <p class="fcaption">{{$t('secondPage.popup8')}}</p>
+            <p class="fcaption">{{$t('secondPage.popup7')}}</p>
           </div>
           <p
             @mouseover="evolve7 = true"
@@ -368,7 +368,7 @@ hr {
   }
   .firsthint {
     color: #fff;
-    font-size: 2vw;
+    font-size: 1.5vw;
     font-weight: 400;
     text-align: center;
     z-index: 999;
@@ -610,17 +610,19 @@ hr {
   }
   .humanity article:nth-of-type(n) .century {
     position: absolute;
+    word-spacing: -0.2vw;
     top: 50%;
     left: 50%;
-    transform: translate(-70%, -10%);
+    transform: translate(-30%, -10%);
     color: #fff;
     font-size: 1.5vw;
     font-weight: 700;
     z-index: 999;
     opacity: 0;
+    width: 7vw;
   }
   .humanity article:nth-of-type(n):hover .century {
-    transform: translate(-70%, -60%);
+    transform: translate(-30%, -60%);
     transition: 2s;
     opacity: 1;
   }
@@ -745,7 +747,7 @@ hr {
   }
   .firsthint {
     color: #fff;
-    font-size: 1.5vw;
+    font-size: 1.3vw;
     font-weight: 400;
     text-align: center;
     z-index: 999;
@@ -989,7 +991,8 @@ hr {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-70%, -10%);
+    word-spacing: -0.2vw;
+    transform: translate(-30%, -10%);
     color: #fff;
     font-weight: 700;
     font-size: 1.5vw;
@@ -997,7 +1000,7 @@ hr {
     opacity: 0;
   }
   .humanity article:nth-of-type(n):hover .century {
-    transform: translate(-70%, -60%);
+    transform: translate(-30%, -10%);
     transition: 2s;
     opacity: 1;
   }

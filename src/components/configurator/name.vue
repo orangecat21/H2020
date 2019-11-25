@@ -200,6 +200,37 @@ input:focus:-ms-input-placeholder{
 input:focus::placeholder{
 	color:transparent;
 }
+input:focus {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100vw;
+    user-select: all;
+    background-color: #fff;
+    height: 100vh;
+    text-align: center;
+    font-size: 8vw;
+    border: none;
+    border-bottom: 0.1vw solid #ac40f1;
+    caret-color: #ac40f1;
+    color: #ac40f1;
+  }
+  .iphoneTrue:focus {
+    all: initial;
+    user-select: all;
+    background-color: transparent;
+    width: 85vw;
+    height: 9vw;
+    text-align: center;
+    font-size: 8vw;
+    border: none;
+    box-shadow: none;
+    border-bottom: 0.1vw solid #ac40f1;
+    caret-color: #ac40f1;
+    color: #ac40f1;
+    margin-bottom: calc(var(--vh, 1vh) * 5);
+  }
 @media screen and (min-width: 760px) and (max-width: 999px) {
 }
 

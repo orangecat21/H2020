@@ -3,7 +3,7 @@
     class="donut"
     background="white"
     foreground="#FF6384"
-    :size="65"
+    :size="55"
     unit="vw"
     :thickness="30"
     hasLegend
@@ -26,10 +26,27 @@ export default {
 
 <style>
 .donut {
-  font-size: 2.7vw;
+  font-size: 2.5vw;
   text-align: left;
 }
 .cdc-legend {
   justify-content: flex-start;
 }
+@media screen and (max-width: 999px) and (orientation: landscape){
+     .cdc-legend{
+     justify-content: flex-start;
+     font-size: .7vw;
+     color: rgb(48, 2, 173);
+ }
+ }
+@media screen and (min-width: 1000px), (orientation: landscape) {
+   .donut{
+     font-size: 1vw;
+     text-align: left;
+ }
+ .cdc-legend{
+     justify-content: flex-start;
+     color: rgb(48, 2, 173);
+ }
+ }
 </style>

@@ -86,21 +86,18 @@ export default {
   },
   watch: {
     softSkills: function() {
-      if (this.softSkills !== 0 && !isNaN(this.softSkills)) {
-        this.hardSkill = this.sumOfScills - this.softSkills;
-        this.buttonTrigger = true;
-      } else {
-        this.hardSkill = 0;
-        this.softSkills = 0;
-        this.buttonTrigger = false;
+      this.hardSkill = this.sumOfScills - this.softSkills
+      if (isNaN(this.softSkills)){
+        this.hardSkill=""
       }
+      if((this.hardSkill !==0)&&(this.hardSkill !==1000)){
+        this.buttonTrigger = true
+      } else this.buttonTrigger = false
     },
     hardSkill: function() {
-      if (this.hardSkill !== 0 && !isNaN(this.hardSkill)) {
-        this.softSkills = this.sumOfScills - this.hardSkill;
-      } else {
-        this.softSkills = 0;
-        this.hardSkill = 0;
+      this.softSkills = this.sumOfScills - this.hardSkill
+      if (isNaN(this.hardSkill)){
+        this.softSkills=""
       }
     },
     inputTrigger: function() {
