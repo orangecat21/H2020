@@ -23,7 +23,17 @@ export default {
 		managersvg:() => import(/* webpackChunkName: "arrowSVG", webpackPrefetch: 988 */ '../SVG/managerSVG.vue'),
 		minersvg:() => import(/* webpackChunkName: "hangerSVG", webpackPrefetch: 987 */ '../SVG/minerSVG.vue'),
 		psychologsvg:() => import(/* webpackChunkName: "seekerSVG", webpackPrefetch: 986 */ '../SVG/psychologSVG.vue'),
-		ubersvg:() => import(/* webpackChunkName: "awardSVG", webpackPrefetch: 985 */ '../SVG/uberSVG.vue')
+		ubersvg:() => import(/* webpackChunkName: "awardSVG", webpackPrefetch: 985 */ '../SVG/uberSVG.vue'),
+		teachersvg:() => import(/* webpackChunkName: "personSVG", webpackPrefetch: 989 */ '../SVG/teacherSVG.vue'),
+		doctorsvg:() => import(/* webpackChunkName: "arrowSVG", webpackPrefetch: 988 */ '../SVG/doctorSVG.vue'),
+		politiciansvg:() => import(/* webpackChunkName: "hangerSVG", webpackPrefetch: 987 */ '../SVG/politicianSVG.vue'),
+		engineersvg:() => import(/* webpackChunkName: "seekerSVG", webpackPrefetch: 986 */ '../SVG/engineerSVG.vue'),
+		artistsvg:() => import(/* webpackChunkName: "awardSVG", webpackPrefetch: 985 */ '../SVG/artistSVG.vue'),
+		hookahmansvg:() => import(/* webpackChunkName: "personSVG", webpackPrefetch: 989 */ '../SVG/hookahmanSVG.vue'),
+		lawyersvg:() => import(/* webpackChunkName: "arrowSVG", webpackPrefetch: 988 */ '../SVG/lawyerSVG.vue'),
+		athletesvg:() => import(/* webpackChunkName: "hangerSVG", webpackPrefetch: 987 */ '../SVG/athleteSVG.vue'),
+		bankersvg:() => import(/* webpackChunkName: "seekerSVG", webpackPrefetch: 986 */ '../SVG/bankerSVG.vue'),
+		unemployedsvg:() => import(/* webpackChunkName: "seekerSVG", webpackPrefetch: 986 */ '../SVG/unemployedSVG.vue')
 	},
 	name:'hardSkillItems',
 	methods:{
@@ -101,7 +111,7 @@ export default {
 		transition: 0.3s;
 		background: linear-gradient(rgb(130, 255, 136), rgb(140, 242, 255));
 		border: none;
-		width: 9.8vw;
+		width: 9.5vw;
 		height: 12vw;
 		border-radius: 0.5vw;
 		margin: 0vw 0.4vw 0.4vw 0vw;

@@ -4,9 +4,18 @@
 export const onCreateAnswer = `subscription OnCreateAnswer {
   onCreateAnswer {
     id
+    respondentGender
+    respondentAge
     gender
     humanName
     humanHead {
+      id
+      src
+      posX
+      posY
+      z
+    }
+    humanBeard {
       id
       src
       posX
@@ -45,6 +54,15 @@ export const onCreateAnswer = `subscription OnCreateAnswer {
     humanAccessories {
       id
       src
+      icon
+      posX
+      posY
+      z
+    }
+    humanVehicle {
+      id
+      src
+      icon
       posX
       posY
       z
@@ -67,9 +85,18 @@ export const onCreateAnswer = `subscription OnCreateAnswer {
 export const onUpdateAnswer = `subscription OnUpdateAnswer {
   onUpdateAnswer {
     id
+    respondentGender
+    respondentAge
     gender
     humanName
     humanHead {
+      id
+      src
+      posX
+      posY
+      z
+    }
+    humanBeard {
       id
       src
       posX
@@ -108,6 +135,15 @@ export const onUpdateAnswer = `subscription OnUpdateAnswer {
     humanAccessories {
       id
       src
+      icon
+      posX
+      posY
+      z
+    }
+    humanVehicle {
+      id
+      src
+      icon
       posX
       posY
       z
@@ -130,9 +166,18 @@ export const onUpdateAnswer = `subscription OnUpdateAnswer {
 export const onDeleteAnswer = `subscription OnDeleteAnswer {
   onDeleteAnswer {
     id
+    respondentGender
+    respondentAge
     gender
     humanName
     humanHead {
+      id
+      src
+      posX
+      posY
+      z
+    }
+    humanBeard {
       id
       src
       posX
@@ -171,6 +216,15 @@ export const onDeleteAnswer = `subscription OnDeleteAnswer {
     humanAccessories {
       id
       src
+      icon
+      posX
+      posY
+      z
+    }
+    humanVehicle {
+      id
+      src
+      icon
       posX
       posY
       z

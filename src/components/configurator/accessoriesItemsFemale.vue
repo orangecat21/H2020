@@ -5,19 +5,44 @@
       v-for="item in items"
       v-bind:key="item.id"
       v-on:click="drawOnCanvas(item)"
+      ref="button"
     >
-      <img :src="item.src" alt />
+      <p>BLOCKED</p>
+      <img :src="item.icon" alt />
     </button>
   </section>
 </template>
 
 <script>
 export default {
-  props: ["items", "type"],
+  props: ["items", "type", "firstID", "map", "secondID", "thirdID", "fourthID"],
   name: "accessoriesItems",
   methods: {
     drawOnCanvas(elem) {
-      this.$store.dispatch("PUSH_" + this.type, elem);
+      if (
+        this.map[elem.id].disableFirst.indexOf(this.firstID) === -1 &&
+        this.map[elem.id].disableSecond.indexOf(this.secondID) === -1 &&
+        this.map[elem.id].disableThird.indexOf(this.thirdID) === -1 &&
+        this.map[elem.id].disableFourth.indexOf(this.fourthID) === -1
+      ) {
+        this.$store.dispatch("PUSH_" + this.type, elem);
+      }
+    }
+  },
+  mounted() {
+    for (var i = 0; i < this.items.length; i++) {
+      if (
+        this.map[this.items[i].id].disableFirst.indexOf(this.firstID) === -1 &&
+        this.map[this.items[i].id].disableSecond.indexOf(this.secondID) ===
+          -1 &&
+        this.map[this.items[i].id].disableThird.indexOf(this.thirdID) === -1 &&
+        this.map[this.items[i].id].disableThird.indexOf(this.thirdID) === -1 &&
+        this.map[this.items[i].id].disableFourth.indexOf(this.fourthID) === -1
+      ) {
+        this.$refs.button[i].classList.add("enable");
+      } else {
+        this.$refs.button[i].classList.add("disable");
+      }
     }
   }
 };
@@ -35,6 +60,7 @@ export default {
   overflow-x: scroll;
 }
 .button {
+  position: relative;
   width: 38vw;
   height: calc(var(--vh, 1vh) * 24);
   margin-top: calc(var(--vh, 1vh) * 0.4);
@@ -46,6 +72,33 @@ export default {
   border: none;
   border-radius: 1vw;
 }
+.button p {
+  position: absolute;
+  color: red;
+  font-size: 7vw;
+  top: 14vw;
+  left: 3vw;
+  transform: rotate(45deg);
+  font-family: "block", sans-serif;
+  display: none;
+}
+.disable {
+  background: rgb(44, 42, 42);
+}
+.disable img {
+  filter: brightness(40%);
+  z-index: 0;
+}
+.disable p {
+  display: initial;
+  z-index: 999;
+}
+.disable:hover {
+  transform: scale(1);
+  background: rgb(44, 42, 42);
+  transition: 0.3s;
+}
+
 .button::-moz-focus-outer {
   border: none;
 }
@@ -86,30 +139,46 @@ img {
     border-radius: 0.5vw;
     margin: 0vw 0vw 0.4vw 0vw;
   }
+  .button p {
+    font-size: 2vw;
+    top: 4vw;
+    left: 0.5vw;
+  }
+  .disable:hover {
+    transform: scale(1);
+    background: rgb(44, 42, 42);
+    transition: 0.3s;
+  }
+  .disable {
+    background: rgb(44, 42, 42);
+  }
   .button:nth-of-type(7) img {
     width: 30%;
   }
 }
-@media screen and (max-width: 999px) and (orientation: landscape){
-	.items{
-		flex-wrap: nowrap;
-		height: 23vw;
-	}
-	.scrollD{
-		overflow-y: hidden;
-	}
-	.scrollM{
-		overflow-x: scroll;
-	}
-	.button{
-		cursor: pointer;
-		transition: 0.3s;
-		background: linear-gradient(rgb(130, 255, 136), rgb(140, 242, 255));
-		border: none;
-		width: 10vw;
-		height: 12vw;
-		border-radius: 0.5vw;
-		margin-right: 1vw;
-	}
+@media screen and (max-width: 999px) and (orientation: landscape) {
+  .items {
+    flex-wrap: nowrap;
+    height: 23vw;
+  }
+  .scrollD {
+    overflow-y: hidden;
+  }
+  .scrollM {
+    overflow-x: scroll;
+  }
+  .button {
+    cursor: pointer;
+    transition: 0.3s;
+    background: linear-gradient(rgb(130, 255, 136), rgb(140, 242, 255));
+    border: none;
+    width: 10vw;
+    height: 12vw;
+    border-radius: 0.5vw;
+    margin-right: 1vw;
+  }
+  .disable {
+    background: rgb(44, 42, 42);
+  }
 }
 </style>

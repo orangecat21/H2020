@@ -1,6 +1,6 @@
 <template>
-<clothesItemsMale v-if="this.gender==='male'" :items="array"  :type="type"/> 
-<clothesItemsFemale :items="array"  :type="type" v-else/>  
+<clothesItemsMale v-if="this.gender==='male'" :items="array" :map="map" :firstID="shirtsID" :secondID="pantsID" :thirdID="jacketsID" :fourthID="1" :type="type"/> 
+<clothesItemsFemale :items="array" :map="map" :firstID="shirtsID" :secondID="pantsID" :thirdID="jacketsID" :fourthID="1" :type="type" v-else/>  
 </template>
 
 <script>
@@ -20,6 +20,22 @@ export default {
         },
         gender(){
             return this.$store.getters.GENDER
+        },
+        map(){
+            if(this.$store.getters.GENDER==='male'){
+                return this.$store.state.accessoriesArray.maleMap
+            }else if(this.$store.getters.GENDER==='female') {
+                return this.$store.state.accessoriesArray.femaleMap
+            } return null
+        },
+        pantsID(){
+            return this.$store.getters.HUMAN_PANTS.id
+        },
+        shirtsID(){
+            return this.$store.getters.HUMAN_SHIRT.id
+        },
+        jacketsID(){
+            return this.$store.getters.HUMAN_JACKET.id
         }
     },
     components:{

@@ -1,13 +1,17 @@
 type Answer @model {
   id: ID!
+  respondentGender: String
+  respondentAge: String
   gender: String!
   humanName: String
   humanHead:  ImgObj
+  humanBeard: ImgObj
   humanShirt: ImgObj
   humanJackets: ImgObj
   humanPants: ImgObj
-  humanShoes: ImgShoesObj
-  humanAccessories: ImgObj
+  humanShoes: ImgIconObj
+  humanAccessories: ImgIconObj
+  humanVehicle: ImgIconObj
   hardSkillPoints: Int
   softSkillsPoints: Int
   hardSkillName: String
@@ -23,14 +27,14 @@ type Answer @model {
 }
 
 type ImgObj {
-  id: Int!
+  id: Int
   src: String
   posX: Int
   posY: Int
   z: Int
 }
 
-type ImgShoesObj {
+type ImgIconObj {
   id: Int
   src: String
   icon: String

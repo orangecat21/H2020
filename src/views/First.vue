@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <div class="attention"></div>
     <header>
       <button @click="changeLocEn" class="Eng">English</button>
       <hr />
@@ -217,7 +216,8 @@ export default {
 .fcaption {
   width: auto;
   color: #fff;
-  font-size: 4vw;
+  font-size: 5vw;
+  font-family: 'Caveat';
   font-weight: 400;
   line-height: 6vw;
   margin: auto 0;
@@ -315,17 +315,6 @@ export default {
   left: 3vw;
   opacity: 1;
 }
-.attention {
-  position: absolute;
-  top: 1vw;
-  right: -55vw;
-  z-index: 0;
-  width: 55vw;
-  border-radius: 1.5vw;
-  height: 7vw;
-  background-color: rgba(232, 22, 255, 0.295);
-  animation: Attention 10s linear;
-}
 header {
   position: absolute;
   z-index: 1;
@@ -337,7 +326,7 @@ header {
   height: calc(var(--vh, 1vh) * 5);
 }
 hr {
-  border: 0.1vw solid #e0ffff;
+  border: 0.1vw solid #ac40f1;
   width: 0.1vw;
   background: none;
   height: 5vw;
@@ -350,7 +339,7 @@ hr {
 .Spa {
   background: none;
   border: none;
-  color: #fff;
+  color: #ac40f1;
   margin: 2vw 2vw 2vw 0;
   font-family: "Source", sans-serif;
   font-size: 4vw;
@@ -361,7 +350,7 @@ hr {
 .Eng:active,
 .Ru:active,
 .Spa:active {
-  color: #ac40f1;
+  color: #fff;
 }
 html {
   overflow: hidden;
@@ -658,10 +647,6 @@ input {
   left: 22vw;
   opacity: 1;
 }
-.attention {
-  top: 0vw;
-  z-index: 0;
-}
 .popup4M {
   position: absolute;
   bottom: 2vw;
@@ -699,7 +684,7 @@ input {
   .fcaption {
     width: auto;
     color: #fff;
-    font-size: 1.5vw;
+    font-size: 2vw;
     font-weight: 400;
     line-height: 2vw;
     margin: auto 0;
@@ -893,14 +878,6 @@ input {
   #app {
     height: 100vh;
   }
-  hr {
-    margin: 2.5vw 0 0 0;
-  }
-  .Eng,
-  .Ru,
-  .Spa {
-    margin: 2vw 2vw 0vw 0;
-  }
   header {
     height: initial;
   }
@@ -919,15 +896,16 @@ input {
   .Spa {
     font-size: 1.5vw;
     margin: 1.8vw 1vw 0 0;
+    text-shadow: 0vw 0vw 0.03vw #000;
   }
   hr {
-    border: 0.1vw solid #fff;
+    border: 0.1vw solid #ac40f1;
     width: 0.1vw;
     background: none;
+    margin: 2vw 0 0 0;
     height: 2vw;
-    margin-top: 2vw;
     margin-right: calc(0.5vw + 0.4vw);
-    box-shadow: 0vw 0vw 0.1vw #000;
+    box-shadow: 0vw 0vw 0.06vw #000;
   }
   .earth {
     width: 45vw;
@@ -968,14 +946,15 @@ input {
     font-size: 11vw;
     font-weight: 400;
     position: relative;
-    line-height: 13vw;
+    line-height: 10vw;
     margin-bottom: 0vw;
     animation: TitleShadow 190s linear infinite;
   }
   .date {
     font-size: 2vw;
-    line-height: 5vw;
+    line-height: 2vw;
     word-spacing: 30vw;
+    margin-bottom: 6vw;
   }
   .enDate span:nth-child(2) {
     margin: 0vw 8.5vw;
@@ -994,17 +973,6 @@ input {
   .esDate span:nth-child(2),
   .ruDate span:nth-child(2) {
     margin: 0vw 12vw;
-  }
-  .attention {
-    position: absolute;
-    top: 1vw;
-    right: -25vw;
-    z-index: 0;
-    width: 25vw;
-    border-radius: 1vw;
-    height: 4vw;
-    background-color: rgba(232, 22, 255, 0.295);
-    animation: Attention 10s linear;
   }
   @keyframes TitleShadow {
     0% {
@@ -1242,20 +1210,14 @@ input {
     left: -0.4vh;
     top: 15vh;
   }
-  .Eng,
-  .Ru,
-  .Spa {
-    font-size: 1.5vw;
-    margin: 1vw 1vw 0 0;
-  }
   hr {
-    border: 0.1vw solid #fff;
+    border: 0.1vw solid #ac40f1;
     width: 0.1vw;
     background: none;
     height: 2vw;
     margin-top: 1vw;
     margin-right: calc(0.5vw + 0.4vw);
-    box-shadow: 0vw 0vw 0.1vw #000;
+    box-shadow: 0vw 0vw 0.05vw #000;
   }
   .earth {
     width: 35vw;
@@ -1322,17 +1284,6 @@ input {
   .esDate span:nth-child(2),
   .ruDate span:nth-child(2) {
     margin: 0vw 12vw;
-  }
-  .attention {
-    position: absolute;
-    top: 0vw;
-    right: -25vw;
-    z-index: 0;
-    width: 25vw;
-    border-radius: 1vw;
-    height: 3vw;
-    background-color: rgba(232, 22, 255, 0.295);
-    animation: Attention 10s linear;
   }
   @keyframes TitleShadow {
     0% {

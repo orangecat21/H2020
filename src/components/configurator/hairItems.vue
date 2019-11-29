@@ -79,7 +79,6 @@ export default {
 		.items{
 			flex-wrap: wrap;
 			justify-content: space-around;
-			padding: 1vw;
 			height: 20.5vw;
 		}
 		.button{
@@ -88,6 +87,8 @@ export default {
 			margin-top: 0vw;
 			flex-shrink: initial;
 			margin: 0vw;
+			margin-top: calc(var(--vh, 1vh) * 0.9);
+			margin-right: 0.1vw;
 		}
 		.button:nth-of-type(3) img{
 			height: initial;

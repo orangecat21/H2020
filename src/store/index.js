@@ -8,6 +8,8 @@ import pantsArray from './modules/pantsArray'
 import accessoriesArray from './modules/accessoriesArray'
 import shoesArray from './modules/shoesArray'
 import hardSkillArray from './modules/hardSkillArray'
+import beardsArray from './modules/beardsArray'
+import vehiclesArray from './modules/vehiclesArray'
 
 Vue.use(Vuex)
 
@@ -20,21 +22,28 @@ export default new Vuex.Store({
       src:'null',
       posX:0,
       posY:0,
-      z:11
+      z:10
+    },
+    humanBeard:{
+      id:0,
+      src:'null',
+      posX:0,
+      posY:0,
+      z:9
     },
     humanShirt:{
       id:0,
       src:'null',
       posX:0,
       posY:0,
-      z:8
+      z:6
     },
     humanJackets:{
       id:0,
       src:'null',
       posX:0,
       posY:0,
-      z:9
+      z:7
     },
     humanPants:{
       id:0,
@@ -54,9 +63,18 @@ export default new Vuex.Store({
     humanAccessories:{
       id:0,
       src:'null',
+      icon:'null',
       posX:0,
       posY:0,
-      z:10
+      z:8
+    },
+    humanVehicle: {
+      id: 0,
+      src: 'null',
+      icon: 'null',
+      posX: 0,
+      posY: 0,
+      z: 11
     },
     sumOfSkills:1000,
     hardSkillPoints:0,
@@ -71,12 +89,26 @@ export default new Vuex.Store({
     Teamwork:0,
     CriticalThinking:0,
     TimeManagement:0,
+    respondentGender: 'null',
+    respondentAge:'null',
     humanImg:null,
     skillInputActive: false,
     popupActive:false,
     requestCounter:0
     },
   getters:{
+    HUMAN_BEARD: state =>{
+      return state.humanBeard
+    },
+    RESPONDENT_AGE: state =>{
+      return state.respondentAge
+    },
+    RESPONDENT_GENDER: state =>{
+      return state.respondentGender
+    },
+    HUMAN_VEHICLE: state=>{
+      return state.humanVehicle
+    },
     requestCounter: state =>{
       return state.requestCounter
     },
@@ -127,6 +159,18 @@ export default new Vuex.Store({
     }
   },
   mutations: {
+    SET_RESPGENDER: (state, payload) =>{
+      state.respondentGender = payload
+    },
+    SET_RESPAGE: (state, payload) =>{
+      state.respondentAge = payload
+    },
+    SET_VEHICLE: (state, payload) => {
+      state.humanVehicle = payload
+    },
+    SET_BEARD: (state, payload) => {
+      state.humanBeard = payload
+    },
     SET_COUNTER: (state, payload) => {
       state.requestCounter = payload
     },
@@ -201,6 +245,18 @@ export default new Vuex.Store({
     },
   },
   actions: {
+    PUSH_RESPGENDER: (context, payload) => {
+      context.commit('SET_RESPGENDER', payload)
+    },
+    PUSH_RESPAGE: (context, payload) => {
+      context.commit('SET_RESPAGE', payload)
+    },
+    PUSH_VEHICLE: (context, payload) => {
+      context.commit('SET_VEHICLE', payload)
+    },
+    PUSH_BEARD: (context, payload) => {
+      context.commit('SET_BEARD', payload)
+    },
     PUSH_COUNTER: (context, payload) =>{
       context.commit('SET_COUNTER', payload)
     },
@@ -282,6 +338,8 @@ export default new Vuex.Store({
     pantsArray,
     accessoriesArray,
     shoesArray,
-    hardSkillArray
+    hardSkillArray,
+    beardsArray,
+    vehiclesArray
   },
 })

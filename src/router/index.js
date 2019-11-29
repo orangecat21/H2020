@@ -54,6 +54,10 @@ const routes = [
         path: '8',
         name: 'eighthEvolve',
         component: () => import(/* webpackChunkName: "eighthEvolve", webpackPreload: true */'../components/eighthEvolve.vue')
+      },
+      {
+        path: 'popup',
+        name: 'popup'
       }
     ]
   },

@@ -9,6 +9,16 @@
   "military": "Military",
   "miner": "Miner",
   "bussinessTrainer": "Business trainer",
+  "teacher": "Teacher",
+  "doctor": "Doctor",
+  "politician": "Politician",
+  "engineer": "Engineer",
+  "artist": "Artist",
+  "hookahman": "Hookahman",
+  "lawyer": "Lawyer",
+  "athlete": "Athlete",
+  "banker": "Banker",
+  "unemployed": "Unemployed",
   "firstPage": {
     "h1" : "HUMAN 2020",
     "topQuote" : "«Everything begins ",
@@ -35,8 +45,13 @@
       "politics": "No Politics!",
       "fun": "Just Fun:)"
     },
+    "popup": {
+      "title": "It is important for us to know about you:",
+      "gender": "Gender",
+      "age": "Age"
+    },
     "evolution":{
-      "greek": "Greeks",
+      "greek": "Antiquity",
       "aristocrat":"Aristocrats",
       "bourgeois":"Bourgeois",
       "mafia":"Mafia",
@@ -58,12 +73,18 @@
     "popup2": "In the first place we had a human personality and talent",
     "popup3": "Big bellies and expensive suits, Promotions? ... enterprises? ... bets? Almost .. wage labor!",
     "popup4": "Hat, PP Thompson, formal suit and a bullet in the head ...",
-    "popup5": "Free thoughts, clothes and love. Violence is the road to nowhere",
-    "popup6": "Chains..chains..chains, riveted leather jackets and loud music 🎸",
+    "popup5": "Free thoughts, clothes and love. Peace-yes, war-no!",
+    "popup6": "Iroquois, riveted leather jackets and loud music 🎸",
     "popup7": "The guys in the subject! Barbershop, Segway, blog, they build sentences from these words😁",
     "popup8": "And now it's time to make your choice, money or a talent, love or war, a formal suit or a leather jacket!"
   },
   "thirdPage": {
+    "inputname": {
+      "forgotN": "Forgot name",
+      "forgotG": "Forgot gender",
+      "forgotNumaric": "Letters and numbers are allowed",
+      "tryagain": "Try again"
+    },
     "gender": {
       "male": "Male",
       "female": "Female",

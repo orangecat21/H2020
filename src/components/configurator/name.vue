@@ -13,16 +13,16 @@
     <section class="overlay" @click="goToBack" :class="[{'overlayDisplay':!popUpDisplay}]"></section>
     <section class="popup" :class="[{'popupDisplay':!popUpDisplay}]">
       <div class="nameIsNan" v-if="nameNotInput">
-        <p class="msg">Забыли имя...😕</p>
-        <button class="return" @click="goToBack">Try again</button>
+        <p class="msg">{{ $t("thirdPage.inputname.forgotN") }}...😕</p>
+        <button class="return" @click="goToBack">{{ $t("thirdPage.inputname.tryagain") }}</button>
       </div>
       <div class="genderIsNan" v-if="genderNotInput">
-        <p class="msg">Забыли пол...😕</p>
-        <button class="return" @click="goToBack">Try again</button>
+        <p class="msg">{{ $t("thirdPage.inputname.forgotG") }}...😕</p>
+        <button class="return" @click="goToBack">{{ $t("thirdPage.inputname.tryagain") }}</button>
       </div>
       <div class="nameIsInvalid" v-if="nameNotValid">
-        <p class="msg">Только буквы и цифры...😕</p>
-        <button class="return" @click="goToBack">Try again</button>
+        <p class="msg">{{ $t("thirdPage.inputname.forgotNumaric") }}...😕</p>
+        <button class="return" @click="goToBack">{{ $t("thirdPage.inputname.tryagain") }}</button>
       </div>
     </section>
   </section>
@@ -99,7 +99,7 @@ export default {
   align-items: center;
 }
 .msg{
-  font-size: 6vw;
+  font-size: 8vw;
   color: #ac40f1;
   margin-top: 5vw;
 }
@@ -109,10 +109,10 @@ export default {
   background: #ac40f1;
   border: 0.1vw solid #ac40f1;
   color: #fff;
-  font-size: 6vw;
+  font-size: 8vw;
   padding: 0vw;
   cursor: pointer;
-  width: 30vw;
+  width: 35vw;
   box-shadow: 0vw 0vw 0.2vw #000;
   text-shadow: 0vw 0vw 0.1vw #000;
 }
@@ -221,9 +221,9 @@ input:focus::placeholder{
   box-shadow:  inset 0vw 0vw 0.2vw #000;
 }
 .popup {
-  width: 30vw;
+  width: 50vw;
   height:30vh;
-  left: calc(50% - 15vw);
+  left: calc(50% - 25vw);
   top: calc(50% - 15vh);
   border-radius: 1vw;
 }

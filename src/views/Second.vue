@@ -2,6 +2,7 @@
 	<div>
 		<DesktopSecond v-if="this.isDesktop"/>
 		<MobileSecond v-else/>
+		<overlay v-if="this.$route.path === '/evolve/popup'"></overlay>
 	</div>
 </template>
 
@@ -10,7 +11,9 @@
 		name: 'secondPage',
 		components:{
 			DesktopSecond:() => import(/* webpackChunkName: "desktopsecond", webpackPrefetch: 999 */ '../components/desktopSecond.vue'),
-			MobileSecond:() => import(/* webpackChunkName: "mobilesecond", webpackPreload:true */ '../components/mobileSecond.vue')
+			MobileSecond:() => import(/* webpackChunkName: "mobilesecond", webpackPreload:true */ '../components/mobileSecond.vue'),
+			overlay:() => import(/* webpackChunkName: "overlaySecond", webpackPreload:true */ '../components/overlaySecond.vue'),
+
 		},
 		data: function(){
 			return{

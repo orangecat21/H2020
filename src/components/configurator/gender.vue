@@ -27,23 +27,27 @@ export default {
 	methods:{
 		male(){
 			this.$store.dispatch('GET_GENDER', 'male')
-			this.$store.dispatch('PUSH_HEAD', {id:0,src:'null',posX:0,posY:0,z:0})
-			this.$store.dispatch('PUSH_JACKETS', {id:0,src:'null',posX:0,posY:0,z:0})
-			this.$store.dispatch('PUSH_SHIRTS', {id:0,src:'null',posX:0,posY:0,z:0})
-			this.$store.dispatch('PUSH_PANTS', {id:0,src:'null',posX:0,posY:0,z:0})
-			this.$store.dispatch('PUSH_SHOES', {id:0,src:'null',icon:'null',posX:0,posY:0,z:0})
-			this.$store.dispatch('PUSH_ACCESSORIES', {id:0,src:'null',posX:0,posY:0,z:0})
+			this.$store.dispatch('PUSH_HEAD', {id:0,src:'null',posX:0,posY:0,z:10})
+			this.$store.dispatch('PUSH_BEARD',{id:0, src:'null',posX:0,posY:0,z:9})
+			this.$store.dispatch('PUSH_JACKETS', {id:0,src:'null',posX:0,posY:0,z:7})
+			this.$store.dispatch('PUSH_SHIRTS', {id:0,src:'null',posX:0,posY:0,z:6})
+			this.$store.dispatch('PUSH_PANTS', {id:0,src:'null',posX:0,posY:0,z:4})
+			this.$store.dispatch('PUSH_SHOES', {id:0,src:'null',icon:'null',posX:0,posY:0,z:5})
+			this.$store.dispatch('PUSH_ACCESSORIES', {id:0,src:'null',icon:'null',posX:0,posY:0,z:8})
+			this.$store.dispatch('PUSH_VEHICLE', {id:0,src:'null',icon:'null',posX:0,posY:0,z:11})
 			this.maleTrigger = true
 			this.femaleTrigger = false
 		},
 		female(){
 			this.$store.dispatch('GET_GENDER', 'female')
-			this.$store.dispatch('PUSH_HEAD', {id:0,src:'null',posX:0,posY:0,z:0})
-			this.$store.dispatch('PUSH_JACKETS', {id:0,src:'null',posX:0,posY:0,z:0})
-			this.$store.dispatch('PUSH_SHIRTS', {id:0,src:'null',posX:0,posY:0,z:0})
-			this.$store.dispatch('PUSH_PANTS', {id:0,src:'null',posX:0,posY:0,z:0})
-			this.$store.dispatch('PUSH_SHOES', {id:0,src:'null',icon:'null',posX:0,posY:0,z:0})
-			this.$store.dispatch('PUSH_ACCESSORIES', {id:0,src:'null',posX:0,posY:0,z:0})
+			this.$store.dispatch('PUSH_HEAD', {id:0,src:'null',posX:0,posY:0,z:10})
+			this.$store.dispatch('PUSH_BEARD',{id:0, src:'null',posX:0,posY:0,z:9})
+			this.$store.dispatch('PUSH_JACKETS', {id:0,src:'null',posX:0,posY:0,z:7})
+			this.$store.dispatch('PUSH_SHIRTS', {id:0,src:'null',posX:0,posY:0,z:6})
+			this.$store.dispatch('PUSH_PANTS', {id:0,src:'null',posX:0,posY:0,z:4})
+			this.$store.dispatch('PUSH_SHOES', {id:0,src:'null',icon:'null',posX:0,posY:0,z:5})
+			this.$store.dispatch('PUSH_ACCESSORIES', {id:0,src:'null',icon:'null',posX:0,posY:0,z:8})
+			this.$store.dispatch('PUSH_VEHICLE', {id:0,src:'null',icon:'null',posX:0,posY:0,z:11})
 			this.maleTrigger = false
 			this.femaleTrigger = true
 		}

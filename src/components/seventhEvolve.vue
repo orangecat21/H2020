@@ -64,7 +64,7 @@ export default {
   transition: 0.8s;
 }
 .fcaption{
-  font-size: 5vw;
+  font-size: 5.9vw;
   line-height: 7vw;
 }
 .popupM:after {

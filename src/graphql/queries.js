@@ -4,9 +4,18 @@
 export const getAnswer = `query GetAnswer($id: ID!) {
   getAnswer(id: $id) {
     id
+    respondentGender
+    respondentAge
     gender
     humanName
     humanHead {
+      id
+      src
+      posX
+      posY
+      z
+    }
+    humanBeard {
       id
       src
       posX
@@ -45,6 +54,15 @@ export const getAnswer = `query GetAnswer($id: ID!) {
     humanAccessories {
       id
       src
+      icon
+      posX
+      posY
+      z
+    }
+    humanVehicle {
+      id
+      src
+      icon
       posX
       posY
       z
@@ -72,9 +90,18 @@ export const listAnswers = `query ListAnswers(
   listAnswers(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
+      respondentGender
+      respondentAge
       gender
       humanName
       humanHead {
+        id
+        src
+        posX
+        posY
+        z
+      }
+      humanBeard {
         id
         src
         posX
@@ -113,6 +140,15 @@ export const listAnswers = `query ListAnswers(
       humanAccessories {
         id
         src
+        icon
+        posX
+        posY
+        z
+      }
+      humanVehicle {
+        id
+        src
+        icon
         posX
         posY
         z

@@ -9,6 +9,16 @@
   "military": "Militar",
   "miner": "Minera",
   "bussinessTrainer": "Entrenador de negocios",
+  "teacher": "Profesor",
+  "doctor": "Doctor",
+  "politician": "Político",
+  "engineer": "Ingeniero",
+  "artist": "Artista",
+  "hookahman": "Hookahman",
+  "lawyer": "Abogado",
+  "athlete": "Atleta",
+  "banker": "Banquero",
+  "unemployed": "Desempleados",
   "firstPage": {
     "h1": "HUMAN 2020",
     "topQuote": "«Todo comienza ",
@@ -35,8 +45,13 @@
       "politics": "No política!",
       "fun": "Solo diversión:)"
     },
+    "popup": {
+      "title": "Es importante que sepamos sobre usted:",
+      "gender": "Género",
+      "age": "Años"
+    },
     "evolution": {
-      "greek": "Griegos",
+      "greek": "Antigüedad",
       "aristocrat": "Aristocrats",
       "bourgeois": "Aristócratas",
       "mafia": "Mafia",
@@ -61,12 +76,18 @@
     "popup2": "En primer lugar teníamos una personalidad y talento humanos.",
     "popup3": "Grandes barrigas y trajes caros, ¿Promociones? ... empresas? ... apuestas? ¡Casi ... trabajo asalariado!",
     "popup4": "Sombrero, PP Thompson, traje formal y una bala en la cabeza ...",
-    "popup5": "Pensamientos libres, ropa y amor. La violencia es el camino a ninguna parte",
-    "popup6": "Cadenas ... cadenas ... cadenas, chaquetas de cuero remachadas y música a todo volumen 🎸",
+    "popup5": "Pensamientos libres, ropa y amor. Paz-si, guerra-no!",
+    "popup6": "Iroqueses, chaquetas de cuero remachadas y música a todo volumen 🎸",
     "popup7": "Los chicos en el tema! Barbershop, Segway, blog, sí, construyen oraciones a partir de estas palabras😁",
     "popup8": "¡Y ahora es el momento de elegir, dinero o talento, amor o guerra, un traje formal o una chaqueta de cuero!"
   },
   "thirdPage": {
+    "inputname": {
+      "forgotN": "Nombre olvidado",
+      "forgotG": "Olvidé el género",
+      "forgotNumaric": "Se permiten letras y números",
+      "tryagain": "Espalda"
+    },
     "gender": {
       "male": "Masculino",
       "female": "Masculina",

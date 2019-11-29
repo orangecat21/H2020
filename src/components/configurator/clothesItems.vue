@@ -3,7 +3,9 @@
 		<button class="button"
 			v-for="item in items"
 			v-bind:key="item.id"
-			v-on:click="drawOnCanvas(item)">
+			v-on:click="drawOnCanvas(item)"
+			ref="button">
+			<p>BLOCKED</p>
 			<img :src="item.src" alt="">
 		</button>
 	</section>
@@ -11,11 +13,22 @@
 
 <script>
 export default {
-	props: ['items','type'],
+	props: ['items','type','firstID','map','secondID','thirdID','fourthID'],
 	name:'clothesitems',
 	methods:{
 		drawOnCanvas(elem){
+			if((this.map[elem.id].disableFirst.indexOf(this.firstID) === -1)&&(this.map[elem.id].disableSecond.indexOf(this.secondID) === -1)&&(this.map[elem.id].disableThird.indexOf(this.thirdID) === -1)&&(this.map[elem.id].disableFourth.indexOf(this.fourthID) === -1)){
 			this.$store.dispatch('PUSH_'+this.type, elem)
+			}
+		}
+	},
+	mounted(){
+		for (var i=0; i<this.items.length; i++){
+			if((this.map[this.items[i].id].disableFirst.indexOf(this.firstID) === -1)&&(this.map[this.items[i].id].disableSecond.indexOf(this.secondID) === -1)&&(this.map[this.items[i].id].disableThird.indexOf(this.thirdID) === -1)&&(this.map[this.items[i].id].disableThird.indexOf(this.thirdID) === -1)&&(this.map[this.items[i].id].disableFourth.indexOf(this.fourthID) === -1)){
+				this.$refs.button[i].classList.add("enable")
+			} else {
+				this.$refs.button[i].classList.add("disable")
+			}
 		}
 	}
 }
@@ -44,6 +57,28 @@ export default {
 		background: linear-gradient(rgb(130, 255, 136), rgb(140, 242, 255));
 		border: none;
 		border-radius: 1vw;
+		position: relative;
+	}
+	.button p{
+		position: absolute;
+		color: red;
+		font-size: 7vw;
+		top: 14vw;
+		left: 3vw;
+		transform: rotate(45deg);
+		font-family: "block", sans-serif;
+		display: none;
+	}
+	.disable{
+		background: rgb(44, 42, 42);
+	}
+	.disable img{
+		filter:brightness(40%);
+		z-index: 0;
+	}
+	.disable p{
+		display: initial;
+		z-index: 999;
 	}
 	.button::-moz-focus-outer{
 		border: none;
@@ -53,12 +88,17 @@ export default {
 		background: none;
 		transition: 0.3s;
 	}
+	.disable:hover{
+		transform: scale(1);
+		background: rgb(44, 42, 42);
+		transition: 0.3s;
+	}
 	img{
 		height: 80%;
 	}
-	button:nth-of-type(11) img{
+	/* button:nth-of-type(11) img{
 		width: 90%;
-	}
+	} */
 @media screen and (min-width: 760px) and (max-width: 999px) {
 }
 
@@ -84,6 +124,11 @@ export default {
 		border-radius: 0.5vw;
 		margin: 0vw 0vw 0.4vw 0vw;
 	}
+	.button p{
+		font-size: 2vw;
+		top: 4vw;
+		left: 0.5vw;
+	}
 	.button:hover{
 		transform: scale(1.1);
 		background: none;
@@ -92,8 +137,13 @@ export default {
 	img{
 		height: 80%;
 	}
-	button:nth-of-type(11) img{
-		width: initial;
+	.disable:hover{
+		transform: scale(1);
+		background: rgb(44, 42, 42);
+		transition: 0.3s;
+	}
+	.disable{
+		background: rgb(44, 42, 42);
 	}
 }
 @media screen and (max-width: 999px) and (orientation: landscape){
@@ -117,5 +167,13 @@ export default {
 		border-radius: 0.5vw;
 		margin-right: 1vw;
 	}
+	.disable:hover{
+		transform: scale(1);
+		background: rgb(44, 42, 42);
+		transition: 0.3s;
+	}
+	.disable{
+		background: rgb(44, 42, 42);
+	}	
 }
 </style>

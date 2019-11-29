@@ -51,6 +51,56 @@ export default {
                 skill: 'bussinessTrainer',
                 svg:"bussinesstrainersvg"
             },
+            {
+                id: 11,
+                skill: 'teacher',
+                svg: "teachersvg"
+            },
+            {
+                id: 12,
+                skill: 'doctor',
+                svg: "doctorsvg"
+            },
+            {
+                id: 13,
+                skill: 'politician',
+                svg: "politiciansvg"
+            },
+            {
+                id: 14,
+                skill: 'engineer',
+                svg: "engineersvg"
+            },
+            {
+                id: 15,
+                skill: 'artist',
+                svg: "artistsvg"
+            },
+            {
+                id: 16,
+                skill: 'hookahman',
+                svg: "hookahmansvg"
+            },
+            {
+                id: 17,
+                skill: 'lawyer',
+                svg: "lawyersvg"
+            },
+            {
+                id: 18,
+                skill: 'athlete',
+                svg: "athletesvg"
+            },
+            {
+                id: 19,
+                skill: 'banker',
+                svg: "bankersvg"
+            },
+            {
+                id: 20,
+                skill: 'unemployed',
+                svg: "unemployedsvg"
+            },
 
         ]
     }

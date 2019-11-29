@@ -75,7 +75,7 @@ export default {
   border-left: 2vw solid rgba(0, 0, 0, 0.233);
 }
 .fcaption{
-  font-size: 5vw;
+  font-size: 7vw;
   line-height: 7vw;
 }
 .popupActiveM {

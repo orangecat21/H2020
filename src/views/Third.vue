@@ -39,8 +39,14 @@
 						<v-image ref="accessories"
 							:config="{image:accessories, x:this.$store.getters.HUMAN_ACCESSORIES.posX,y:this.$store.getters.HUMAN_ACCESSORIES.posY, scale:{x:.38,y:.38}}">
 						</v-image>
+						<v-image ref="beard"
+							:config="{image:beard, x:this.$store.getters.HUMAN_BEARD.posX,y:this.$store.getters.HUMAN_BEARD.posY, scale:{x:.38,y:.38}}">
+						</v-image>
 						<v-image ref="hair"
 							:config="{image:hair, x:this.$store.getters.HUMAN_HEAD.posX,y:this.$store.getters.HUMAN_HEAD.posY, scale:{x:.38,y:.38}}">
+						</v-image>
+						<v-image ref="vehicle"
+							:config="{image:vehicle, x:this.$store.getters.HUMAN_VEHICLE.posX,y:this.$store.getters.HUMAN_VEHICLE.posY, scale:{x:.38,y:.38}}">
 						</v-image>
 					</v-layer>
 				</v-stage>
@@ -80,6 +86,8 @@ export default {
 			pants:null,
 			accessories:null,
 			shoes:null,
+			beard:null,
+			vehicle:null,
 			canvascontainer:'',
 			posX:'',
 			firstStep: '/create/personalisation',
@@ -126,6 +134,12 @@ export default {
 		shoesSrc(){
 			return this.$store.getters.HUMAN_SHOES.src
 		},
+		beardSrc(){
+			return this.$store.getters.HUMAN_BEARD.src
+		},
+		vehicleSrc(){
+			return this.$store.getters.HUMAN_VEHICLE.src
+		},
 		skillInputActive(){
 			return this.$store.getters.skillInputActive
 		},
@@ -134,7 +148,13 @@ export default {
 		},
 		gender() {
           return this.$store.getters.GENDER;
-        },
+		},
+		respondentGender(){
+			return this.$store.getters.RESPONDENT_GENDER
+		},
+		respondentAge(){
+			return this.$store.getters.RESPONDENT_AGE
+		},
         humanHead() {
           return this.$store.getters.HUMAN_HEAD;
         },
@@ -152,7 +172,13 @@ export default {
         },
         humanJackets() {
           return this.$store.getters.HUMAN_JACKET;
-        },
+		},
+		humanBeard(){
+			return this.$store.getters.HUMAN_BEARD
+		},
+		humanVehicle(){
+			return this.$store.getters.HUMAN_VEHICLE
+		},
         hardSkillName() {
           return this.$store.getters.HARDSKILLNAME;
         },
@@ -199,6 +225,8 @@ export default {
 			this.pants = null,
 			this.shoes = null,
 			this.accessories = null
+			this.beard = null
+			this.vehicle = null
 		},
 		humanName: function(){
 			this.name = this.humanName
@@ -222,88 +250,154 @@ export default {
 		shoesSrc: function(){
 			this.newShoes()
 		},
+		beardSrc: function(){
+			this.newBeard()
+		},
+		vehicleSrc: function(){
+			this.newVehicle()
+		},
 		async shoes(){
 			await this.$refs.shoes.getStage().setZIndex(this.$store.getters.HUMAN_SHOES.z)
 			await this.$refs.scene.getStage().draw()
-			await this.$refs.pants.getStage().setZIndex(this.$store.getters.HUMAN_PANTS.z)
-			await this.$refs.scene.getStage().draw()
 			await this.$refs.shirt.getStage().setZIndex(this.$store.getters.HUMAN_SHIRT.z)
+			await this.$refs.scene.getStage().draw()
+			await this.$refs.pants.getStage().setZIndex(this.$store.getters.HUMAN_PANTS.z)
 			await this.$refs.scene.getStage().draw()
 			await this.$refs.jacket.getStage().setZIndex(this.$store.getters.HUMAN_JACKET.z)
 			await this.$refs.scene.getStage().draw()
 			await this.$refs.hair.getStage().setZIndex(this.$store.getters.HUMAN_HEAD.z)
 			await this.$refs.scene.getStage().draw()
+			await this.$refs.beard.getStage().setZIndex(this.$store.getters.HUMAN_BEARD.z)
+			await this.$refs.scene.getStage().draw()
 			await this.$refs.accessories.getStage().setZIndex(this.$store.getters.HUMAN_ACCESSORIES.z)
+			await this.$refs.scene.getStage().draw()
+			await this.$refs.vehicle.getStage().setZIndex(this.$store.getters.HUMAN_VEHICLE.z)
 			await this.$refs.scene.getStage().draw()
 		},
 		async pants(){
 			await this.$refs.shoes.getStage().setZIndex(this.$store.getters.HUMAN_SHOES.z)
 			await this.$refs.scene.getStage().draw()
-			await this.$refs.pants.getStage().setZIndex(this.$store.getters.HUMAN_PANTS.z)
-			await this.$refs.scene.getStage().draw()
 			await this.$refs.shirt.getStage().setZIndex(this.$store.getters.HUMAN_SHIRT.z)
+			await this.$refs.scene.getStage().draw()
+			await this.$refs.pants.getStage().setZIndex(this.$store.getters.HUMAN_PANTS.z)
 			await this.$refs.scene.getStage().draw()
 			await this.$refs.jacket.getStage().setZIndex(this.$store.getters.HUMAN_JACKET.z)
 			await this.$refs.scene.getStage().draw()
 			await this.$refs.hair.getStage().setZIndex(this.$store.getters.HUMAN_HEAD.z)
 			await this.$refs.scene.getStage().draw()
+			await this.$refs.beard.getStage().setZIndex(this.$store.getters.HUMAN_BEARD.z)
+			await this.$refs.scene.getStage().draw()
 			await this.$refs.accessories.getStage().setZIndex(this.$store.getters.HUMAN_ACCESSORIES.z)
+			await this.$refs.scene.getStage().draw()
+			await this.$refs.vehicle.getStage().setZIndex(this.$store.getters.HUMAN_VEHICLE.z)
 			await this.$refs.scene.getStage().draw()
 		},
 		async shirt(){
 			await this.$refs.shoes.getStage().setZIndex(this.$store.getters.HUMAN_SHOES.z)
 			await this.$refs.scene.getStage().draw()
-			await this.$refs.pants.getStage().setZIndex(this.$store.getters.HUMAN_PANTS.z)
-			await this.$refs.scene.getStage().draw()
 			await this.$refs.shirt.getStage().setZIndex(this.$store.getters.HUMAN_SHIRT.z)
+			await this.$refs.scene.getStage().draw()
+			await this.$refs.pants.getStage().setZIndex(this.$store.getters.HUMAN_PANTS.z)
 			await this.$refs.scene.getStage().draw()
 			await this.$refs.jacket.getStage().setZIndex(this.$store.getters.HUMAN_JACKET.z)
 			await this.$refs.scene.getStage().draw()
 			await this.$refs.hair.getStage().setZIndex(this.$store.getters.HUMAN_HEAD.z)
 			await this.$refs.scene.getStage().draw()
+			await this.$refs.beard.getStage().setZIndex(this.$store.getters.HUMAN_BEARD.z)
+			await this.$refs.scene.getStage().draw()
 			await this.$refs.accessories.getStage().setZIndex(this.$store.getters.HUMAN_ACCESSORIES.z)
+			await this.$refs.scene.getStage().draw()
+			await this.$refs.vehicle.getStage().setZIndex(this.$store.getters.HUMAN_VEHICLE.z)
 			await this.$refs.scene.getStage().draw()
 		},
 		async jacket(){
 			await this.$refs.shoes.getStage().setZIndex(this.$store.getters.HUMAN_SHOES.z)
 			await this.$refs.scene.getStage().draw()
-			await this.$refs.pants.getStage().setZIndex(this.$store.getters.HUMAN_PANTS.z)
-			await this.$refs.scene.getStage().draw()
 			await this.$refs.shirt.getStage().setZIndex(this.$store.getters.HUMAN_SHIRT.z)
+			await this.$refs.scene.getStage().draw()
+			await this.$refs.pants.getStage().setZIndex(this.$store.getters.HUMAN_PANTS.z)
 			await this.$refs.scene.getStage().draw()
 			await this.$refs.jacket.getStage().setZIndex(this.$store.getters.HUMAN_JACKET.z)
 			await this.$refs.scene.getStage().draw()
 			await this.$refs.hair.getStage().setZIndex(this.$store.getters.HUMAN_HEAD.z)
 			await this.$refs.scene.getStage().draw()
+			await this.$refs.beard.getStage().setZIndex(this.$store.getters.HUMAN_BEARD.z)
+			await this.$refs.scene.getStage().draw()
 			await this.$refs.accessories.getStage().setZIndex(this.$store.getters.HUMAN_ACCESSORIES.z)
+			await this.$refs.scene.getStage().draw()
+			await this.$refs.vehicle.getStage().setZIndex(this.$store.getters.HUMAN_VEHICLE.z)
 			await this.$refs.scene.getStage().draw()
 		},
 		async accessories(){
 			await this.$refs.shoes.getStage().setZIndex(this.$store.getters.HUMAN_SHOES.z)
 			await this.$refs.scene.getStage().draw()
-			await this.$refs.pants.getStage().setZIndex(this.$store.getters.HUMAN_PANTS.z)
-			await this.$refs.scene.getStage().draw()
 			await this.$refs.shirt.getStage().setZIndex(this.$store.getters.HUMAN_SHIRT.z)
+			await this.$refs.scene.getStage().draw()
+			await this.$refs.pants.getStage().setZIndex(this.$store.getters.HUMAN_PANTS.z)
 			await this.$refs.scene.getStage().draw()
 			await this.$refs.jacket.getStage().setZIndex(this.$store.getters.HUMAN_JACKET.z)
 			await this.$refs.scene.getStage().draw()
 			await this.$refs.hair.getStage().setZIndex(this.$store.getters.HUMAN_HEAD.z)
 			await this.$refs.scene.getStage().draw()
+			await this.$refs.beard.getStage().setZIndex(this.$store.getters.HUMAN_BEARD.z)
+			await this.$refs.scene.getStage().draw()
 			await this.$refs.accessories.getStage().setZIndex(this.$store.getters.HUMAN_ACCESSORIES.z)
+			await this.$refs.scene.getStage().draw()
+			await this.$refs.vehicle.getStage().setZIndex(this.$store.getters.HUMAN_VEHICLE.z)
 			await this.$refs.scene.getStage().draw()
 		},
 		async hair(){
 			await this.$refs.shoes.getStage().setZIndex(this.$store.getters.HUMAN_SHOES.z)
 			await this.$refs.scene.getStage().draw()
-			await this.$refs.pants.getStage().setZIndex(this.$store.getters.HUMAN_PANTS.z)
-			await this.$refs.scene.getStage().draw()
 			await this.$refs.shirt.getStage().setZIndex(this.$store.getters.HUMAN_SHIRT.z)
+			await this.$refs.scene.getStage().draw()
+			await this.$refs.pants.getStage().setZIndex(this.$store.getters.HUMAN_PANTS.z)
 			await this.$refs.scene.getStage().draw()
 			await this.$refs.jacket.getStage().setZIndex(this.$store.getters.HUMAN_JACKET.z)
 			await this.$refs.scene.getStage().draw()
 			await this.$refs.hair.getStage().setZIndex(this.$store.getters.HUMAN_HEAD.z)
 			await this.$refs.scene.getStage().draw()
+			await this.$refs.beard.getStage().setZIndex(this.$store.getters.HUMAN_BEARD.z)
+			await this.$refs.scene.getStage().draw()
 			await this.$refs.accessories.getStage().setZIndex(this.$store.getters.HUMAN_ACCESSORIES.z)
+			await this.$refs.scene.getStage().draw()
+			await this.$refs.vehicle.getStage().setZIndex(this.$store.getters.HUMAN_VEHICLE.z)
+			await this.$refs.scene.getStage().draw()
+		},
+		async beard(){
+			await this.$refs.shoes.getStage().setZIndex(this.$store.getters.HUMAN_SHOES.z)
+			await this.$refs.scene.getStage().draw()
+			await this.$refs.shirt.getStage().setZIndex(this.$store.getters.HUMAN_SHIRT.z)
+			await this.$refs.scene.getStage().draw()
+			await this.$refs.pants.getStage().setZIndex(this.$store.getters.HUMAN_PANTS.z)
+			await this.$refs.scene.getStage().draw()
+			await this.$refs.jacket.getStage().setZIndex(this.$store.getters.HUMAN_JACKET.z)
+			await this.$refs.scene.getStage().draw()
+			await this.$refs.hair.getStage().setZIndex(this.$store.getters.HUMAN_HEAD.z)
+			await this.$refs.scene.getStage().draw()
+			await this.$refs.beard.getStage().setZIndex(this.$store.getters.HUMAN_BEARD.z)
+			await this.$refs.scene.getStage().draw()
+			await this.$refs.accessories.getStage().setZIndex(this.$store.getters.HUMAN_ACCESSORIES.z)
+			await this.$refs.scene.getStage().draw()
+			await this.$refs.vehicle.getStage().setZIndex(this.$store.getters.HUMAN_VEHICLE.z)
+			await this.$refs.scene.getStage().draw()
+		},
+		async vehicle(){
+			await this.$refs.shoes.getStage().setZIndex(this.$store.getters.HUMAN_SHOES.z)
+			await this.$refs.scene.getStage().draw()
+			await this.$refs.shirt.getStage().setZIndex(this.$store.getters.HUMAN_SHIRT.z)
+			await this.$refs.scene.getStage().draw()
+			await this.$refs.pants.getStage().setZIndex(this.$store.getters.HUMAN_PANTS.z)
+			await this.$refs.scene.getStage().draw()
+			await this.$refs.jacket.getStage().setZIndex(this.$store.getters.HUMAN_JACKET.z)
+			await this.$refs.scene.getStage().draw()
+			await this.$refs.hair.getStage().setZIndex(this.$store.getters.HUMAN_HEAD.z)
+			await this.$refs.scene.getStage().draw()
+			await this.$refs.beard.getStage().setZIndex(this.$store.getters.HUMAN_BEARD.z)
+			await this.$refs.scene.getStage().draw()
+			await this.$refs.accessories.getStage().setZIndex(this.$store.getters.HUMAN_ACCESSORIES.z)
+			await this.$refs.scene.getStage().draw()
+			await this.$refs.vehicle.getStage().setZIndex(this.$store.getters.HUMAN_VEHICLE.z)
 			await this.$refs.scene.getStage().draw()
 		}
 		
@@ -340,7 +434,7 @@ export default {
 		goToNext(){
 			if(this.$route.path === this.softSkill){
 				this.name = ''
-				if(this.$store.getters.requestCounter < 2){
+				if(this.$store.getters.requestCounter < 1){
 				this.pushToDynamo()}
 				setTimeout(() => {
 					this.$router.push('/create/soft_skill/finish')
@@ -352,14 +446,18 @@ export default {
 		},
 		async pushToDynamo() {
 			const answer = {
+				respondentGender: this.respondentGender,
+				respondentAge: this.respondentAge,
 				gender: this.gender,
 				humanName: this.humanName,
 				humanHead: this.humanHead,
+				humanBeard: this.humanBeard,
 				humanShirt: this.humanShirt,
 				humanJackets: this.humanJackets,
 				humanPants: this.humanPants,
 				humanShoes: this.humanShoes,
 				humanAccessories: this.humanAccessories,
+				humanVehicle: this.humanVehicle,
 				hardSkillPoints: this.hardSkillPoints,
 				softSkillsPoints: this.softSkillsPoints,
 				hardSkillName: this.hardSkillName,
@@ -432,6 +530,22 @@ export default {
 			image.src = this.shoesSrc
 			image.onload = () =>{
 				this.shoes=image
+			}
+			
+		},
+		newBeard(){
+			const image = new window.Image()
+			image.src = this.beardSrc
+			image.onload = () =>{
+				this.beard=image
+			}
+			
+		},
+		newVehicle(){
+			const image = new window.Image()
+			image.src = this.vehicleSrc
+			image.onload = () =>{
+				this.vehicle=image
 			}
 			
 		},

@@ -4,9 +4,18 @@
 export const createAnswer = `mutation CreateAnswer($input: CreateAnswerInput!) {
   createAnswer(input: $input) {
     id
+    respondentGender
+    respondentAge
     gender
     humanName
     humanHead {
+      id
+      src
+      posX
+      posY
+      z
+    }
+    humanBeard {
       id
       src
       posX
@@ -45,6 +54,15 @@ export const createAnswer = `mutation CreateAnswer($input: CreateAnswerInput!) {
     humanAccessories {
       id
       src
+      icon
+      posX
+      posY
+      z
+    }
+    humanVehicle {
+      id
+      src
+      icon
       posX
       posY
       z
@@ -67,9 +85,18 @@ export const createAnswer = `mutation CreateAnswer($input: CreateAnswerInput!) {
 export const updateAnswer = `mutation UpdateAnswer($input: UpdateAnswerInput!) {
   updateAnswer(input: $input) {
     id
+    respondentGender
+    respondentAge
     gender
     humanName
     humanHead {
+      id
+      src
+      posX
+      posY
+      z
+    }
+    humanBeard {
       id
       src
       posX
@@ -108,6 +135,15 @@ export const updateAnswer = `mutation UpdateAnswer($input: UpdateAnswerInput!) {
     humanAccessories {
       id
       src
+      icon
+      posX
+      posY
+      z
+    }
+    humanVehicle {
+      id
+      src
+      icon
       posX
       posY
       z
@@ -130,9 +166,18 @@ export const updateAnswer = `mutation UpdateAnswer($input: UpdateAnswerInput!) {
 export const deleteAnswer = `mutation DeleteAnswer($input: DeleteAnswerInput!) {
   deleteAnswer(input: $input) {
     id
+    respondentGender
+    respondentAge
     gender
     humanName
     humanHead {
+      id
+      src
+      posX
+      posY
+      z
+    }
+    humanBeard {
       id
       src
       posX
@@ -171,6 +216,15 @@ export const deleteAnswer = `mutation DeleteAnswer($input: DeleteAnswerInput!) {
     humanAccessories {
       id
       src
+      icon
+      posX
+      posY
+      z
+    }
+    humanVehicle {
+      id
+      src
+      icon
       posX
       posY
       z

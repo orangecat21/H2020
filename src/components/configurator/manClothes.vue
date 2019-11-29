@@ -27,11 +27,15 @@ export default {
 	components:{
 		hairstylesvg:() => import(/* webpackChunkName: "hairstylesvg", webpackPrefetch: 979 */ '../SVG/hairstyleSVG.vue'),
 		shirtsvg:() => import(/* webpackChunkName: "shirtsvg", webpackPrefetch: 978 */ '../SVG/shirtSVG.vue'),
+		beardsvg:() => import(/* webpackChunkName: "shirtsvg", webpackPrefetch: 940 */ '../SVG/beardSVG.vue'),
+		vehiclesvg:() => import(/* webpackChunkName: "vehiclesvg", webpackPrefetch: 937 */ '../SVG/vehicleSVG.vue'),
 		pantssvg:() => import(/* webpackChunkName: "pantssvg", webpackPrefetch: 977 */ '../SVG/pantsSVG.vue'),
 		suitsvgm:() => import(/* webpackChunkName: "suitsvgm", webpackPrefetch: 976 */ '../SVG/suitSVGM.vue'),
 		shoessvg:() => import(/* webpackChunkName: "shoessvg", webpackPrefetch: 975 */ '../SVG/shoesSVG.vue'),
 		accessoriessvg:() => import(/* webpackChunkName: "accessoriessvg", webpackPrefetch: 974 */ '../SVG/accessoriesSVG.vue'),
 		hairstyle: () => import(/* webpackChunkName: "hairstyle", webpackPrefetch: 973 */ '../configurator/hairstyleMale.vue'),
+		beards: () => import(/* webpackChunkName: "beards", webpackPrefetch: 950 */ '../configurator/beards.vue'),
+		vehicles: () => import(/* webpackChunkName: "vehicles", webpackPrefetch: 947 */ '../configurator/vehicles.vue'),
 		jackets: () => import(/* webpackChunkName: "jackets", webpackPrefetch: 970 */ '../configurator/jackets.vue'),
 		shirts: () => import(/* webpackChunkName: "shirts", webpackPrefetch: 972 */ '../configurator/shirts.vue'),
 		pants: () => import(/* webpackChunkName: "pants", webpackPrefetch: 971 */ '../configurator/pants.vue'),
@@ -49,7 +53,9 @@ export default {
 				{id:3, name:'pants', svg:'pantssvg'},
 				{id:4, name:'jackets', svg:'suitsvgm'},
 				{id:5, name:'shoes', svg:'shoessvg'},
-				{id:6, name:'accessories', svg:'accessoriessvg'}
+				{id:7, name:'accessories', svg:'accessoriessvg'},
+				{id:8, name:'beards', svg:'beardsvg'},
+				{id:9, name:'vehicles', svg:'vehiclesvg'}
 			]
 		}
 	},
@@ -118,13 +124,13 @@ export default {
 		background-color: #ac40f1;
 		margin-bottom: 2vw;
 	}
-	.hairstylesvg, .shirtsvg, .accessoriessvg{
+	.hairstylesvg, .shirtsvg, .vehiclesvg, .beardsvg, .accessoriessvg{
 		width: 5vw;
 	}
 	.suitsvgm, .pantssvg, .shoessvg{
 		width: 6vw;
 	}
-	.hairstylesvg.active, .shirtsvg.active, .pantssvg.active, .accessoriessvg.active, .suitsvgm.active, .shoessvg.active{
+	.hairstylesvg.active, .vehiclesvg.active, .beardsvg.active, .shirtsvg.active, .pantssvg.active, .accessoriessvg.active, .suitsvgm.active, .shoessvg.active{
 		fill: #ffffff;
 	}
 	.currentTab{
@@ -192,12 +198,12 @@ export default {
 	.hairstylesvg, .shirtsvg, .accessoriessvg{
 		width: 2vw;
 	}
-	.suitsvgm, .pantssvg, .shoessvg{
+	.suitsvgm, .pantssvg, .beardsvg, .vehiclesvg, .shoessvg{
 		width: 3vw;
 	}
 	.button{
 		border-radius: initial;
-		width: 8.8vw;
+		width: 6.6vw;
 		height: 4vw;
 	}
 	.button.active{
@@ -221,12 +227,12 @@ export default {
 	.hairstylesvg, .shirtsvg, .accessoriessvg{
 		width: 2vw;
 	}
-	.suitsvgm, .pantssvg, .shoessvg{
+	.suitsvgm, .pantssvg, .beardsvg, .vehiclesvg, .shoessvg{
 		width: 3vw;
 	}
 	.button{
 		border-radius: initial;
-		width: 8.8vw;
+		width: 6.6vw;
 		height: 4vw;
 	}
 }

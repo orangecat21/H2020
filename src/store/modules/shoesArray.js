@@ -65,6 +65,70 @@ export default {
                 posY:992,
                 z:5
             },
+            {
+                id: 9,
+                src: require('../../assets/Textures/Shoes/male/9.png'),
+                icon: require('../../assets/Textures/Shoes/male/icons/9.png'),
+                posX: 330,
+                posY: 955,
+                z: 5
+            },
+            {
+                id: 10,
+                src: require('../../assets/Textures/Shoes/male/10.png'),
+                icon: require('../../assets/Textures/Shoes/male/icons/10.png'),
+                posX: 333,
+                posY: 1065,
+                z: 5
+            },
+            {
+                id: 11,
+                src: require('../../assets/Textures/Shoes/male/11.png'),
+                icon: require('../../assets/Textures/Shoes/male/icons/11.png'),
+                posX: 333,
+                posY: 1065,
+                z: 5
+            },
+            {
+                id: 12,
+                src: require('../../assets/Textures/Shoes/male/12.png'),
+                icon: require('../../assets/Textures/Shoes/male/icons/12.png'),
+                posX: 333,
+                posY: 1065,
+                z: 5
+            },
+            {
+                id: 13,
+                src: require('../../assets/Textures/Shoes/male/13.png'),
+                icon: require('../../assets/Textures/Shoes/male/icons/13.png'),
+                posX: 333,
+                posY: 1065,
+                z: 5
+            },
+            {
+                id: 14,
+                src: require('../../assets/Textures/your.svg'),
+                icon: require('../../assets/Textures/your.svg'),
+                posX: -1000,
+                posY: -1000,
+                z: 5
+            },
+            {
+                id: 15,
+                src: require('../../assets/Textures/your.svg'),
+                icon: require('../../assets/Textures/your.svg'),
+                posX: -1000,
+                posY: -1000,
+                z: 5
+            },
+            {
+                id: 16,
+                src: require('../../assets/Textures/your.svg'),
+                icon: require('../../assets/Textures/your.svg'),
+                posX: -1000,
+                posY: -1000,
+                z: 5
+            },
         ],
         shoesFemale: [
             {
@@ -131,6 +195,247 @@ export default {
                 posY:990,
                 z:5
             },
+            {
+                id: 9,
+                src: require('../../assets/Textures/Shoes/female/9.png'),
+                icon: require('../../assets/Textures/Shoes/female/icons/9.png'),
+                posX: 360,
+                posY: 917,
+                z: 5
+            },
+            {
+                id: 10,
+                src: require('../../assets/Textures/Shoes/female/10.png'),
+                icon: require('../../assets/Textures/Shoes/female/icons/10.png'),
+                posX: 359,
+                posY: 995,
+                z: 5
+            },
+            {
+                id: 11,
+                src: require('../../assets/Textures/Shoes/female/11.png'),
+                icon: require('../../assets/Textures/Shoes/female/icons/11.png'),
+                posX: 360,
+                posY: 1040,
+                z: 5
+            },
+            {
+                id: 12,
+                src: require('../../assets/Textures/Shoes/female/12.png'),
+                icon: require('../../assets/Textures/Shoes/female/icons/12.png'),
+                posX: 355,
+                posY: 1035,
+                z: 5
+            },
         ],
+        femaleMap:[
+            {
+                disableFirst:[], //Pants
+                disableSecond:[], 
+                disableThird:[], 
+                disableFourth:[] 
+            },
+            // 1 shoes
+            {
+                disableFirst:[], //Pants
+                disableSecond:[], 
+                disableThird:[], 
+                disableFourth:[] 
+            },
+            // 2 shoes
+            {
+                disableFirst:[21], //Pants
+                disableSecond:[], 
+                disableThird:[], 
+                disableFourth:[] 
+            },
+            // 3 shoes
+            {
+                disableFirst:[3,7,9,10,12,14,15,18,19,20,21], //Pants
+                disableSecond:[], 
+                disableThird:[], 
+                disableFourth:[] 
+            },
+            // 4 shoes
+            {
+                disableFirst:[21], //Pants
+                disableSecond:[], 
+                disableThird:[], 
+                disableFourth:[] 
+            },
+            // 5 shoes
+            {
+                disableFirst:[21], //Pants
+                disableSecond:[], 
+                disableThird:[], 
+                disableFourth:[] 
+            },
+            // 6 shoes
+            {
+                disableFirst:[], //Pants
+                disableSecond:[], 
+                disableThird:[], 
+                disableFourth:[] 
+            },
+            // 7 shoes
+            {
+                disableFirst:[], //Pants
+                disableSecond:[], 
+                disableThird:[], 
+                disableFourth:[] 
+            },
+            // 8 shoes
+            {
+                disableFirst:[], //Pants
+                disableSecond:[], 
+                disableThird:[], 
+                disableFourth:[] 
+            },
+            // 9 shoes
+            {
+                disableFirst:[3,7,9,10,12,14,15,18,19,20], //Pants
+                disableSecond:[], 
+                disableThird:[], 
+                disableFourth:[] 
+            },
+            // 10 shoes
+            {
+                disableFirst:[3,7,9,10,12,14,15,18,19], //Pants
+                disableSecond:[], 
+                disableThird:[], 
+                disableFourth:[] 
+            },
+            // 11 shoes
+            {
+                disableFirst:[], //Pants
+                disableSecond:[], 
+                disableThird:[], 
+                disableFourth:[] 
+            },
+            // 12 shoes
+            {
+                disableFirst:[], //Pants
+                disableSecond:[], 
+                disableThird:[], 
+                disableFourth:[] 
+            },
+        ],
+        maleMap:[
+            {
+                disableFirst:[], //Pants
+                disableSecond:[], 
+                disableThird:[], 
+                disableFourth:[] 
+            },
+            // 1 shoes
+            {
+                disableFirst:[], //Pants
+                disableSecond:[], 
+                disableThird:[], 
+                disableFourth:[] 
+            },
+            // 2 shoes
+            {
+                disableFirst:[], //Pants
+                disableSecond:[], 
+                disableThird:[], 
+                disableFourth:[] 
+            },
+            // 3 shoes
+            {
+                disableFirst:[], //Pants
+                disableSecond:[], 
+                disableThird:[], 
+                disableFourth:[] 
+            },
+            // 4 shoes
+            {
+                disableFirst:[2,13], //Pants
+                disableSecond:[], 
+                disableThird:[], 
+                disableFourth:[] 
+            },
+            // 5 shoes
+            {
+                disableFirst:[2,13], //Pants
+                disableSecond:[], 
+                disableThird:[], 
+                disableFourth:[] 
+            },
+            // 6 shoes
+            {
+                disableFirst:[], //Pants
+                disableSecond:[], 
+                disableThird:[], 
+                disableFourth:[] 
+            },
+            // 7 shoes
+            {
+                disableFirst:[], //Pants
+                disableSecond:[], 
+                disableThird:[], 
+                disableFourth:[] 
+            },
+            // 8 shoes
+            {
+                disableFirst:[], //Pants
+                disableSecond:[], 
+                disableThird:[], 
+                disableFourth:[] 
+            },
+            // 9 shoes
+            {
+                disableFirst:[2,13], //Pants
+                disableSecond:[], 
+                disableThird:[], 
+                disableFourth:[] 
+            },
+            // 10 shoes
+            {
+                disableFirst:[], //Pants
+                disableSecond:[], 
+                disableThird:[], 
+                disableFourth:[] 
+            },
+            // 11 shoes
+            {
+                disableFirst:[], //Pants
+                disableSecond:[], 
+                disableThird:[], 
+                disableFourth:[] 
+            },
+            // 12 shoes
+            {
+                disableFirst:[], //Pants
+                disableSecond:[], 
+                disableThird:[], 
+                disableFourth:[] 
+            },
+            // 13 shoes
+            {
+                disableFirst:[], //Pants
+                disableSecond:[], 
+                disableThird:[], 
+                disableFourth:[] 
+            },
+            {
+                disableFirst:[], //Pants
+                disableSecond:[], 
+                disableThird:[], 
+                disableFourth:[] 
+            },
+            {
+                disableFirst:[], //Pants
+                disableSecond:[], 
+                disableThird:[], 
+                disableFourth:[] 
+            },
+            {
+                disableFirst:[], //Pants
+                disableSecond:[], 
+                disableThird:[], 
+                disableFourth:[] 
+            },
+        ]
     }
 }
