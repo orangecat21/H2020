@@ -23,9 +23,9 @@ export default {
         },
         map(){
             if(this.$store.getters.GENDER==='male'){
-                return this.$store.state.jacketsArray.maleMap
+                return this.$store.state.shoesArray.maleMap
             }else if(this.$store.getters.GENDER==='female') {
-                return this.$store.state.jacketsArray.femaleMap
+                return this.$store.state.shoesArray.femaleMap
             } return null
         },
         pantsID(){
