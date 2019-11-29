@@ -56,6 +56,7 @@ export default {
 		background: linear-gradient(rgb(130, 255, 136), rgb(140, 242, 255));
 		border: none;
 		border-radius: 1vw;
+		position: relative;
 	}
 	.button p {
   position: absolute;

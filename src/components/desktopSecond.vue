@@ -149,7 +149,7 @@
         </article>
         <article class="evolve8">
           <div class="popup8" :class="{popupActive8:(evolve8) && (firsthint)}">
-            <p class="fcaption">❔ ❓ ❔ ❓ ❔ ❓</p>
+            <p class="fcaption">❔ ❓ ❔ ❓</p>
           </div>
           <p @mouseover="evolve8 = true" @mouseout="evolve8 = false" class="century ❔">❔</p>
           <img

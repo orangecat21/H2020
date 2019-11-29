@@ -55,7 +55,7 @@ export default {
   position: absolute;
   top: 3vw;
   left: 100vw;
-  width: 58vw;
+  width: 62vw;
   height: 30vw;
   background: rgba(0, 0, 0, 0.233);
   border-radius: 1vw;
@@ -64,7 +64,7 @@ export default {
   transition: 0.8s;
 }
 .fcaption{
-  font-size: 6.9vw;
+  font-size: 6.4vw;
   line-height: 7vw;
 }
 .popupM:after {
@@ -80,7 +80,7 @@ export default {
 }
 .popupActiveM {
   top: 3vw;
-  left: 40vw;
+  left: 37vw;
   opacity: 1;
 }
 main {
