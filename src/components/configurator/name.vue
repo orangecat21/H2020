@@ -58,13 +58,13 @@ export default {
       this.genderNotInput = false
     },
     goToNext() {
-      if (this.$store.getters.GENDER === "male") {
+      if ((this.$store.getters.GENDER === "male")&&(this.$store.getters.GENDER_LOAD_TRIGGER)) {
         if (this.humanName !== "") {
           if(this.nameValidly === true){
             this.$router.replace("/create/man_clothes")
             } else {this.nameNotValid = true,this.popUpDisplay = true}
         } else {this.popUpDisplay = true, this.nameNotInput = true}
-      } else if (this.$store.getters.GENDER === "female") {
+      } else if ((this.$store.getters.GENDER === "female")&&(this.$store.getters.GENDER_LOAD_TRIGGER)) {
         if (this.humanName !== "") {
           if(this.nameValidly === true){
             this.$router.replace("/create/women_clothes")

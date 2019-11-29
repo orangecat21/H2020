@@ -217,8 +217,8 @@ export default {
         }
 	},
 	watch:{
-		humanLink: function(){
-			this.newGender()
+		humanLink: async function(){
+			await this.newGender()
 			this.hair = null,
 			this.jacket = null,
 			this.shirt = null,
@@ -488,6 +488,7 @@ export default {
 			image.onload = () =>{
 			this.human=image
 			this.question=null
+			this.$store.dispatch('PUSH_GENDER_LOAD', true)
 			}
 		},
 		newHair(){

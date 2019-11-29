@@ -103,10 +103,10 @@ section {
   background-color: #6b2c26;
 }
 .brown {
-  background-color: #967869;
+  background-color: #885943;
 }
 .ginger {
-  background-color: #e48e37;
+  background-color: #a57d5a;
 }
 .green {
   background-color: #417334;

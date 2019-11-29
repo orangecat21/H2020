@@ -94,9 +94,13 @@ export default new Vuex.Store({
     humanImg:null,
     skillInputActive: false,
     popupActive:false,
-    requestCounter:0
+    requestCounter:0,
+    genderLoadTrigger:true
     },
   getters:{
+    GENDER_LOAD_TRIGGER: state =>{
+      return state.genderLoadTrigger
+    },
     HUMAN_BEARD: state =>{
       return state.humanBeard
     },
@@ -159,6 +163,9 @@ export default new Vuex.Store({
     }
   },
   mutations: {
+    SET_GENDER_LOAD: (state, payload) =>{
+      state.genderLoadTrigger = payload
+    },
     SET_RESPGENDER: (state, payload) =>{
       state.respondentGender = payload
     },
@@ -245,6 +252,9 @@ export default new Vuex.Store({
     },
   },
   actions: {
+    PUSH_GENDER_LOAD: (context, payload) => {
+      context.commit('SET_GENDER_LOAD', payload)
+    },
     PUSH_RESPGENDER: (context, payload) => {
       context.commit('SET_RESPGENDER', payload)
     },
