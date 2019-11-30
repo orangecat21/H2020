@@ -5,7 +5,7 @@
 			v-bind:key="item.id"
 			v-on:click="drawOnCanvas(item)"
 			ref="button">
-			<p>BLOCKED</p>
+			<p>CAN`T WEAR</p>
 			<img :src="item.icon" alt="">
 		</button>
 	</section>
@@ -63,7 +63,7 @@ export default {
   color: red;
   font-size: 7vw;
   top: 14vw;
-  left: 3vw;
+  left: 0vw;
   transform: rotate(45deg);
   font-family: "block", sans-serif;
   display: none;
@@ -142,8 +142,8 @@ export default {
 	}
 	.button p {
     font-size: 2vw;
-    top: 4vw;
-    left: 0.5vw;
+    top: 3vw;
+    left: 0vw;
   }
 
 	.button:hover{

@@ -598,8 +598,24 @@ export default {
 		// this.name = this.humanName,
 		// this.newShoes()
 	},
-	updated(){
+	async updated(){
 		this.changeCanvas()
+		await this.$refs.shoes.getStage().setZIndex(this.$store.getters.HUMAN_SHOES.z)
+		await this.$refs.scene.getStage().draw()
+		await this.$refs.shirt.getStage().setZIndex(this.$store.getters.HUMAN_SHIRT.z)
+		await this.$refs.scene.getStage().draw()
+		await this.$refs.pants.getStage().setZIndex(this.$store.getters.HUMAN_PANTS.z)
+		await this.$refs.scene.getStage().draw()
+		await this.$refs.jacket.getStage().setZIndex(this.$store.getters.HUMAN_JACKET.z)
+		await this.$refs.scene.getStage().draw()
+		await this.$refs.hair.getStage().setZIndex(this.$store.getters.HUMAN_HEAD.z)
+		await this.$refs.scene.getStage().draw()
+		await this.$refs.beard.getStage().setZIndex(this.$store.getters.HUMAN_BEARD.z)
+		await this.$refs.scene.getStage().draw()
+		await this.$refs.accessories.getStage().setZIndex(this.$store.getters.HUMAN_ACCESSORIES.z)
+		await this.$refs.scene.getStage().draw()
+		await this.$refs.vehicle.getStage().setZIndex(this.$store.getters.HUMAN_VEHICLE.z)
+		await this.$refs.scene.getStage().draw()
 	}
 }
 </script>

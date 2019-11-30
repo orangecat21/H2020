@@ -189,10 +189,10 @@ p {
   justify-content: space-between;
   position: absolute;
   width: 75vw;
-  height: 70vh;
+  height: 130vw;
   background: linear-gradient(rgb(100, 255, 131), rgb(0, 247, 255));
   left: calc(50% - 37vw);
-  top: calc(50% - 35vh);
+  top: calc(50% - 65vw);
   z-index: 999;
   flex-shrink: 0;
   border-radius: 2vw;

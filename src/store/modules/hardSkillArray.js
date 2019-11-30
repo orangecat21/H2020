@@ -101,6 +101,56 @@ export default {
                 skill: 'unemployed',
                 svg: "unemployedsvg"
             },
+            {
+                id: 21,
+                skill: 'artist',
+                svg: "paintersvg"
+            },
+            {
+                id: 22,
+                skill: 'photographer',
+                svg: "photographersvg"
+            },
+            {
+                id: 23,
+                skill: 'journalist',
+                svg: "journalistsvg"
+            },
+            {
+                id: 24,
+                skill: 'writer',
+                svg: "writersvg"
+            },
+            {
+                id: 25,
+                skill: 'musician',
+                svg: "musiciansvg"
+            },
+            {
+                id: 26,
+                skill: 'visagiste',
+                svg: "womansvg"
+            },
+            {
+                id: 27,
+                skill: 'stylist',
+                svg: "modelsvg"
+            },
+            {
+                id: 28,
+                skill: 'PR',
+                svg: "piarsvg"
+            },
+            {
+                id: 29,
+                skill: 'clip maker',
+                svg: "reportersvg"
+            },
+            {
+                id: 30,
+                skill: 'designer',
+                svg: "designersvg"
+            },
 
         ]
     }
