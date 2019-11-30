@@ -691,6 +691,7 @@ input {
     text-align: center;
     z-index: 999;
     opacity: 1;
+    margin-top: .5vw;
   }
   .hint {
     top: 5vw;
