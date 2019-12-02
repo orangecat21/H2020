@@ -88,7 +88,15 @@ export default {
       canvascontainer: "",
       podium: null,
 
-      gender: "male",
+      gender: "",
+      humanHead: null,
+      humanBeard: null,
+      humanShirt: null,
+      humanJackets: null,
+      humanPants: null,
+      humanShoes: null,
+      humanAccessories: null,
+      humanVehicle: null,
       hardSkillPoints: 0,
       softSkillsPoints: 0,
       hardSkillName: "",
@@ -104,30 +112,6 @@ export default {
     };
   },
   computed: {
-    humanVehicle(){
-      return this.$store.state.vehiclesArray.vehicleMale[5]
-    },
-    humanShirt(){
-      return this.$store.state.shirtsArray.shirtsMale[10]
-    },
-    humanAccessories(){
-      return this.$store.state.accessoriesArray.accessoriesMale[0]
-    },
-    humanShoes(){
-      return this.$store.state.shoesArray.shoesMale[6]
-    },
-    humanPants(){
-      return this.$store.state.pantsArray.pantsMale[3]
-    },
-    humanJackets(){
-      return this.$store.state.jacketsArray.jacketsMale[4]
-    },
-    humanHead(){
-      return this.$store.state.hairArrayMale.hairBlackMale[9]
-    },
-    humanBeard(){
-      return this.$store.state.beardsArray.berads[20]
-    },
     humanLink() {
       if (this.gender === "male") {
         return require("../assets/boy.png");
@@ -290,6 +274,35 @@ export default {
       this.vehiclePosY = this.humanVehicle.posY;
     }
   },
+  watch: {
+    humanLink: function() {
+      this.newGender();
+    },
+    humanHead() {
+      this.newHair();
+    },
+    humanBeard() {
+      this.newBeard();
+    },
+    humanJackets: function() {
+      this.newJacket();
+    },
+    humanShirt: function() {
+      this.newShirt();
+    },
+    humanPants: function() {
+      this.newPants();
+    },
+    humanAccessories: function() {
+      this.newAccessories();
+    },
+    humanShoes: function() {
+      this.newShoes();
+    },
+    humanVehicle: function() {
+      this.newVehicle();
+    }
+  },
   components: {
     personsvg: () =>
       import(
@@ -353,6 +366,99 @@ export default {
       .catch(error => {
         this.hardSkillName = error;
       });
+      await axios
+      .post(
+        "https://api.rs2.usw2.rockset.com/v1/orgs/self/queries",
+        {
+          sql: {
+            query: `SELECT
+					    H2020Collection.gender,
+					    H2020Collection.humanBeard
+					FROM
+					    commons.H2020Collection
+					WHERE
+					    H2020Collection.humanBeard.id <> 0
+					    and H2020Collection.gender = (
+					        SELECT
+					            H2020Collection.gender
+					        FROM
+					            commons.H2020Collection
+					        GROUP BY
+					            H2020Collection.gender
+					        ORDER BY
+					            COUNT(*) DESC
+					        limit
+					            1
+					    )
+					GROUP BY
+					    H2020Collection.gender,
+					    H2020Collection.humanBeard
+					ORDER BY
+					    COUNT(*) DESC
+					LIMIT
+					    1`
+          }
+        },
+        {
+          headers: {
+            Authorization:
+              "ApiKey TVjJpzuiOaUQJfo6MA18EpunKDdWfQiQUANLK69T01ysoQhWbkbo89jtpcZLv0gv"
+          }
+        }
+      )
+      .then(response => {
+        this.humanBeard = response.data.results[0].humanBeard;
+      })
+      .catch(error => {
+        this.humanBeard = error;
+      });
+
+      await axios
+      .post(
+        "https://api.rs2.usw2.rockset.com/v1/orgs/self/queries",
+        {
+          sql: {
+            query: `SELECT
+					    H2020Collection.gender,
+					    H2020Collection.humanVehicle
+					FROM
+					    commons.H2020Collection
+					WHERE
+					    H2020Collection.humanVehicle.id <> 0
+					    and H2020Collection.gender = (
+					        SELECT
+					            H2020Collection.gender
+					        FROM
+					            commons.H2020Collection
+					        GROUP BY
+					            H2020Collection.gender
+					        ORDER BY
+					            COUNT(*) DESC
+					        limit
+					            1
+					    )
+					GROUP BY
+					    H2020Collection.gender,
+					    H2020Collection.humanVehicle
+					ORDER BY
+					    COUNT(*) DESC
+					LIMIT
+					    1`
+          }
+        },
+        {
+          headers: {
+            Authorization:
+              "ApiKey TVjJpzuiOaUQJfo6MA18EpunKDdWfQiQUANLK69T01ysoQhWbkbo89jtpcZLv0gv"
+          }
+        }
+      )
+      .then(response => {
+        this.humanVehicle = response.data.results[0].humanVehicle;
+      })
+      .catch(error => {
+        this.humanVehicle = error;
+      });
   },
   created() {
     window.addEventListener("resize", this.changeCanvas());
@@ -361,12 +467,338 @@ export default {
     podium.onload = () => {
       this.podium = podium;
     };
-    this.newGender()
   },
   async mounted() {
     this.changeCanvas();
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
+
+    // Получение gender
+    await axios
+      .post(
+        "https://api.rs2.usw2.rockset.com/v1/orgs/self/queries",
+        {
+          sql: {
+            query: `SELECT
+					    H2020Collection.gender
+					FROM
+					    commons.H2020Collection
+					GROUP BY
+					    H2020Collection.gender
+					ORDER BY
+					    COUNT(*) DESC
+					LIMIT
+					    1`
+          }
+        },
+        {
+          headers: {
+            Authorization:
+              "ApiKey TVjJpzuiOaUQJfo6MA18EpunKDdWfQiQUANLK69T01ysoQhWbkbo89jtpcZLv0gv"
+          }
+        }
+      )
+      .then(response => {
+        this.gender = response.data.results[0].gender;
+      })
+      .catch(error => {
+        this.gender = error;
+      });
+
+    // Получение humanHead
+
+    await axios
+      .post(
+        "https://api.rs2.usw2.rockset.com/v1/orgs/self/queries",
+        {
+          sql: {
+            query: `SELECT
+					    H2020Collection.gender,
+					    H2020Collection.humanHead
+					FROM
+					    commons.H2020Collection
+					WHERE
+					    H2020Collection.humanHead.id <> 0
+					    and H2020Collection.gender = (
+					        SELECT
+					            H2020Collection.gender
+					        FROM
+					            commons.H2020Collection
+					        GROUP BY
+					            H2020Collection.gender
+					        ORDER BY
+					            COUNT(*) DESC
+					        limit
+					            1
+					    )
+					GROUP BY
+					    H2020Collection.gender,
+					    H2020Collection.humanHead
+					ORDER BY
+					    COUNT(*) DESC
+					LIMIT
+					    1`
+          }
+        },
+        {
+          headers: {
+            Authorization:
+              "ApiKey TVjJpzuiOaUQJfo6MA18EpunKDdWfQiQUANLK69T01ysoQhWbkbo89jtpcZLv0gv"
+          }
+        }
+      )
+      .then(response => {
+        this.humanHead = response.data.results[0].humanHead;
+      })
+      .catch(error => {
+        this.humanHead = error;
+      });
+    // Получение humanShirt
+
+    await axios
+      .post(
+        "https://api.rs2.usw2.rockset.com/v1/orgs/self/queries",
+        {
+          sql: {
+            query: `SELECT
+					    H2020Collection.gender,
+					    H2020Collection.humanShirt
+					FROM
+					    commons.H2020Collection
+					WHERE
+					    H2020Collection.humanShirt.id <> 0
+					    and H2020Collection.gender = (
+					        SELECT
+					            H2020Collection.gender
+					        FROM
+					            commons.H2020Collection
+					        GROUP BY
+					            H2020Collection.gender
+					        ORDER BY
+					            COUNT(*) DESC
+					        limit
+					            1
+					    )
+					GROUP BY
+					    H2020Collection.gender,
+					    H2020Collection.humanShirt
+					ORDER BY
+					    COUNT(*) DESC
+					LIMIT
+					    1`
+          }
+        },
+        {
+          headers: {
+            Authorization:
+              "ApiKey TVjJpzuiOaUQJfo6MA18EpunKDdWfQiQUANLK69T01ysoQhWbkbo89jtpcZLv0gv"
+          }
+        }
+      )
+      .then(response => {
+        this.humanShirt = response.data.results[0].humanShirt;
+      })
+      .catch(error => {
+        this.humanShirt = error;
+      });
+
+    // Получение humanJackets
+
+    await axios
+      .post(
+        "https://api.rs2.usw2.rockset.com/v1/orgs/self/queries",
+        {
+          sql: {
+            query: `SELECT
+					    H2020Collection.gender,
+					    H2020Collection.humanJackets
+					FROM
+					    commons.H2020Collection
+					WHERE
+					    H2020Collection.humanJackets.id <> 0
+					    and H2020Collection.gender = (
+					        SELECT
+					            H2020Collection.gender
+					        FROM
+					            commons.H2020Collection
+					        GROUP BY
+					            H2020Collection.gender
+					        ORDER BY
+					            COUNT(*) DESC
+					        limit
+					            1
+					    )
+					GROUP BY
+					    H2020Collection.gender,
+					    H2020Collection.humanJackets
+					ORDER BY
+					    COUNT(*) DESC
+					LIMIT
+					    1`
+          }
+        },
+        {
+          headers: {
+            Authorization:
+              "ApiKey TVjJpzuiOaUQJfo6MA18EpunKDdWfQiQUANLK69T01ysoQhWbkbo89jtpcZLv0gv"
+          }
+        }
+      )
+      .then(response => {
+        this.humanJackets = response.data.results[0].humanJackets;
+      })
+      .catch(error => {
+        this.humanJackets = error;
+      });
+
+    // Получение humanPants
+
+    await axios
+      .post(
+        "https://api.rs2.usw2.rockset.com/v1/orgs/self/queries",
+        {
+          sql: {
+            query: `SELECT
+					    H2020Collection.gender,
+					    H2020Collection.humanPants
+					FROM
+					    commons.H2020Collection
+					WHERE
+					    H2020Collection.humanPants.id <> 0
+					    and H2020Collection.gender = (
+					        SELECT
+					            H2020Collection.gender
+					        FROM
+					            commons.H2020Collection
+					        GROUP BY
+					            H2020Collection.gender
+					        ORDER BY
+					            COUNT(*) DESC
+					        limit
+					            1
+					    )
+					GROUP BY
+					    H2020Collection.gender,
+					    H2020Collection.humanPants
+					ORDER BY
+					    COUNT(*) DESC
+					LIMIT
+					    1`
+          }
+        },
+        {
+          headers: {
+            Authorization:
+              "ApiKey TVjJpzuiOaUQJfo6MA18EpunKDdWfQiQUANLK69T01ysoQhWbkbo89jtpcZLv0gv"
+          }
+        }
+      )
+      .then(response => {
+        this.humanPants = response.data.results[0].humanPants;
+      })
+      .catch(error => {
+        this.humanPants = error;
+      });
+
+    // Получение humanShoes
+
+    await axios
+      .post(
+        "https://api.rs2.usw2.rockset.com/v1/orgs/self/queries",
+        {
+          sql: {
+            query: `SELECT
+					    H2020Collection.gender,
+					    H2020Collection.humanShoes
+					FROM
+					    commons.H2020Collection
+					WHERE
+					    H2020Collection.humanShoes.id <> 0
+					    and H2020Collection.gender = (
+					        SELECT
+					            H2020Collection.gender
+					        FROM
+					            commons.H2020Collection
+					        GROUP BY
+					            H2020Collection.gender
+					        ORDER BY
+					            COUNT(*) DESC
+					        limit
+					            1
+					    )
+					GROUP BY
+					    H2020Collection.gender,
+					    H2020Collection.humanShoes
+					ORDER BY
+					    COUNT(*) DESC
+					LIMIT
+					    1`
+          }
+        },
+        {
+          headers: {
+            Authorization:
+              "ApiKey TVjJpzuiOaUQJfo6MA18EpunKDdWfQiQUANLK69T01ysoQhWbkbo89jtpcZLv0gv"
+          }
+        }
+      )
+      .then(response => {
+        this.humanShoes = response.data.results[0].humanShoes;
+      })
+      .catch(error => {
+        this.humanShoes = error;
+      });
+
+    // Получение humanAccessories
+
+    await axios
+      .post(
+        "https://api.rs2.usw2.rockset.com/v1/orgs/self/queries",
+        {
+          sql: {
+            query: `SELECT
+					    H2020Collection.gender,
+					    H2020Collection.humanAccessories
+					FROM
+					    commons.H2020Collection
+					WHERE
+					    H2020Collection.humanAccessories.id <> 0
+					    and H2020Collection.gender = (
+					        SELECT
+					            H2020Collection.gender
+					        FROM
+					            commons.H2020Collection
+					        GROUP BY
+					            H2020Collection.gender
+					        ORDER BY
+					            COUNT(*) DESC
+					        limit
+					            1
+					    )
+					GROUP BY
+					    H2020Collection.gender,
+					    H2020Collection.humanAccessories
+					ORDER BY
+					    COUNT(*) DESC
+					LIMIT
+					    1`
+          }
+        },
+        {
+          headers: {
+            Authorization:
+              "ApiKey TVjJpzuiOaUQJfo6MA18EpunKDdWfQiQUANLK69T01ysoQhWbkbo89jtpcZLv0gv"
+          }
+        }
+      )
+      .then(response => {
+        this.humanAccessories = response.data.results[0].humanAccessories;
+      })
+      .catch(error => {
+        this.humanAccessories = error;
+      });
+
+    // Получение hardSkillName
 
     // Получение SoftSkills
 
@@ -414,14 +846,6 @@ export default {
       .catch(error => {
         this.Initiative = error;
       });
-      await this.newHair()
-      // await this.newBeard()
-      await this.newJacket()
-      await this.newPants()
-      await this.newShoes()
-      await this.newAccessories()
-      await this.newShirt()
-      await this.newVehicle()
       await this.$refs.shoes.getStage().setZIndex(this.$store.getters.HUMAN_SHOES.z)
 			await this.$refs.scene.getStage().draw()
 			await this.$refs.shirt.getStage().setZIndex(this.$store.getters.HUMAN_SHIRT.z)
